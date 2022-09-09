@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.channels.USA">
+
+    <View
+        android:id="@+id/vTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/channel7"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:src="@drawable/channel7"
+        app:layout_constraintBottom_toBottomOf="@id/tvPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPrimary" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:padding="@dimen/_16sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vTop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btUSA1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa1"
+                android:gravity="center"
+                android:text="@string/usa1"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa2"
+                android:gravity="center"
+                android:text="@string/usa2"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa3"
+                android:gravity="center"
+                android:text="@string/usa3"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa4"
+                android:gravity="center"
+                android:text="@string/usa4"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa5"
+                android:gravity="center"
+                android:text="@string/usa5"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa6"
+                android:gravity="center"
+                android:text="@string/usa6"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa7"
+                android:gravity="center"
+                android:text="@string/usa7"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa8"
+                android:gravity="center"
+                android:text="@string/usa8"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa9"
+                android:gravity="center"
+                android:text="@string/usa9"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa10"
+                android:gravity="center"
+                android:text="@string/usa10"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa11"
+                android:gravity="center"
+                android:text="@string/usa11"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa12"
+                android:gravity="center"
+                android:text="@string/usa12"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa13"
+                android:gravity="center"
+                android:text="@string/usa13"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa14"
+                android:gravity="center"
+                android:text="@string/usa14"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa15"
+                android:gravity="center"
+                android:text="@string/usa15"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa16"
+                android:gravity="center"
+                android:text="@string/usa16"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa17"
+                android:gravity="center"
+                android:text="@string/usa17"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa18"
+                android:gravity="center"
+                android:text="@string/usa18"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa19"
+                android:gravity="center"
+                android:text="@string/usa19"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa20"
+                android:gravity="center"
+                android:text="@string/usa20"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa21"
+                android:gravity="center"
+                android:text="@string/usa21"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa22"
+                android:gravity="center"
+                android:text="@string/usa22"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa23"
+                android:gravity="center"
+                android:text="@string/usa23"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa24"
+                android:gravity="center"
+                android:text="@string/usa24"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btUSA25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/usa25"
+                android:gravity="center"
+                android:text="@string/usa25"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

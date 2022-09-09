@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VolumeControl">
+        <attr name="vcHeight" format="dimension" />
+        <attr name="vcWidth" format="dimension" />
+        <attr name="vcNumber" format="integer" />
+        <attr name="vcLow" format="integer" />
+        <attr name="vcMedium" format="integer" />
+        <attr name="vcMax" format="integer" />
+        <attr name="vcColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="LightControl">
+        <attr name="lcHeight" format="dimension" />
+        <attr name="lcWidth" format="dimension" />
+        <attr name="lcNumber" format="integer" />
+        <attr name="lcNumberMax" format="float" />
+        <attr name="lcColorMoon" format="color" />
+        <attr name="lcColor" format="color" />
+    </declare-styleable>
+</resources>

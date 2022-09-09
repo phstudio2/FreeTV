@@ -1,0 +1,920 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Developer & App info-->
+    <string name="app_name" translatable="false">Free TV</string>
+    <string name="developer" translatable="false">PH studio</string>
+    <string name="app_version" translatable="false">1.0</string>
+    <string name="fav_num" translatable="false">0</string>
+    <string name="countries_num" translatable="false">7</string>
+    <string name="streams_num" translatable="false">359</string>
+
+    <!--MainActivity-->
+    <string name="adultWarning">Do you have 18+?</string>
+    <string name="really">Really?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="enterLink">Enter your link</string>
+    <string name="hint">https://www.exapmle.com/tv.m3u8</string>
+    <string name="empty">Your text is empty!</string>
+    <string name="cancel">Cancel</string>
+    <string name="closeApp">Do you want to close this application?</string>
+    <string name="exitApp">Exit app</string>
+    <string name="start">Start</string>
+
+    <!--Channels-->
+    <string name="channel1">Czech Republic</string>
+    <string name="channel2">United Kingdom</string>
+    <string name="channel3">Slovakia</string>
+    <string name="channel4">Argentina</string>
+    <string name="channel5">Australia</string>
+    <string name="channel6">Germany</string>
+    <string name="channel7">USA</string>
+    <string name="channel8">International</string>
+
+    <!--AboutActivity-->
+    <string name="about" translatable="false">https://phstudio2.github.io/</string>
+    <string name="github" translatable="false">https://github.com/phstudio2</string>
+    <string name="googlePlay" translatable="false">https://play.google.com/store/apps/dev?id=5702159986992384861</string>
+    <string name="report" translatable="false">https://github.com/phstudio2/FreeTV/issues/new/choose</string>
+    <string name="share_mail">Download this great app ;)!</string>
+    <string name="email_text">Hi download Free TV from PH studio!</string>
+    <string name="email_text2" translatable="false">https://play.google.com/store/apps/details?id=com.phstudio.freetv</string>
+    <string name="email_text3" translatable="false">https://github.com/phstudio2/FreeTV</string>
+    <string name="select_email">Share with…</string>
+    <string name="telegram" translatable="false">https://t.me/s/phstudio2</string>
+    <string name="privacy" translatable="false">https://github.com/phstudio2/FreeTV</string>
+    <string name="terms" translatable="false">https://github.com/phstudio2/FreeTV</string>
+
+    <!--layout_about-->
+    <string name="text_about">About</string>
+    <string name="application_development">Application development</string>
+    <string name="website">Website</string>
+    <string name="github_text">GitHub</string>
+    <string name="about1">More apps</string>
+    <string name="about2">Report bug</string>
+    <string name="about3">Share</string>
+    <string name="about4">Telegram</string>
+    <string name="about5">Privacy Policy</string>
+    <string name="about6"><![CDATA[Terms & Conditions]]></string>
+
+    <!--Another strings-->
+    <string name="okay">Okay</string>
+    <string name="error">Error</string>
+    <string name="notSupported">Not supported</string>
+    <string name="record">"Record "</string>
+    <string name="wasDeleted">" was deleted!"</string>
+    <string name="importText">Do you want to import favorite?</string>
+    <string name="exportText">Do you want to export your favorite?</string>
+    <string name="deleteText">Do you want to delete all records?</string>
+    <string name="deleteRec">Do you want to delete your record?</string>
+    <string name="btDelete">Delete</string>
+    <string name="btImport">Import</string>
+    <string name="btExport">Export</string>
+    <string name="emptyLV">You have no favorites!\n\nHold your finger on the button to add items.</string>
+    <string name="permission_granted">Permissions granted\nPlease click the button again!</string>
+    <string name="NotStream">Can\'t play this stream!\n\nError: </string>
+    <string name="addedToFav">Added to favorites!</string>
+    <string name="unknown">Unknown</string>
+    <string name="add">add</string>
+    <string name="favorite">Favorites</string>
+    <string name="pornography">Adult</string>
+    <string name="add_link">Add your link</string>
+    <string name="news">News</string>
+    <string name="movies">Movies</string>
+    <string name="show">show</string>
+    <string name="channels">Channels</string>
+    <string name="statistics">Statistics</string>
+    <string name="countries">Countries</string>
+    <string name="streams">Streams</string>
+    <string name="music">Music</string>
+    <string name="saveOkay">Saved to Downloads</string>
+
+
+    <!--NewsActivity m3u8 name-->
+    <string name="news1" translatable="false">Al Jazeera English</string>
+    <string name="news2" translatable="false">Al Jazeera Arabic</string>
+    <string name="news3" translatable="false">DW English</string>
+    <string name="news4" translatable="false">DW German</string>
+    <string name="news5" translatable="false">DW German+</string>
+    <string name="news6" translatable="false">DW Spanish</string>
+    <string name="news7" translatable="false">DW Arabic</string>
+
+    <!--NewsActivity html name-->
+    <string name="news8" translatable="false">France 24 English</string>
+    <string name="news9" translatable="false">France 24 French</string>
+    <string name="news10" translatable="false">France 24 Spanish</string>
+    <string name="news11" translatable="false">France 24 Arabic</string>
+    <string name="news12" translatable="false">Euronews English</string>
+    <string name="news13" translatable="false">Euronews French</string>
+    <string name="news14" translatable="false">Euronews Spanish</string>
+    <string name="news15" translatable="false">Euronews Italian</string>
+    <string name="news16" translatable="false">Euronews Russian</string>
+    <string name="news17" translatable="false">Euronews German</string>
+    <string name="news18" translatable="false">Euronews Portuguese</string>
+    <string name="news19" translatable="false">Euronews Greek</string>
+    <string name="news20" translatable="false">Euronews Hungarian</string>
+    <string name="news21" translatable="false">Africanews African</string>
+    <string name="news22" translatable="false">Africanews French</string>
+    <string name="news23" translatable="false">Sky News English</string>
+
+    <!--NewsActivity m3u8 links-->
+    <string-array name="news_html" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://www.youtube.com/c/FRANCE24English/live</item>
+        <item>https://www.youtube.com/c/FRANCE24/live</item>
+        <item>https://www.youtube.com/watch?v=XDJPzMznAjU</item>
+        <item>https://www.youtube.com/c/FRANCE24Arabic/live</item>
+        <item>https://www.youtube.com/watch?v=sPgqEHsONK8</item>
+        <item>https://www.youtube.com/watch?v=MsN0_WNXvh8</item>
+        <item>https://www.youtube.com/watch?v=JbKgQhFlMdU</item>
+        <item>https://www.youtube.com/watch?v=B0zXsva0hYs</item>
+        <item>https://www.youtube.com/watch?v=YG0lEwYLaxk</item>
+        <item>https://www.youtube.com/watch?v=cLZYvDovKlo</item>
+        <item>https://www.youtube.com/watch?v=JyC8mwZqJao</item>
+        <item>https://www.youtube.com/watch?v=-UJlcdni8cM</item>
+        <item>https://www.youtube.com/watch?v=xddy7-kDdkE</item>
+        <item>https://www.youtube.com/watch?v=NQjabLGdP5g</item>
+        <item tools:ignore="TypographyDashes">https://www.youtube.com/watch?v=b6R9-7KZ8YM</item>
+        <item>https://www.youtube.com/watch?v=9Auq9mYxFEE</item>
+    </string-array>
+
+    <!--NewsActivity html links-->
+    <string-array name="news_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://live-hls-web-aje.getaj.net/AJE/index.m3u8</item>
+        <item>https://live-hls-web-aja.getaj.net/AJA/02.m3u8</item>
+        <item>https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8</item>
+        <item>https://dwamdstream106.akamaized.net/hls/live/2017965/dwstream106/index.m3u8</item>
+        <item>https://dwamdstream105.akamaized.net/hls/live/2015531/dwstream105/index.m3u8</item>
+        <item>https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8</item>
+        <item>https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/index.m3u8</item>
+    </string-array>
+
+    <!--MoviesActivity m3u8 name-->
+    <string name="movies1" translatable="false">FilmRise Movies</string>
+    <string name="movies2" translatable="false">FilmRise Sci-Fi</string>
+    <string name="movies3" translatable="false">Film Detective</string>
+    <string name="movies4" translatable="false">Pluto TV 007</string>
+    <string name="movies5" translatable="false">Pluto TV Spotlight</string>
+    <string name="movies6" translatable="false">Pluto TV Action</string>
+    <string name="movies7" translatable="false">Pluto TV Comedy</string>
+    <string name="movies8" translatable="false">Pluto TV Drama</string>
+    <string name="movies9" translatable="false">Pluto TV Fantastic</string>
+    <string name="movies10" translatable="false">Pluto TV Romance</string>
+    <string name="movies11" translatable="false">Pluto TV Crime Movies</string>
+    <string name="movies12" translatable="false">Pluto TV Thrillers</string>
+    <string name="movies13" translatable="false">Pluto TV Horror</string>
+    <string name="movies14" translatable="false">Pluto TV Terror</string>
+    <string name="movies15" translatable="false">Black Cinema</string>
+    <string name="movies16" translatable="false">Pluto TV Staff Picks</string>
+    <string name="movies17" translatable="false">Pluto TV Documentaries</string>
+    <string name="movies18" translatable="false">90s Throwback</string>
+    <string name="movies19" translatable="false">80s Rewind</string>
+    <string name="movies20" translatable="false">70s Cinema</string>
+    <string name="movies21" translatable="false">Paramount Movie Channel</string>
+    <string name="movies22" translatable="false">Pluto TV Westerns</string>
+    <string name="movies23" translatable="false">Classic Movies</string>
+    <string name="movies24" translatable="false">Pluto TV Cult Films</string>
+    <string name="movies25" translatable="false">Flicks of Fury</string>
+    <string name="movies26" translatable="false">The Asylum</string>
+
+    <!--MoviesActivity m3u8 links-->
+    <string-array name="movies_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>http://corp.xumo.com/xumocdn/p=roku/amagi_hls_data_xumo1212A-filmrisefreemovies/CDN/playlist.m3u8</item>
+        <item>http://corp.xumo.com/xumocdn/p=roku/amagi_hls_data_xumo1212A-rokufilmrisesci-fi/CDN/master.m3u8</item>
+        <item>https://dai.google.com/linear/hls/event/OYH9J7rZSK2fabKXWAYcfA/master.m3u8</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5d4db961034718b2f52f9e52/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=50&amp;deviceId=5d4db961034718b2f52f9e52&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ba3fb9c4b078e0f37ad34e8/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=51&amp;deviceId=5ba3fb9c4b078e0f37ad34e8&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/561d7d484dc7c8770484914a/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=54&amp;deviceId=561d7d484dc7c8770484914a&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5a4d3a00ad95e4718ae8d8db/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=57&amp;deviceId=5a4d3a00ad95e4718ae8d8db&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item tools:ignore="Typos">http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b4e92e4694c027be6ecece1/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=60&amp;deviceId=5b4e92e4694c027be6ecece1&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b64a245a202b3337f09e51d/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=66&amp;deviceId=5b64a245a202b3337f09e51d&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5a66795ef91fef2c7031c599/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=70&amp;deviceId=5a66795ef91fef2c7031c599&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d8594eb979c0007706de7/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=73&amp;deviceId=5f4d8594eb979c0007706de7&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b4e69e08291147bd04a9fd7/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=74&amp;deviceId=5b4e69e08291147bd04a9fd7&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/569546031a619b8f07ce6e25/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=75&amp;deviceId=569546031a619b8f07ce6e25&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5c6dc88fcd232425a6e0f06e/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=76&amp;deviceId=5c6dc88fcd232425a6e0f06e&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58af4c093a41ca9d4ecabe96/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=80&amp;deviceId=58af4c093a41ca9d4ecabe96&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d863b98b41000076cd061/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=90&amp;deviceId=5f4d863b98b41000076cd061&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b85a7582921777994caea63/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=91&amp;deviceId=5b85a7582921777994caea63&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d86f519358a00072b978e/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=94&amp;deviceId=5f4d86f519358a00072b978e&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca525b650be2571e3943c63/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=95&amp;deviceId=5ca525b650be2571e3943c63&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d878d3d19b30007d2e782/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=96&amp;deviceId=5f4d878d3d19b30007d2e782&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5cb0cae7a461406ffe3f5213/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=100&amp;deviceId=5cb0cae7a461406ffe3f5213&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b4e94282d4ec87bdcbb87cd/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=103&amp;deviceId=5b4e94282d4ec87bdcbb87cd&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/561c5b0dada51f8004c4d855/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=106&amp;deviceId=561c5b0dada51f8004c4d855&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5c665db3e6c01b72c4977bc2/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=109&amp;deviceId=5c665db3e6c01b72c4977bc2&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58e55b14ad8e9c364d55f717/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=112&amp;deviceId=58e55b14ad8e9c364d55f717&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+        <item>http://service-stitcher.clusters.pluto.tv/stitch/hls/channel/591105034c1806b47438342c/master.m3u8?terminate=false&amp;deviceType=web&amp;deviceMake=web&amp;deviceModel=web&amp;sid=115&amp;deviceId=591105034c1806b47438342c&amp;deviceVersion=DNT&amp;appVersion=DNT&amp;deviceDNT=0&amp;userId=&amp;advertisingId=&amp;deviceLat=&amp;deviceLon=&amp;app_name=&amp;appName=web&amp;buildVersion=&amp;appStoreUrl=&amp;architecture=&amp;includeExtendedEvents=false&amp;marketingRegion=US&amp;serverSideAds=false</item>
+    </string-array>
+
+    <!--MusicActivity m3u8 name-->
+    <string name="music1" translatable="false">Afrobeats</string>
+    <string name="music2" translatable="false">Artist Aloud</string>
+    <string name="music3" translatable="false">88 Stereo</string>
+    <string name="music4" translatable="false">1HD Music Television</string>
+    <string name="music5" translatable="false">30A Music</string>
+    <string name="music6" translatable="false">9XM</string>
+    <string name="music7" translatable="false">101 Tele Antequera</string>
+    <string name="music8" translatable="false">A2i Music</string>
+    <string name="music9" translatable="false">A Son de Salsa</string>
+    <string name="music10" translatable="false">Activa TV</string>
+    <string name="music11" translatable="false">Arabica TV</string>
+    <string name="music12" translatable="false">Baeble Music</string>
+    <string name="music13" translatable="false">Baraza TV</string>
+    <string name="music14" translatable="false">Barbud Music</string>
+    <string name="music15" translatable="false">Beats Radio</string>
+    <string name="music16" translatable="false">Best Cable Más Cumbia</string>
+    <string name="music17" translatable="false">Best Cable Music</string>
+    <string name="music18" translatable="false">Bibel TV Musik</string>
+    <string name="music19" translatable="false">Carolina TV</string>
+    <string name="music20" translatable="false">Dhamaal</string>
+    <string name="music21" translatable="false">Galáctica TV (Peru)</string>
+    <string name="music22" translatable="false">High Vision</string>
+    <string name="music23" translatable="false">Huila TV</string>
+    <string name="music24" translatable="false">Kadak Hits</string>
+    <string name="music25" translatable="false">Kronehit</string>
+    <string name="music26" translatable="false">MBC FM</string>
+    <string name="music27" translatable="false">MCM Top</string>
+    <string name="music28" translatable="false">MCN6 Music Channel</string>
+    <string name="music29" translatable="false">Mnet</string>
+    <string name="music30" translatable="false">Óčko</string>
+    <string name="music31" translatable="false">Óčko Expres</string>
+    <string name="music32" translatable="false">Óčko Gold</string>
+    <string name="music33" translatable="false">Panorama FM</string>
+    <string name="music34" translatable="false">Pluto TV VEVO 2K</string>
+    <string name="music35" translatable="false">Pluto TV VEVO 70\'s</string>
+    <string name="music36" translatable="false">Pluto TV VEVO 90\'s</string>
+    <string name="music37" translatable="false">Pluto TV VEVO Country</string>
+    <string name="music38" translatable="false">Pluto TV VEVO R&amp;B</string>
+    <string name="music39" translatable="false">Pluto TV VEVO Reggeaton &amp; Trap</string>
+    <string name="music40" translatable="false">PMC</string>
+    <string name="music41" translatable="false">Rotana Khalijia</string>
+    <string name="music42" translatable="false">Rotana Music</string>
+    <string name="music43" translatable="false">RTV Vida</string>
+    <string name="music44" translatable="false">The Country Network 4K</string>
+    <string name="music45" translatable="false">The Retro Channel</string>
+    <string name="music46" translatable="false">Trace Urban (Australia)</string>
+    <string name="music47" translatable="false">Vevo 80s</string>
+    <string name="music48" translatable="false">Vevo Hip Hop</string>
+    <string name="music49" translatable="false">Vevo Latino</string>
+    <string name="music50" translatable="false">Vevo Pop Europe</string>
+    <string name="music51" translatable="false">Wanasah</string>
+    <string name="music52" translatable="false">Матур ТВ</string>
+    <string name="music53" translatable="false">ТНТ Music</string>
+
+    <!--MusicActivity m3u8 links-->
+    <string-array name="music_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://stream.ecable.tv/afrobeats/index.m3u8</item>
+        <item>https://live.hungama.com/linear/artist-aloud/playlist.m3u8</item>
+        <item>http://k3.usastreams.com/CableLatino/88stereo/playlist.m3u8</item>
+        <item>http://103.199.161.254/Content/7smusic/Live/Channel(7smusic)/index.m3u8</item>
+        <item>https://30a-tv.com/music.m3u8</item>
+        <item>https://d2q8p4pe5spbak.cloudfront.net/bpk-tv/9XM/9XM.isml/index.m3u8</item>
+        <item>https://limited38.todostreaming.es/live/101tv-AntequeraHD.m3u8</item>
+        <item>https://stream.sen-gt.com/A2iMusic/myStream/playlist.m3u8</item>
+        <item>https://cloud01.mipaneltv.xyz/asondesalsa/asondesalsa/playlist.m3u8</item>
+        <item>https://streamtv.mediasector.es/hls/activatv/.m3u8</item>
+        <item>http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8</item>
+        <item>https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxbaeble/CDN/playlist.m3u8</item>
+        <item>https://eco.streams.ovh/BarazaTV/BarazarazaTV/BarazaTV/playlist.m3u8</item>
+        <item>https://raw.githubusercontent.com/taodicakhia/IPTV_Exception/master/channels/af/tolomusic.m3u8</item>
+        <item>https://59537faa0729a.streamlock.net/beatsradio/beatsradio/playlist.m3u8</item>
+        <item>https://tv.inka.net.pe/mascumbiatvonline/mascumbiatvonline/index.m3u8</item>
+        <item>https://tv.inka.net.pe/bestcablemusic/bestcablemusic/index.m3u8</item>
+        <item tools:ignore="Typos">http://bibeltv03.iptv-playoutcenter.de/bibeltv03/bibeltv03.stream_1/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://unlimited1-us.dps.live/carolinatv/carolinatv.smil/playlist.m3u8</item>
+        <item>https://live.hungama.com/linear/dhamaal/playlist.m3u8</item>
+        <item>https://pacific.direcnode.com:3715/hybrid/play.m3u8</item>
+        <item>https://streamer1.connectto.com/HIGHVISION_WEB_1205/tracks-v1a1/mono.m3u8</item>
+        <item>https://plataformavideo.com:19360/8020/8020.m3u8</item>
+        <item>https://live.hungama.com/linear/kadak-hits/playlist.m3u8</item>
+        <item>https://bitcdn-kronehit.bitmovin.com/v2/hls/playlist.m3u8</item>
+        <item>https://mbcfm-riyadh-prod-dub.shahid.net/out/v1/69c8a03f507e422f99cf5c07291c9e3a/index.m3u8</item>
+        <item>http://ott-cdn.ucom.am/s49/index.m3u8</item>
+        <item>https://5b464b69d264e.streamlock.net/Channels_live/ngrp:MelodyChannel_all/playlist.m3u8</item>
+        <item>https://allanf181.github.io/adaptive-streams/streams/kr/Mnet.m3u8</item>
+        <item>https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist.m3u8</item>
+        <item>https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8</item>
+        <item>https://ocko-live.ssl.cdn.cra.cz/channels/ocko_gold/playlist.m3u8</item>
+        <item>https://shls-panoramafm-prod-dub.shahid.net/out/v1/66262e420d824475aaae794dc2d69f14/index.m3u8</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5fd7bca3e0a4ee0007a38e8c/master.m3u8?advertisingId=channel&amp;appName=rokuchannel&amp;appVersion=1.0&amp;bmodel=bm1&amp;channel_id=channel&amp;content=channel&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;content_type=livefeed&amp;coppa=false&amp;deviceDNT=1&amp;deviceId=channel&amp;deviceMake=rokuChannel&amp;deviceModel=web&amp;deviceType=rokuChannel&amp;deviceVersion=1.0&amp;embedPartner=rokuChannel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;is_lat=1&amp;platform=web&amp;rdid=channel&amp;studio_id=viacom&amp;tags=ROKU_CONTENT_TAGS</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5f32f26bcd8aea00071240e5/master.m3u8?advertisingId=channel&amp;appName=rokuchannel&amp;appVersion=1.0&amp;bmodel=bm1&amp;channel_id=channel&amp;content=channel&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;content_type=livefeed&amp;coppa=false&amp;deviceDNT=1&amp;deviceId=channel&amp;deviceMake=rokuChannel&amp;deviceModel=web&amp;deviceType=rokuChannel&amp;deviceVersion=1.0&amp;embedPartner=rokuChannel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;is_lat=1&amp;platform=web&amp;rdid=channel&amp;studio_id=viacom&amp;tags=ROKU_CONTENT_TAGS</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5fd7bb1f86d94a000796e2c2/master.m3u8?advertisingId=channel&amp;appName=rokuchannel&amp;appVersion=1.0&amp;bmodel=bm1&amp;channel_id=channel&amp;content=channel&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;content_type=livefeed&amp;coppa=false&amp;deviceDNT=1&amp;deviceId=channel&amp;deviceMake=rokuChannel&amp;deviceModel=web&amp;deviceType=rokuChannel&amp;deviceVersion=1.0&amp;embedPartner=rokuChannel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;is_lat=1&amp;platform=web&amp;rdid=channel&amp;studio_id=viacom&amp;tags=ROKU_CONTENT_TAGS</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5da0d75e84830900098a1ea0/master.m3u8?advertisingId=channel&amp;appName=rokuchannel&amp;appVersion=1.0&amp;bmodel=bm1&amp;channel_id=channel&amp;content=channel&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;content_type=livefeed&amp;coppa=false&amp;deviceDNT=1&amp;deviceId=channel&amp;deviceMake=rokuChannel&amp;deviceModel=web&amp;deviceType=rokuChannel&amp;deviceVersion=1.0&amp;embedPartner=rokuChannel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;is_lat=1&amp;platform=web&amp;rdid=channel&amp;studio_id=viacom&amp;tags=ROKU_CONTENT_TAGS</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5da0d83f66c9700009b96d0e/master.m3u8?advertisingId=channel&amp;appName=rokuchannel&amp;appVersion=1.0&amp;bmodel=bm1&amp;channel_id=channel&amp;content=channel&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;content_type=livefeed&amp;coppa=false&amp;deviceDNT=1&amp;deviceId=channel&amp;deviceMake=rokuChannel&amp;deviceModel=web&amp;deviceType=rokuChannel&amp;deviceVersion=1.0&amp;embedPartner=rokuChannel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;is_lat=1&amp;platform=web&amp;rdid=channel&amp;studio_id=viacom&amp;tags=ROKU_CONTENT_TAGS</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5f32f397795b750007706448/master.m3u8?advertisingId=channel&amp;appName=rokuchannel&amp;appVersion=1.0&amp;bmodel=bm1&amp;channel_id=channel&amp;content=channel&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;content_type=livefeed&amp;coppa=false&amp;deviceDNT=1&amp;deviceId=channel&amp;deviceMake=rokuChannel&amp;deviceModel=web&amp;deviceType=rokuChannel&amp;deviceVersion=1.0&amp;embedPartner=rokuChannel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;is_lat=1&amp;platform=web&amp;rdid=channel&amp;studio_id=viacom&amp;tags=ROKU_CONTENT_TAGS</item>
+        <item>https://hls.pmchd.live/hls/stream.m3u8</item>
+        <item>https://shls-rotanakhalijia-prod-dub.shahid.net/out/v1/a639fd49db684f1b8c063d398101a888/index.m3u8</item>
+        <item>https://rotanastudios-rotanamusic-1-eu.xiaomi.wurl.tv/playlist.m3u8</item>
+        <item>https://vidartv2.todostreaming.es/live/radiovida-emisiontvhd.m3u8</item>
+        <item>https://endpnt.com/hls/tcn4k/playlist.m3u8</item>
+        <item>https://5fd5567570c0e.streamlock.net/theretrochannel/stream/playlist.m3u8</item>
+        <item>https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8</item>
+        <item>https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxvevo80s/CDN/playlist.m3u8</item>
+        <item>https://5dcc6a54d90e8c5dc4345c16-s-4.ssai.zype.com/5dcc6a54d90e8c5dc4345c16-s-4/manifest.m3u8</item>
+        <item>https://5dcc6a9f1621dc5dd511ca14-s-5.ssai.zype.com/5dcc6a9f1621dc5dd511ca14-s-5/manifest.m3u8</item>
+        <item>https://5f3491c50b093e00015a3c4c-samsung.eu.ssai.zype.com/5f3491c50b093e00015a3c4c_samsung_eu/manifest.m3u8</item>
+        <item>https://shls-wanasah-prod-dub.shahid.net/out/v1/c84ef3128e564b74a6a796e8b6287de6/index.m3u8</item>
+        <item>https://public.streaming.matur-tv.ru/hls/h264_aac/stream.m3u8</item>
+        <item>http://83.222.205.65:8080/tntmusic/index.m3u8</item>
+    </string-array>
+
+    <!--AdultActivity m3u8 name-->
+    <string name="p1" translatable="false">Teen</string>
+    <string name="p2" translatable="false">Pornstar</string>
+    <string name="p3" translatable="false">Big Ass</string>
+    <string name="p4" translatable="false">Fetish</string>
+    <string name="p5" translatable="false">MILF</string>
+    <string name="p6" translatable="false">POV</string>
+    <string name="p7" translatable="false">Big Dick</string>
+    <string name="p8" translatable="false">Big Tits</string>
+    <string name="p9" translatable="false">Interracial</string>
+    <string name="p10" translatable="false">Anal</string>
+    <string name="p11" translatable="false">Blowjob</string>
+    <string name="p12" translatable="false">Hardcore</string>
+    <string name="p13" translatable="false">Cuckold</string>
+    <string name="p14" translatable="false">Threesome</string>
+    <string name="p15" translatable="false">Lesbian</string>
+    <string name="p16" translatable="false">Gangbang</string>
+    <string name="p17" translatable="false">Brunette</string>
+    <string name="p18" translatable="false">Blonde</string>
+    <string name="p19" translatable="false">Rough</string>
+    <string name="p20" translatable="false">Compilation</string>
+    <string name="p21" translatable="false">Livecams</string>
+    <string name="p22" translatable="false">Latina</string>
+    <string name="p23" translatable="false">Russian</string>
+    <string name="p24" translatable="false">Asian</string>
+    <string name="p25" translatable="false">Fashion TV Midnite Secrets</string>
+    <string name="p26" translatable="false">KINO 18+</string>
+    <string name="p27" translatable="false">Extasy</string>
+    <string name="p28" translatable="false">REDLIGHT</string>
+    <string name="p29" translatable="false">AST TV 1</string>
+    <string name="p30" translatable="false">AST TV 2</string>
+    <string name="p31" translatable="false">AST TV 2 1080p</string>
+
+    <!--AdultActivity m3u8 links-->
+    <string-array name="p_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://live.redtraffic.xyz/teen.m3u8</item>
+        <item>https://live.redtraffic.xyz/pornstar.m3u8</item>
+        <item>https://live.redtraffic.xyz/bigass.m3u8</item>
+        <item>https://live.redtraffic.xyz/fetish.m3u8</item>
+        <item>https://live.redtraffic.xyz/milf.m3u8</item>
+        <item>https://live.redtraffic.xyz/pov.m3u8</item>
+        <item>https://live.redtraffic.xyz/bigdick.m3u8</item>
+        <item>https://live.redtraffic.xyz/bigtits.m3u8</item>
+        <item>https://live.redtraffic.xyz/interracial.m3u8</item>
+        <item>https://live.redtraffic.xyz/anal.m3u8</item>
+        <item>https://live.redtraffic.xyz/blowjob.m3u8</item>
+        <item>https://live.redtraffic.xyz/hardcore.m3u8</item>
+        <item>https://live.redtraffic.xyz/cuckold.m3u8</item>
+        <item>https://live.redtraffic.xyz/threesome.m3u8</item>
+        <item>https://live.redtraffic.xyz/lesbian.m3u8</item>
+        <item>https://live.redtraffic.xyz/gangbang.m3u8</item>
+        <item>https://live.redtraffic.xyz/brunette.m3u8</item>
+        <item>https://live.redtraffic.xyz/blonde.m3u8</item>
+        <item>https://live.redtraffic.xyz/rough.m3u8</item>
+        <item>https://live.redtraffic.xyz/compilation.m3u8</item>
+        <item>https://live.redtraffic.xyz/livecams.m3u8</item>
+        <item>https://live.redtraffic.xyz/latina.m3u8</item>
+        <item>https://live.redtraffic.xyz/russian.m3u8</item>
+        <item>https://live.redtraffic.xyz/asian.m3u8</item>
+        <item>https://fash1043.cloudycdn.services/slive/ftv_ftv_midnite_k1y_27049_midnite_secr_108_hls.smil/playlist.m3u8</item>
+        <item>https://autopilot.catcast.tv/content/40381/index.m3u8</item>
+        <item>http://213.151.233.20:8000/dna-6233-tv-pc.m3u8</item>
+        <item tools:ignore="Typos">http://93.152.174.144:4000/play/privatetv1/index.m3u8</item>
+        <item>https://www.ast.tv/stream/1/cellular.m3u8</item>
+        <item>https://www.ast.tv/stream/2/cellular.m3u8</item>
+        <item>https://www.ast.tv/stream/2/ultra.m3u8</item>
+    </string-array>
+
+    <!--ChannelsActivity-->
+    <!--Argentina m3u8 name-->
+    <string name="argentina1" translatable="false">5RTV Santa Fe</string>
+    <string name="argentina2" translatable="false">Fenix TV</string>
+    <string name="argentina3" translatable="false">Argentinísima Satelital</string>
+    <string name="argentina4" translatable="false">Canal 17 Milenium Salta</string>
+
+    <!--Argentina m3u8 links-->
+    <string-array name="argentina_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://api.new.livestream.com/accounts/22636012/events/8242619/live.m3u8?</item>
+        <item>https://stmv1.questreaming.com/fenixlarioja/fenixlarioja/playlist.m3u8?</item>
+        <item>http://186.0.233.76:1935/Argentinisima/smil:argentinisima.smil/playlist.m3u8?</item>
+        <item>https://59c5c86e10038.streamlock.net/6605140/6605140/playlist.m3u8?</item>
+    </string-array>
+
+    <!--Argentina html name-->
+    <string name="argentina5" translatable="false">Encuentro</string>
+    <string name="argentina6" translatable="false">Pakapaka</string>
+    <string name="argentina7" translatable="false">Televisión Pública</string>
+    <string name="argentina8" translatable="false">Crónica TV</string>
+    <string name="argentina9" translatable="false">C5N</string>
+    <string name="argentina10" translatable="false">LA NACION</string>
+
+    <!--Argentina html links-->
+    <string-array name="argentina_html" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://www.youtube.com/watch?v=8ff8RRReAfU</item>
+        <item>https://www.youtube.com/watch?v=ST7zMUw5W9w</item>
+        <item>https://www.youtube.com/watch?v=nyU0P6Hdavo</item>
+        <item>https://www.youtube.com/watch?v=InSydaLSSlw</item>
+        <item>https://www.youtube.com/watch?v=jF3jb9JDBr0</item>
+        <item>https://www.youtube.com/watch?v=HlhZ0XZHHaw</item>
+    </string-array>
+
+    <!--Australia m3u8 name-->
+    <string name="australia1" translatable="false">ABC TV</string>
+    <string name="australia2" translatable="false">ABC Me</string>
+    <string name="australia3" translatable="false">ABC News</string>
+    <string name="australia4" translatable="false">ABC Au</string>
+    <string name="australia5" translatable="false">ABC Kids</string>
+    <string name="australia6" translatable="false">ABC News Australia</string>
+    <string name="australia7" translatable="false">ABC TV Plus</string>
+    <string name="australia8" translatable="false">Ausbiz TV</string>
+    <string name="australia9" translatable="false">Aus Tamil</string>
+    <string name="australia10" translatable="false">Horse and Country</string>
+    <string name="australia11" translatable="false">JonmoBhumi TV</string>
+    <string name="australia12" translatable="false">Juice TV</string>
+    <string name="australia13" translatable="false">M4TV Malayalam</string>
+    <string name="australia14" translatable="false">Real Stories</string>
+    <string name="australia15" translatable="false">Ryan and Friends</string>
+    <string name="australia16" translatable="false">Time Line Australia</string>
+    <string name="australia17" translatable="false">Wonder</string>
+
+    <!--Australia m3u8 links-->
+    <string-array name="australia_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://c.mjh.nz/101002210221/</item>
+        <item>https://c.mjh.nz/101002210224/</item>
+        <item>https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8</item>
+        <item>https://c.mjh.nz/101002210221/</item>
+        <item>https://c.mjh.nz/101002210222/</item>
+        <item>https://c.mjh.nz/101002210220/</item>
+        <item>https://c.mjh.nz/abc2</item>
+        <item>https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8</item>
+        <item>https://bk7l2pn7dx53-hls-live.5centscdn.com/austamil/fe01ce2a7fbac8fafaed7c982a04e229.sdp/playlist.m3u8</item>
+        <item>https://hncfree-samsungau.amagi.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn.appv.jagobd.com:444/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/jonmobhumitv.stream/playlist.m3u8</item>
+        <item>https://juicex.nz/hls/mystream.m3u8</item>
+        <item>https://app.m4stream.live/mfourmalayalamhls/live.m3u8</item>
+        <item>https://lds-realstories-samsungau.amagi.tv/playlist.m3u8</item>
+        <item>https://ryanandfriends-samsungau.amagi.tv/playlist.m3u8</item>
+        <item>https://lds-timeline-samsungau.amagi.tv/playlist.m3u8</item>
+        <item>https://lds-wonder-samsungau.amagi.tv/playlist.m3u8</item>
+    </string-array>
+
+    <!--Czech m3u8 & html name-->
+    <string name="cz1" translatable="false">Prima</string>
+    <string name="cz2" translatable="false">CNN Prima News</string>
+    <string name="cz3" translatable="false">Prima Zoom</string>
+    <string name="cz4" translatable="false">Prima Love</string>
+    <string name="cz5" translatable="false">Prima STAR</string>
+    <string name="cz6" translatable="false">Prima Krimi</string>
+    <string name="cz7" translatable="false">Prima MAX</string>
+    <string name="cz8" translatable="false">Prima Cool</string>
+    <string name="cz9" translatable="false">Prima Show</string>
+    <string name="cz10" translatable="false">Óčko</string>
+    <string name="cz11" translatable="false">Óčko Star</string>
+    <string name="cz12" translatable="false">Óčko Expres</string>
+    <string name="cz13" translatable="false">TV Seznam</string>
+    <string name="cz14" translatable="false">ČT1</string>
+    <string name="cz15" translatable="false">ČT2</string>
+    <string name="cz16" translatable="false">ČT3</string>
+    <string name="cz17" translatable="false">ČT24</string>
+    <string name="cz18" translatable="false">ČT sport</string>
+    <string name="cz19" translatable="false">ČT :D</string>
+    <string name="cz20" translatable="false">ČT art</string>
+    <string name="cz21" translatable="false">Retro Music Television</string>
+    <string name="cz22" translatable="false">Šlágr Originál</string>
+    <string name="cz23" translatable="false">Šlágr Muzika</string>
+    <string name="cz24" translatable="false">Šlágr Premium</string>
+    <string name="cz25" translatable="false">Východočeská TV</string>
+
+    <!--Czech m3u8 name-->
+    <string-array name="cz_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_family/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_cnn/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_zoom/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_love/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_star/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_krimi/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_max/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_cool/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_show/playlist/cze/live_hq.m3u8?offsetSeconds=0&amp;url=0</item>
+        <item>https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist.m3u8</item>
+        <item>https://ocko-live.ssl.cdn.cra.cz/channels/ocko_gold/playlist.m3u8</item>
+        <item>https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8</item>
+        <item>https://stream.mediawork.cz/retrotv/smil:retrotv2.smil/playlist.m3u8</item>
+        <item>https://stream-6.mazana.tv/slagr.m3u</item>
+        <item>https://stream-33.mazana.tv/slagr2.m3u</item>
+        <item>https://arenasportslovakia.ddns.net/hls/slager.m3u8</item>
+        <item>https://stream.polar.cz/vctv/vctvlive-1/playlist.m3u8</item>
+    </string-array>
+
+    <!--Czech html links-->
+    <string-array name="cz_html" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://www.televizeseznam.cz/tv</item>
+        <item tools:ignore="Typos">https://www.ceskatelevize.cz/ct1</item>
+        <item>https://www.ceskatelevize.cz/ct2</item>
+        <item>https://www.ceskatelevize.cz/ct3</item>
+        <item>https://www.ceskatelevize.cz/ct24/zive-vysilani/</item>
+        <item>https://sport.ceskatelevize.cz/zive-vysilani#live</item>
+        <item>https://www.ceskatelevize.cz/zive/decko/</item>
+        <item>https://www.ceskatelevize.cz/zive/art/</item>
+    </string-array>
+
+    <!--Germany m3u8 name-->
+    <string name="germany1" translatable="false">Das Erste</string>
+    <string name="germany2" translatable="false">WDR</string>
+    <string name="germany3" translatable="false">HR</string>
+    <string name="germany4" translatable="false">BR Nord</string>
+    <string name="germany5" translatable="false">Tagesschau24</string>
+    <string name="germany6" translatable="false">ARD Alpha</string>
+    <string name="germany7" translatable="false">Deluxe Music</string>
+    <string name="germany8" translatable="false">Euronews Deutsch</string>
+    <string name="germany9" translatable="false">ZDF info</string>
+    <string name="germany10" translatable="false">ZDF NEO</string>
+    <string name="germany11" translatable="false">UNIVERSAL TV</string>
+    <string name="germany12" translatable="false">TNT SERIE</string>
+    <string name="germany13" translatable="false">TNT COMEDY</string>
+    <string name="germany14" translatable="false">SYFY</string>
+    <string name="germany15" translatable="false">SIXX</string>
+    <string name="germany16" translatable="false">SAT 1 GOLD</string>
+    <string name="germany17" translatable="false">RTL PASSION</string>
+    <string name="germany18" translatable="false">RTL Nitro</string>
+    <string name="germany19" translatable="false">RTL</string>
+    <string name="germany20" translatable="false">RTL CRIME</string>
+    <string name="germany21" translatable="false">RTL 2</string>
+    <string name="germany22" translatable="false">RTL PLUS</string>
+    <string name="germany23" translatable="false">PROSIEBEN Maxx</string>
+    <string name="germany24" translatable="false">ORF 1</string>
+    <string name="germany25" translatable="false">ORF 2</string>
+    <string name="germany26" translatable="false">NATIONAL GEOGRAPHIC WILD</string>
+    <string name="germany27" translatable="false">N-TV</string>
+    <string name="germany28" translatable="false">KINOWELT</string>
+    <string name="germany29" translatable="false">KIKA</string>
+    <string name="germany30" translatable="false">KABEL 1</string>
+    <string name="germany31" translatable="false">HISTORY</string>
+    <string name="germany32" translatable="false">CLASSICA</string>
+    <string name="germany33" translatable="false">HEIMATKANAL</string>
+    <string name="germany34" translatable="false">ROMANCE TV</string>
+    <string name="germany35" translatable="false">Tele 5</string>
+    <string name="germany36" translatable="false">ATV</string>
+    <string name="germany37" translatable="false">ARD</string>
+    <string name="germany38" translatable="false">DISNEY Jr.</string>
+    <string name="germany39" translatable="false">E!</string>
+    <string name="germany40" translatable="false">SAT.1</string>
+    <string name="germany41" translatable="false">3SAT</string>
+    <string name="germany42" translatable="false">PRO SIEBEN</string>
+    <string name="germany43" translatable="false">BOOMERANG</string>
+    <string name="germany44" translatable="false">ARTE</string>
+    <string name="germany45" translatable="false">WELT</string>
+    <string name="germany46" translatable="false">DISNEY CINEMAGIC</string>
+    <string name="germany47" translatable="false">CARTOON NETWORK</string>
+    <string name="germany48" translatable="false">FOX</string>
+    <string name="germany49" translatable="false">ONE</string>
+    <string name="germany50" translatable="false">EUROSPORT 1</string>
+    <string name="germany51" translatable="false">EUROSPORT 2</string>
+    <string name="germany52" translatable="false">EUROSPORT 2 XTRA</string>
+    <string name="germany53" translatable="false">MOTORVISION TV</string>
+    <string name="germany54" translatable="false">CINE SELECT 1</string>
+    <string name="germany55" translatable="false">CINE SELECT 2</string>
+    <string name="germany56" translatable="false">CINE SELECT 3</string>
+    <string name="germany57" translatable="false">CINE SELECT 4</string>
+    <string name="germany58" translatable="false">DAZN 1</string>
+    <string name="germany59" translatable="false">DAZN 2</string>
+    <string name="germany60" translatable="false">TELEKOM DEL SPORT  1</string>
+    <string name="germany61" translatable="false">TELEKOM DEL SPORT  2</string>
+    <string name="germany62" translatable="false">TELEKOM BUNDESLIGA 1</string>
+    <string name="germany63" translatable="false">TELEKOM BUNDESLIGA 2</string>
+    <string name="germany64" translatable="false">HR</string>
+    <string name="germany65" translatable="false">Baden TV</string>
+    <string name="germany66" translatable="false">Noa 4 Hamburg</string>
+    <string name="germany67" translatable="false">RFO</string>
+    <string name="germany68" translatable="false">tagesschau 24</string>
+    <string name="germany69" translatable="false">TV Oberfranken</string>
+    <string name="germany70" translatable="false">PRO 7</string>
+    <string name="germany71" translatable="false">PRO 7 FUN</string>
+    <string name="germany72" translatable="false">PRO 7 Maxx</string>
+
+    <!--Germany m3u8 links-->
+    <string-array name="germany_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://mcdn.daserste.de/daserste/de/master.m3u8</item>
+        <item>https://mcdn.wdr.de/wdr/wdrfs/de/master.m3u8</item>
+        <item>https://hrhls.akamaized.net/hls/live/2024525/hrhls/master.m3u8</item>
+        <item>http://brlive-lh.akamaihd.net/i/bfsnord_germany@119898/master.m3u8</item>
+        <item tools:ignore="Typos">https://tagesschau.akamaized.net/hls/live/2020115/tagesschau/tagesschau_1/master.m3u8</item>
+        <item>http://brlive-lh.akamaihd.net/i/bralpha_germany@119899/master.m3u8</item>
+        <item>https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8</item>
+        <item>https://euronews.alteox.app/hls/de_stream.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84653.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84654.m3u8</item> <!--germany10-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84656.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84657.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84659.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84660.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84666.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84667.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84668.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84669.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84670.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84671.m3u8</item> <!--germany20-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84672.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84787.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84673.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84674.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84675.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84676.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84677.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84678.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84679.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84680.m3u8</item> <!--germany30-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84681.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84687.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84689.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84789.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84690.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84692.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84693.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84697.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84698.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84700.m3u8</item> <!--germany40-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84701.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84703.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84709.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84710.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84711.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84712.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84713.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84714.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84722.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84724.m3u8</item> <!--germany50-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84725.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84726.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84728.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84729.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84730.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84731.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84732.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84736.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84737.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84746.m3u8</item> <!--germany60-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84747.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84748.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84749.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84780.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84781.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84783.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84784.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84785.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84786.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84792.m3u8</item> <!--germany70-->
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84791.m3u8</item>
+        <item>http://supersonictv.live:25461/live/vegas2000/vegas2000/84790.m3u8</item>
+    </string-array>
+
+    <!--International m3u8 name-->
+    <string name="international1" translatable="false">Red Bull TV</string>
+    <string name="international2" translatable="false">TRT World</string>
+    <string name="international3" translatable="false">World Fashion Channel</string>
+    <string name="international4" translatable="false">Failarmy International</string>
+    <string name="international5" translatable="false">Iran International</string>
+
+    <!--International m3u8 links-->
+    <string-array name="international_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8</item>
+        <item>https://tv-trtworld.live.trt.com.tr/master.m3u8</item>
+        <item>https://wfcint.mediacdn.ru/cdn/wfcintweb/playlist.m3u8</item>
+        <item>https://failarmy-international-nl.samsung.wurl.tv/playlist.m3u8</item>
+        <item tools:ignore="TypographyDashes">https://dev-live.livetvstream.co.uk/LS-63503-4/index.m3u8</item>
+    </string-array>
+
+    <!--Slovakia m3u8 name-->
+    <string name="slovakia1" translatable="false">RTVS Jednotka</string>
+    <string name="slovakia2" translatable="false">RTVS Dvojka</string>
+    <string name="slovakia3" translatable="false">RTVS 24</string>
+    <string name="slovakia4" translatable="false">RTVS Šport</string>
+    <string name="slovakia5" translatable="false">RTVS :O</string>
+    <string name="slovakia6" translatable="false">RTVS</string>
+    <string name="slovakia7" translatable="false">NR SR</string>
+    <string name="slovakia8" translatable="false">JOJ</string>
+    <string name="slovakia9" translatable="false">JOJ Family</string>
+    <string name="slovakia10" translatable="false">JOJ Plus</string>
+    <string name="slovakia11" translatable="false">JOJ WAU</string>
+    <string name="slovakia12" translatable="false">Senzi</string>
+    <string name="slovakia13" translatable="false">TA3</string>
+
+    <!--Slovakia m3u8 links-->
+    <string-array name="slovakia_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=1</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=2</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=3</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=15</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=4</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=6</item>
+        <item>https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=5</item>
+        <item tools:ignore="TypographyDashes">https://st01-1.iptv.joj.sk/101-tv-pc.m3u8</item>
+        <item>https://live.cdn.joj.sk/live/hls/family-540.m3u8</item>
+        <item tools:ignore="TypographyDashes">https://st01-1.iptv.joj.sk/102-tv-pc.m3u8</item>
+        <item tools:ignore="TypographyDashes">https://st01-1.iptv.joj.sk/103-tv-pc.m3u8</item>
+        <item>http://lb.streaming.sk/senzi/stream/playlist.m3u8</item>
+        <item>https://get-a-flippin-ta3-url-dss6dgprdpjf.runkit.sh/</item>
+    </string-array>
+
+    <!--UK m3u8 name-->
+    <string name="uk1" translatable="false">Animal Planet</string>
+    <string name="uk2" translatable="false">Access Sacramento Channel 17</string>
+    <string name="uk3" translatable="false">Access Sacramento Channel 18</string>
+    <string name="uk4" translatable="false">Action Hollywood Movies</string>
+    <string name="uk5" translatable="false">Ahlulbayt TV</string>
+    <string name="uk6" translatable="false">BBC 1</string>
+    <string name="uk7" translatable="false">BBC2</string>
+    <string name="uk8" translatable="false">BBC Arabic</string>
+    <string name="uk9" translatable="false">BBC Persian</string>
+    <string name="uk10" translatable="false">Bloomberg Quicktake</string>
+    <string name="uk11" translatable="false">Bloomberg TV</string>
+    <string name="uk12" translatable="false">Bloomberg TV+</string>
+    <string name="uk13" translatable="false">Bloomberg TV Europe</string>
+    <string name="uk14" translatable="false">Bloomberg TV EMEA Live Event</string>
+    <string name="uk15" translatable="false">Bounty</string>
+    <string name="uk16" translatable="false">CineView</string>
+    <string name="uk17" translatable="false">Clubbing TV</string>
+    <string name="uk18" translatable="false">Craft Store TV</string>
+    <string name="uk19" translatable="false">DISNEY CHANNEL</string>
+    <string name="uk20" translatable="false">DISNEY JUNIOR</string>
+    <string name="uk21" translatable="false">Deluxe Lounge</string>
+    <string name="uk22" translatable="false">DiscoverFilm</string>
+    <string name="uk23" translatable="false">Drybar Comedy</string>
+    <string name="uk24" translatable="false">Dust</string>
+    <string name="uk25" translatable="false">FOX</string>
+    <string name="uk26" translatable="false">GemsTV</string>
+    <string name="uk27" translatable="false">Gigant FM</string>
+    <string name="uk28" translatable="false">Hell\'s Kitchen</string>
+    <string name="uk29" translatable="false">InWonder</string>
+    <string name="uk30" translatable="false">Insight TV</string>
+    <string name="uk31" translatable="false">Introuble</string>
+    <string name="uk32" translatable="false">Jewlery Maker</string>
+    <string name="uk33" translatable="false">Kanshi TV</string>
+    <string name="uk34" translatable="false">Kartoon Channel</string>
+    <string name="uk35" translatable="false">LOL!</string>
+    <string name="uk36" translatable="false">Love Stories TV</string>
+    <string name="uk37" translatable="false">METV (Merced Educational Television)</string>
+    <string name="uk38" translatable="false">Made in Hollywood</string>
+    <string name="uk39" translatable="false">Magellen TV</string>
+    <string name="uk40" translatable="false">Marin TV Education</string>
+    <string name="uk41" translatable="false">Marin TV Government Channel</string>
+    <string name="uk42" translatable="false">Mav TV Motorsports Network</string>
+    <string name="uk43" translatable="false">Mobile County Public Schools TV Network (MCPSS)</string>
+    <string name="uk44" translatable="false">Mojitv</string>
+    <string name="uk45" translatable="false">Motorvision TV</string>
+    <string name="uk46" translatable="false">Mtrspt 1</string>
+    <string name="uk47" translatable="false">MyZen TV</string>
+    <string name="uk48" translatable="false">NCM Educational &amp; Kid</string>
+    <string name="uk49" translatable="false">NCM Government &amp; Politics</string>
+    <string name="uk50" translatable="false">NCM Main Channel</string>
+    <string name="uk51" translatable="false">PBS America</string>
+    <string name="uk52" translatable="false">Pet Club TV</string>
+    <string name="uk53" translatable="false">QVC</string>
+    <string name="uk54" translatable="false">QVC Beauty</string>
+    <string name="uk55" translatable="false">QVC Style</string>
+    <string name="uk56" translatable="false">Sofy TV</string>
+    <string name="uk57" translatable="false">Sporty Stuff TV</string>
+    <string name="uk58" translatable="false">The Guardian</string>
+    <string name="uk59" translatable="false">Timeline</string>
+
+    <!--UK m3u8 links-->
+    <string-array name="uk_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>http://cineapp.org:8000/Fernando/Fernando/314?checkedby:iptvcat.com</item>
+        <item>https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8</item>
+        <item>https://reflect-access-sacramento.cablecast.tv/live-8/live/live.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-actionhollywood-samsungnz/playlist.m3u8</item>
+        <item>https://5f3e23ac71915.streamlock.net:4434/live/livestream1.sdp/playlist.m3u8</item>
+        <item>http://cineapp.org:8000/Fernando/Fernando/318</item>
+        <item>http://cineapp.org:8000/Fernando/Fernando/317</item>
+        <item>https://vs-cmaf-pushb-ww.live.cf.md.bbci.co.uk/x=3/i=urn:bbc:pips:service:bbc_arabic_tv/pc_hd_abr_v2_cloudfrontms_live.mpd</item>
+        <item>https://vs-cmaf-pushb-ww.live.cf.md.bbci.co.uk/x=3/i=urn:bbc:pips:service:bbc_persian_tv/pc_hd_abr_v2_cloudfrontms_live_http.mpd</item>
+        <item>https://bloomberg-quicktake-4-nz.samsung.wurl.tv/playlist.m3u8</item> <!--uk10-->
+        <item>https://bloomberg-bloomberg-2-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://bloomberg-bloombergtv-3-nl.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://bloomberg-bloombergtv-1-it.samsung.wurl.com/manifest/playlist.m3u8</item>
+        <item>https://www.bloomberg.com/media-manifest/streams/eu-event.m3u8</item>
+        <item>https://bountyfilms-bounty-1-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-rialto-samsungnz/playlist.m3u8</item>
+        <item>https://clubbingtv-samsungnz.amagi.tv/playlist.m3u8</item>
+        <item>https://live-hochanda.simplestreamcdn.com/hochanda/live.m3u8</item>
+        <item>http://cineapp.org:8000/Fernando/Fernando/286</item>
+        <item>http://cineapp.org:8000/Fernando/Fernando/5626</item> <!--uk20-->
+        <item tools:ignore="TypographyDashes">https://d46c0ebf9ef94053848fdd7b1f2f6b90.mediatailor.eu-central-1.amazonaws.com/v1/master/81bfcafb76f9c947b24574657a9ce7fe14ad75c0/live-prod/9a087b26-8be4-11eb-a7de-bacfe1f83627/0/master.m3u8?country=DE&amp;optout=0&amp;uid=749544ec3d9a45d48c600d03cac91dfd&amp;vendor=philips</item>
+        <item>https://discoverfilm-discoverfilm-1-nl.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://drybar-drybarcomedy-1-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00219-gunpowdersky-dustintlnz-samsungnz/playlist.m3u8</item>
+        <item>http://cineapp.org:8000/Fernando/Fernando/16715</item>
+        <item>http://57d6b85685bb8.streamlock.net:1935/abrgemporiaukgfx/livestream_360p/index.m3u8</item>
+        <item>https://video.uitzending.tv:19360/gigantfm/gigantfm.m3u8</item>
+        <item>https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00654-itvstudios-hellskitchennl-samsungnl/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00861-terninternation-inwondernz-samsungnz/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00861-terninternation-insighttvrow-samsungnz/playlist.m3u8</item> <!--uk30-->
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00861-terninternation-introublenz-samsungnz/playlist.m3u8</item>
+        <item tools:ignore="TypographyDashes">https://lo2-1.gemporia.com/abrjewellerymaker/smil:livestream.smil/playlist.m3u8</item>
+        <item>http://live.kanshitv.co.uk/mobile/kanshitvkey.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-kartoonchannel-samsungnz/playlist.m3u8</item>
+        <item>https://lol-lolnetwork-2-nl.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://lovestoriestv-lovestoriestv-1-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://mercedcouedu.secure.footprint.net/egress/bhandler/mercedcouedu/streamc/chunklist_b1192000.m3u8</item>
+        <item>https://connection3-ent-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://magellantv-3-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://dacastmmd.mmdlive.lldns.net/dacastmmd/8e6d110b223b4aca9dd6f7c368baec07/playlist.m3u8</item> <!--uk40-->
+        <item>https://dacastmmd.mmdlive.lldns.net/dacastmmd/ddf2a073e3da4acb9feb34bef6d58672/playlist.m3u8</item>
+        <item>https://mavtv-mavtvglobal-1-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item>https://5b200f5268ceb.streamlock.net/MCPSS/MCPSS247.smil/playlist.m3u8</item>
+        <item>https://odmedia-mojitv-1-nl.samsung.wurl.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01329-otterainc-motorvisionnz-samsungnz/playlist.m3u8</item>
+        <item tools:ignore="TypographyDashes,Typos">https://kravemedia-mtrspt1-1-nz.samsung.wurl.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8</item>
+        <item>https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_005/playlist.m3u8</item>
+        <item>https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_002/playlist.m3u8</item>
+        <item>https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_001/playlist.m3u8</item> <!--uk50-->
+        <item>https://pbs-samsunguk.amagi.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-petclub-samsungnz/playlist.m3u8</item>
+        <item>https://d1txbbj1u9asam.cloudfront.net/live/qvcuk_main_clean/bitrate1.isml/3/prog_index.m3u8</item>
+        <item>http://live.qvcuk.simplestreamcdn.com/live/qvcuk_beauty_clean/bitrate1.isml/live.m3u8</item>
+        <item>http://live.qvcuk.simplestreamcdn.com/live/qvcuk_style_clean/bitrate1.isml/live.m3u8</item>
+        <item>https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00535-largofilmsltdli-sofytvnl-samsungnl/playlist.m3u8</item>
+        <item>https://ayozat-live.secure2.footprint.net/egress/bhandler/ayozat/sportystufftv/playlist.m3u8</item>
+        <item>https://rakuten-guardian-1-nl.samsung.wurl.tv/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00426-littledotstudio-timelinenz-samsungnz/playlist.m3u8</item>
+    </string-array>
+
+    <!--USA m3u8 name-->
+    <string name="usa1" translatable="false">CNN</string>
+    <string name="usa2" translatable="false">ABC News</string>
+    <string name="usa3" translatable="false">Reuters TV</string>
+    <string name="usa4" translatable="false">NASA TV Public</string>
+    <string name="usa5" translatable="false">NASA TV Media</string>
+    <string name="usa6" translatable="false">BBC Food</string>
+    <string name="usa7" translatable="false">BBC Home</string>
+    <string name="usa8" translatable="false">CCX Media Minnesota</string>
+    <string name="usa9" translatable="false">Newsy</string>
+    <string name="usa10" translatable="false">Retro TV</string>
+    <string name="usa11" translatable="false">Heartland</string>
+    <string name="usa12" translatable="false">Rev\'n</string>
+    <string name="usa13" translatable="false">23 ABC (KERO)</string>
+    <string name="usa14" translatable="false">30A TV</string>
+    <string name="usa15" translatable="false">30A Investment Pitch</string>
+    <string name="usa16" translatable="false">30A Sidewalks</string>
+    <string name="usa17" translatable="false">AKC TV</string>
+    <string name="usa18" translatable="false">American Horrors</string>
+    <string name="usa19" translatable="false">Darcizzle Offshore</string>
+    <string name="usa20" translatable="false">CBS 3 KMTV</string>
+    <string name="usa21" translatable="false">5USA</string>
+    <string name="usa22" translatable="false">A&amp;E</string>
+
+    <!--USA m3u8 links-->
+    <string-array name="usa_m3u8" translatable="false">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://cnn-cnninternational-1-de.samsung.wurl.com/manifest/playlist.m3u8</item>
+        <item>https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8</item>
+        <item>https://reuters-reuters-1-eu.rakuten.wurl.com/manifest/playlist.m3u8</item>
+        <item tools:ignore="Typos">https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master_2000.m3u8</item>
+        <item>https://ntv2.akamaized.net/hls/live/2013923/NASA-NTV2-HLS/master.m3u8</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5fb5844bf5514d0007945bda/master.m3u8?deviceId=channel&amp;deviceModel=web&amp;deviceVersion=1.0&amp;appVersion=1.0&amp;deviceType=rokuChannel&amp;deviceMake=rokuChannel&amp;deviceDNT=1&amp;advertisingId=channel&amp;embedPartner=rokuChannel&amp;appName=rokuchannel&amp;is_lat=1&amp;bmodel=bm1&amp;content=channel&amp;platform=web&amp;tags=ROKU_CONTENT_TAGS&amp;coppa=false&amp;content_type=livefeed&amp;rdid=channel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;studio_id=viacom&amp;channel_id=channel</item>
+        <item tools:ignore="Typos">https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5fb5836fe745b600070fc743/master.m3u8?deviceId=channel&amp;deviceModel=web&amp;deviceVersion=1.0&amp;appVersion=1.0&amp;deviceType=rokuChannel&amp;deviceMake=rokuChannel&amp;deviceDNT=1&amp;advertisingId=channel&amp;embedPartner=rokuChannel&amp;appName=rokuchannel&amp;is_lat=1&amp;bmodel=bm1&amp;content=channel&amp;platform=web&amp;tags=ROKU_CONTENT_TAGS&amp;coppa=false&amp;content_type=livefeed&amp;rdid=channel&amp;genre=ROKU_ADS_CONTENT_GENRE&amp;content_rating=ROKU_ADS_CONTENT_RATING&amp;studio_id=viacom&amp;channel_id=channel</item>
+        <item>http://156.142.85.152/live/WIFI-2096k-1080p/WIFI-2096k-1080p.m3u8</item>
+        <item>https://content.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8</item>
+        <item tools:ignore="Typos">https://bcovlive-a.akamaihd.net/5e531be3ed6c41229b2af2d9bffba88d/us-east-1/6183977686001/profile_1/chunklist.m3u8</item>
+        <item tools:ignore="Typos">https://bcovlive-a.akamaihd.net/1ad942d15d9643bea6d199b729e79e48/us-east-1/6183977686001/profile_1/chunklist.m3u8</item>
+        <item tools:ignore="Typos">https://bcovlive-a.akamaihd.net/a71236fdda1747999843bd3d55bdd6fa/us-east-1/6183977686001/profile_1/chunklist.m3u8</item>
+        <item>https://content.uplynk.com/channel/ff809e6d9ec34109abfb333f0d4444b5.m3u8</item>
+        <item>http://30a-tv.com/my999.m3u8</item>
+        <item>http://www.30a-tv.com/InvPit.m3u8</item>
+        <item>http://30a-tv.com/sidewalks.m3u8</item>
+        <item>https://video.blivenyc.com/broadcast/prod/2061/22/file-3192k.m3u8</item>
+        <item tools:ignore="Typos">http://170.178.189.66:1935/live/Stream1/playlist.m3u8</item>
+        <item>http://30a-tv.com/darcizzle.m3u8</item>
+        <item>http://content.uplynk.com/channel/328d1434fb51476cb6567c74d5b2cc70.m3u8</item>
+        <item tools:ignore="Typos">http://us1-external-sources.iptvserver.tv:80/kkkrkDp2a9KNwAwGzpb/QT94uK5NNQw4r4Qs/481</item>
+        <item>https://bk7l2w4nlx53-hls-live.5centscdn.com/AETV/514c04b31b5f01cf00dd4965e197fdda.sdp/playlist.m3u8</item>
+    </string-array>
+
+    <!--USA html name-->
+    <string name="usa23" translatable="false">CNBC</string>
+    <string name="usa24" translatable="false">CBS News</string>
+    <string name="usa25" translatable="false">Bloomberg</string>
+
+    <!--USA html links-->
+    <string-array name="usa_html">
+        <item>https://phstudio2.github.io/</item>
+        <item>https://www.youtube.com/watch?v=Fof55uxFeSs</item>
+        <item>https://www.youtube.com/watch?v=DD_rK9_mcrk</item>
+        <item>https://www.youtube.com/watch?v=dp8PhLsUcFE</item>
+    </string-array>
+</resources>

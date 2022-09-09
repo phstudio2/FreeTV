@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--MainActivity-->
+    <string name="adultWarning">Je Vám více než 18 let?</string>
+    <string name="really">Opravdu?</string>
+    <string name="yes">Ano</string>
+    <string name="no">Ne</string>
+    <string name="enterLink">Zadejte odkaz</string>
+    <string name="hint">https://www.priklad.cz/tv.m3u8</string>
+    <string name="empty">Váš text je prázdný!</string>
+    <string name="cancel">Zrušit</string>
+    <string name="closeApp">Opravdu chcete ukončit tuto aplikaci?</string>
+    <string name="exitApp">Ukončit aplikaci</string>
+    <string name="start">Začít</string>
+
+    <!--Channels-->
+    <string name="channel1">Česká Republika</string>
+    <string name="channel2">Spojené království</string>
+    <string name="channel3">Slovensko</string>
+    <string name="channel4">Argentina</string>
+    <string name="channel5">Austrálie</string>
+    <string name="channel6">Německo</string>
+    <string name="channel7">USA</string>
+    <string name="channel8">Mezinárodní</string>
+
+    <!--AboutActivity-->
+    <string name="share_mail">Stáhni si tuto skvělou aplikaci ;)!</string>
+    <string name="email_text">Ahoj, stáhni si Free TV od PH studia!</string>
+    <string name="select_email">Vyberte s kým…</string>
+
+    <!--layout_about-->
+    <string name="text_about">O nás</string>
+    <string name="application_development">Vývoj mobilních aplikací</string>
+    <string name="website">Webové stránky</string>
+    <string name="github_text">GitHub</string>
+    <string name="about1">Více aplikací</string>
+    <string name="about2">Nahlásit chybu</string>
+    <string name="about3">Sdílet aplikaci</string>
+    <string name="about4">Telegram</string>
+    <string name="about5">Zásady ochrany osobních údajů</string>
+    <string name="about6">Obchodní podmínky</string>
+
+    <!--Another strings-->
+    <string name="okay">V pořádku</string>
+    <string name="error">Chyba</string>
+    <string name="notSupported">Není podporováno</string>
+    <string name="record">"Záznam "</string>
+    <string name="wasDeleted">" byl smazán!"</string>
+    <string name="importText">Chcete importovat oblíbené?</string>
+    <string name="exportText">Chcete exportovat oblíbené?</string>
+    <string name="deleteText">Chcete smazat všechny záznamy?</string>
+    <string name="deleteRec">Chcete smazat záznam?</string>
+    <string name="btDelete">Smazat</string>
+    <string name="btImport">Importovat</string>
+    <string name="btExport">Exportovat</string>
+    <string name="emptyLV">Nemáte žádné oblíbené položky!\n\nPodržte prst na tlačítku pro přidání položek.</string>
+    <string name="permission_granted">Oprávnění uděleno\nKlikněte na tlačítko znovu!</string>
+    <string name="NotStream">Tento stream nelze přehrát!\n\nChyba: </string>
+    <string name="addedToFav">Přidáno do oblíbených!</string>
+    <string name="unknown">Neznámé</string>
+    <string name="add">přidat</string>
+    <string name="favorite">Oblíbené</string>
+    <string name="pornography">Pro dospělé</string>
+    <string name="add_link">Vlastní odkaz</string>
+    <string name="news">Zprávy</string>
+    <string name="movies">Filmy</string>
+    <string name="show">zobrazit</string>
+    <string name="channels">Kanály</string>
+    <string name="statistics">Statistiky</string>
+    <string name="countries">Zemí</string>
+    <string name="streams">Streamů</string>
+    <string name="music">Hudba</string>
+    <string name="saveOkay">Uloženo do složky Stažené</string>
+</resources>

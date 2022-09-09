@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <VideoView
+        android:id="@+id/vvPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPlayer"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_center_window"
+        android:src="@drawable/play"
+        android:tint="@color/white"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_center_window"
+        android:gravity="center"
+        android:padding="@dimen/_4sdp"
+        android:text="@string/unknown"
+        android:textColor="@color/white"
+        android:textIsSelectable="true"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.phstudio.freetv.player.LightControl
+        android:id="@+id/lcPlayer"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/ivPlayer"
+        android:background="@drawable/bg_center_window"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:lcColor="@android:color/white"
+        app:lcColorMoon="@android:color/white"
+        app:lcHeight="7dp"
+        app:lcWidth="2dp" />
+
+    <com.phstudio.freetv.player.VolumeControl
+        android:id="@+id/vcPlayer"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/ivPlayer"
+        android:background="@drawable/bg_center_window"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:vcColor="@android:color/white"
+        app:vcHeight="7dp"
+        app:vcWidth="2dp" />
+
+</RelativeLayout>
