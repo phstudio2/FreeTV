@@ -1,0 +1,1 @@
+Open-Source aplikace, která nevyžaduje registraci a veškerý obsah je pro uživatele zdarma. Lze přehrávat zahraniční, ale i lokální kanály pomocí jednoduchého přehrávače. Přehrávač podporuje ovládání pomocí gest. Dále je možné přidávat oblíbené kanály do seznamu oblíbených a poté je spouštět. Nechybí ani možnost přehrávání vlastních odkazů. A mnoho dalšího.

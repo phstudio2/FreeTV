@@ -1,0 +1,1 @@
+Open-Source application that does not require registration and all content is free for users. It is possible to play international as well as local channels using a simple player. The player supports gesture control. Add favorite channels to the favorites list and then play them. There is also the option to play your own links. And much more.
