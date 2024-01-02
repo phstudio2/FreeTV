@@ -1,0 +1,4 @@
+-Themed icon
+-Application acceleration
+-Support for newer devices
+-Fix broken links

@@ -27,7 +27,7 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     companion object {
         private const val DATABASE_NAME = "PH studio"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         const val TABLE_NAME = "Favorite"
         const val ID_COL = "id"
         const val COL1 = "source"
@@ -60,13 +60,14 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
             user["picture"] =
                 context.resources.getIdentifier(picture, "drawable", context.packageName)
             val text = cursor.getString(cursor.getColumnIndex(COL5))
-            user["string"] = context.getString(
-                context.resources.getIdentifier(
-                    text,
-                    "string",
-                    context.packageName
-                )
-            )
+            user["string"] = text
+            /* user["string"] = context.getString(
+                 context.resources.getIdentifier(
+                     text,
+                     "string",
+                     context.packageName
+                 )
+             )*/
             userList.add(user)
         }
         cursor.close()
@@ -156,6 +157,7 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
                     string = curCSV.getString(curCSV.getColumnIndex("string"))
 
                     val record = "$id,$source,$number,$playlist,$picture,$string"
+
                     printWriter.println(record)
                 }
                 curCSV.close()

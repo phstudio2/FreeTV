@@ -1,13 +1,17 @@
 package com.phstudio.freetv.ui.channels
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
 import com.phstudio.freetv.favorite.Database
+import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
+import com.phstudio.freetv.ui.ItemAdapter
 
 class Slovakia : AppCompatActivity() {
 
@@ -15,127 +19,154 @@ class Slovakia : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_slovakia)
 
-        val btSlovakia1 = findViewById<Button>(R.id.btSlovakia1)
-        val btSlovakia2 = findViewById<Button>(R.id.btSlovakia2)
-        val btSlovakia3 = findViewById<Button>(R.id.btSlovakia3)
-        val btSlovakia4 = findViewById<Button>(R.id.btSlovakia4)
-        val btSlovakia5 = findViewById<Button>(R.id.btSlovakia5)
-        val btSlovakia6 = findViewById<Button>(R.id.btSlovakia6)
-        val btSlovakia7 = findViewById<Button>(R.id.btSlovakia7)
-        val btSlovakia8 = findViewById<Button>(R.id.btSlovakia8)
-        val btSlovakia9 = findViewById<Button>(R.id.btSlovakia9)
-        val btSlovakia10 = findViewById<Button>(R.id.btSlovakia10)
-        val btSlovakia11 = findViewById<Button>(R.id.btSlovakia11)
-        val btSlovakia12 = findViewById<Button>(R.id.btSlovakia12)
-        val btSlovakia13 = findViewById<Button>(R.id.btSlovakia13)
+        val recyclerView: RecyclerView = findViewById(R.id.rvSlovakia)
+        customAdapter = ItemAdapter(slovakiaList, object : ItemAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val (_, _, stringList2) = splitList(slovakiaList)
+                val url = stringList2[position]
+                if (url.contains("https://www.youtube.com")) {
+                    val intent = Intent(this@Slovakia, HTMLActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@Slovakia, PlayerActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                }
 
-        val m3u8 = resources.getStringArray(R.array.slovakia_m3u8)
+            }
+        }, object : ItemAdapter.OnItemLongClickListener {
+            override fun onItemLongClick(position: Int): Boolean {
+                val (stringList1, _, stringList2) = splitList(slovakiaList)
+                favorite(stringList1[position], position + 1, stringList2[position])
 
-        btSlovakia1.setOnClickListener {
-            player(1, m3u8)
-        }
-        btSlovakia2.setOnClickListener {
-            player(2, m3u8)
-        }
-        btSlovakia3.setOnClickListener {
-            player(3, m3u8)
-        }
-        btSlovakia4.setOnClickListener {
-            player(4, m3u8)
-        }
-        btSlovakia5.setOnClickListener {
-            player(5, m3u8)
-        }
-        btSlovakia6.setOnClickListener {
-            player(6, m3u8)
-        }
-        btSlovakia7.setOnClickListener {
-            player(7, m3u8)
-        }
-        btSlovakia8.setOnClickListener {
-            player(8, m3u8)
-        }
-        btSlovakia9.setOnClickListener {
-            player(9, m3u8)
-        }
-        btSlovakia10.setOnClickListener {
-            player(10, m3u8)
-        }
-        btSlovakia11.setOnClickListener {
-            player(11, m3u8)
-        }
-        btSlovakia12.setOnClickListener {
-            player(12, m3u8)
-        }
-        btSlovakia13.setOnClickListener {
-            player(13, m3u8)
-        }
+                return true
+            }
+        })
 
-        btSlovakia1.setOnLongClickListener {
-            favorite(1, 1)
-            true
-        }
-        btSlovakia2.setOnLongClickListener {
-            favorite(2, 2)
-            true
-        }
-        btSlovakia3.setOnLongClickListener {
-            favorite(3, 3)
-            true
-        }
-        btSlovakia4.setOnLongClickListener {
-            favorite(4, 4)
-            true
-        }
-        btSlovakia5.setOnLongClickListener {
-            favorite(5, 5)
-            true
-        }
-        btSlovakia6.setOnLongClickListener {
-            favorite(6, 6)
-            true
-        }
-        btSlovakia7.setOnLongClickListener {
-            favorite(7, 7)
-            true
-        }
-        btSlovakia8.setOnLongClickListener {
-            favorite(8, 8)
-            true
-        }
-        btSlovakia9.setOnLongClickListener {
-            favorite(9, 9)
-            true
-        }
-        btSlovakia10.setOnLongClickListener {
-            favorite(10, 10)
-            true
-        }
-        btSlovakia11.setOnLongClickListener {
-            favorite(11, 11)
-            true
-        }
-        btSlovakia12.setOnLongClickListener {
-            favorite(12, 12)
-            true
-        }
-        btSlovakia13.setOnLongClickListener {
-            favorite(13, 13)
-            true
-        }
-
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareItems()
     }
 
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@Slovakia, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private fun splitList(slovakiaList: ArrayList<Triple<String, Int, String>>): Triple<ArrayList<String>, ArrayList<Int>, ArrayList<String>> {
+        val stringList1 = ArrayList<String>()
+        val intList = ArrayList<Int>()
+        val stringList2 = ArrayList<String>()
+
+        for (pair in slovakiaList) {
+            stringList1.add(pair.first)
+            intList.add(pair.second)
+            stringList2.add(pair.third)
+        }
+        return Triple(stringList1, intList, stringList2)
     }
 
-    private fun favorite(x: Int, y: Int) {
+    private val slovakiaList = ArrayList<Triple<String, Int, String>>()
+
+    private lateinit var customAdapter: ItemAdapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun prepareItems() {
+        slovakiaList.add(
+            Triple(
+                "RTVS Jednotka",
+                R.drawable.slovakia1,
+                "https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=1"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "RTVS Dvojka",
+                R.drawable.slovakia2,
+                "http://213.81.133.133:8080/dvojka/index.m3u8"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "RTVS 24",
+                R.drawable.slovakia3,
+                "https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=3"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "RTVS Šport",
+                R.drawable.slovakia4,
+                "https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=15"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "RTVS :O",
+                R.drawable.slovakia5,
+                "https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=4"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "RTVS",
+                R.drawable.slovakia6,
+                "https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=6"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "NR SR",
+                R.drawable.slovakia7,
+                "https://yoink-that-stv-jgskjbq68tnj.runkit.sh/?x=5"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "JOJ",
+                R.drawable.slovakia8,
+                "https://nn.geo.joj.sk/live/hls/joj-720.m3u8"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "JOJ Family",
+                R.drawable.slovakia9,
+                "https://live.cdn.joj.sk/live/hls/family-540.m3u8"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "JOJ Plus",
+                R.drawable.slovakia10,
+                "https://live.cdn.joj.sk/live/hls/jojplus-540.m3u8"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "JOJ WAU",
+                R.drawable.slovakia11,
+                "https://nn.geo.joj.sk/hls/wau-540.m3u8"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "Senzi",
+                R.drawable.slovakia12,
+                "http://lb.streaming.sk/senzi/stream/playlist.m3u8"
+            )
+        )
+        slovakiaList.add(
+            Triple(
+                "TA3",
+                R.drawable.slovakia13,
+                "http://get-a-flippin-ta3-url-dss6dgprdpjf.runkit.sh/"
+            )
+        )
+
+        customAdapter.notifyDataSetChanged()
+    }
+
+    private fun favorite(name: String, num: Int, url: String) {
         val db = Database(this, null)
-        db.writeToDb("Slovakia", x.toString(), "m3u8", "slovakia$y", "slovakia$y")
+        db.writeToDb("Slovakia", num.toString(), url, "slovakia$num", name)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

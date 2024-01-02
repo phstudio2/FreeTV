@@ -46,77 +46,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vTop">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvInternational"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btInternational1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/international1"
-                android:gravity="center"
-                android:text="@string/international1"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btInternational2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/international2"
-                android:gravity="center"
-                android:text="@string/international2"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btInternational3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/international3"
-                android:gravity="center"
-                android:text="@string/international3"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btInternational4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/international4"
-                android:gravity="center"
-                android:text="@string/international4"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btInternational5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/international5"
-                android:gravity="center"
-                android:text="@string/international5"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

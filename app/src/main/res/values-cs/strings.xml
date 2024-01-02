@@ -27,6 +27,7 @@
     <string name="share_mail">Stáhni si tuto skvělou aplikaci ;)!</string>
     <string name="email_text">Ahoj, stáhni si Free TV od PH studia!</string>
     <string name="select_email">Vyberte s kým…</string>
+    <string name="license">Licence</string>
 
     <!--layout_about-->
     <string name="text_about">O nás</string>

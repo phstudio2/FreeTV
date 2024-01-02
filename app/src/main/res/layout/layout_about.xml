@@ -166,47 +166,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btAbout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/about1"
-                android:gravity="center"
-                android:text="@string/about1"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btAbout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/about2"
-                android:gravity="center"
-                android:text="@string/about2"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btAbout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/about3"
-                android:gravity="center"
-                android:text="@string/about3"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-
-            <Button
-                android:id="@+id/btAbout4"
+                android:id="@+id/btTelegram"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
@@ -218,29 +178,40 @@
                 android:textSize="@dimen/_12ssp"
                 tools:ignore="RtlHardcoded" />
 
-
             <Button
-                android:id="@+id/btAbout5"
+                android:id="@+id/btShare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/about5"
+                android:drawableLeft="@drawable/about3"
                 android:gravity="center"
-                android:text="@string/about5"
+                android:text="@string/about3"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_12ssp"
                 tools:ignore="RtlHardcoded" />
 
-
             <Button
-                android:id="@+id/btAbout6"
+                android:id="@+id/btLicense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/about6"
+                android:drawableLeft="@drawable/about5"
                 android:gravity="center"
-                android:text="@string/about6"
+                android:text="@string/license"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btReportBug"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/about2"
+                android:gravity="center"
+                android:text="@string/about2"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_12ssp"

@@ -1,13 +1,18 @@
 package com.phstudio.freetv.ui.channels
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
 import com.phstudio.freetv.favorite.Database
+import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
+import com.phstudio.freetv.ui.ItemAdapter
+import com.phstudio.freetv.ui.ItemAdapter.*
 
 
 class UK : AppCompatActivity() {
@@ -16,494 +21,477 @@ class UK : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_uk)
 
-        val btUK1 = findViewById<Button>(R.id.btUK1)
-        val btUK2 = findViewById<Button>(R.id.btUK2)
-        val btUK3 = findViewById<Button>(R.id.btUK3)
-        val btUK4 = findViewById<Button>(R.id.btUK4)
-        val btUK5 = findViewById<Button>(R.id.btUK5)
-        val btUK6 = findViewById<Button>(R.id.btUK6)
-        val btUK7 = findViewById<Button>(R.id.btUK7)
-        val btUK8 = findViewById<Button>(R.id.btUK8)
-        val btUK9 = findViewById<Button>(R.id.btUK9)
-        val btUK10 = findViewById<Button>(R.id.btUK10)
-        val btUK11 = findViewById<Button>(R.id.btUK11)
-        val btUK12 = findViewById<Button>(R.id.btUK12)
-        val btUK13 = findViewById<Button>(R.id.btUK13)
-        val btUK14 = findViewById<Button>(R.id.btUK14)
-        val btUK15 = findViewById<Button>(R.id.btUK15)
-        val btUK16 = findViewById<Button>(R.id.btUK16)
-        val btUK17 = findViewById<Button>(R.id.btUK17)
-        val btUK18 = findViewById<Button>(R.id.btUK18)
-        val btUK19 = findViewById<Button>(R.id.btUK19)
-        val btUK20 = findViewById<Button>(R.id.btUK20)
-        val btUK21 = findViewById<Button>(R.id.btUK21)
-        val btUK22 = findViewById<Button>(R.id.btUK22)
-        val btUK23 = findViewById<Button>(R.id.btUK23)
-        val btUK24 = findViewById<Button>(R.id.btUK24)
-        val btUK25 = findViewById<Button>(R.id.btUK25)
-        val btUK26 = findViewById<Button>(R.id.btUK26)
-        val btUK27 = findViewById<Button>(R.id.btUK27)
-        val btUK28 = findViewById<Button>(R.id.btUK28)
-        val btUK29 = findViewById<Button>(R.id.btUK29)
-        val btUK30 = findViewById<Button>(R.id.btUK30)
-        val btUK31 = findViewById<Button>(R.id.btUK31)
-        val btUK32 = findViewById<Button>(R.id.btUK32)
-        val btUK33 = findViewById<Button>(R.id.btUK33)
-        val btUK34 = findViewById<Button>(R.id.btUK34)
-        val btUK35 = findViewById<Button>(R.id.btUK35)
-        val btUK36 = findViewById<Button>(R.id.btUK36)
-        val btUK37 = findViewById<Button>(R.id.btUK37)
-        val btUK38 = findViewById<Button>(R.id.btUK38)
-        val btUK39 = findViewById<Button>(R.id.btUK39)
-        val btUK40 = findViewById<Button>(R.id.btUK40)
-        val btUK41 = findViewById<Button>(R.id.btUK41)
-        val btUK42 = findViewById<Button>(R.id.btUK42)
-        val btUK43 = findViewById<Button>(R.id.btUK43)
-        val btUK44 = findViewById<Button>(R.id.btUK44)
-        val btUK45 = findViewById<Button>(R.id.btUK45)
-        val btUK46 = findViewById<Button>(R.id.btUK46)
-        val btUK47 = findViewById<Button>(R.id.btUK47)
-        val btUK48 = findViewById<Button>(R.id.btUK48)
-        val btUK49 = findViewById<Button>(R.id.btUK49)
-        val btUK50 = findViewById<Button>(R.id.btUK50)
-        val btUK51 = findViewById<Button>(R.id.btUK51)
-        val btUK52 = findViewById<Button>(R.id.btUK52)
-        val btUK53 = findViewById<Button>(R.id.btUK53)
-        val btUK54 = findViewById<Button>(R.id.btUK54)
-        val btUK55 = findViewById<Button>(R.id.btUK55)
-        val btUK56 = findViewById<Button>(R.id.btUK56)
-        val btUK57 = findViewById<Button>(R.id.btUK57)
-        val btUK58 = findViewById<Button>(R.id.btUK58)
-        val btUK59 = findViewById<Button>(R.id.btUK59)
+        val recyclerView: RecyclerView = findViewById(R.id.rvUK)
+        customAdapter = ItemAdapter(UKList, object : OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val (_, _, stringList2) = splitList(UKList)
+                val url = stringList2[position]
+                if (url.contains("https://www.youtube.com")) {
+                    val intent = Intent(this@UK, HTMLActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@UK, PlayerActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                }
 
-        val m3u8 = resources.getStringArray(R.array.uk_m3u8)
+            }
+        }, object : OnItemLongClickListener {
+            override fun onItemLongClick(position: Int): Boolean {
+                val (stringList1, _, stringList2) = splitList(UKList)
+                favorite(stringList1[position], position + 1, stringList2[position])
 
-        btUK1.setOnClickListener {
-            player(1, m3u8)
-        }
-        btUK2.setOnClickListener {
-            player(2, m3u8)
-        }
-        btUK3.setOnClickListener {
-            player(3, m3u8)
-        }
-        btUK4.setOnClickListener {
-            player(4, m3u8)
-        }
-        btUK5.setOnClickListener {
-            player(5, m3u8)
-        }
-        btUK6.setOnClickListener {
-            player(6, m3u8)
-        }
-        btUK7.setOnClickListener {
-            player(7, m3u8)
-        }
-        btUK8.setOnClickListener {
-            player(8, m3u8)
-        }
-        btUK9.setOnClickListener {
-            player(9, m3u8)
-        }
-        btUK10.setOnClickListener {
-            player(10, m3u8)
-        }
-        btUK11.setOnClickListener {
-            player(11, m3u8)
-        }
-        btUK12.setOnClickListener {
-            player(12, m3u8)
-        }
-        btUK13.setOnClickListener {
-            player(13, m3u8)
-        }
-        btUK14.setOnClickListener {
-            player(14, m3u8)
-        }
-        btUK15.setOnClickListener {
-            player(15, m3u8)
-        }
-        btUK16.setOnClickListener {
-            player(16, m3u8)
-        }
-        btUK17.setOnClickListener {
-            player(17, m3u8)
-        }
-        btUK18.setOnClickListener {
-            player(18, m3u8)
-        }
-        btUK19.setOnClickListener {
-            player(19, m3u8)
-        }
-        btUK20.setOnClickListener {
-            player(20, m3u8)
-        }
-        btUK21.setOnClickListener {
-            player(21, m3u8)
-        }
-        btUK22.setOnClickListener {
-            player(22, m3u8)
-        }
-        btUK23.setOnClickListener {
-            player(23, m3u8)
-        }
-        btUK24.setOnClickListener {
-            player(24, m3u8)
-        }
-        btUK25.setOnClickListener {
-            player(25, m3u8)
-        }
-        btUK26.setOnClickListener {
-            player(26, m3u8)
-        }
-        btUK27.setOnClickListener {
-            player(27, m3u8)
-        }
-        btUK28.setOnClickListener {
-            player(28, m3u8)
-        }
-        btUK29.setOnClickListener {
-            player(29, m3u8)
-        }
-        btUK30.setOnClickListener {
-            player(30, m3u8)
-        }
-        btUK31.setOnClickListener {
-            player(31, m3u8)
-        }
-        btUK32.setOnClickListener {
-            player(32, m3u8)
-        }
-        btUK33.setOnClickListener {
-            player(33, m3u8)
-        }
-        btUK34.setOnClickListener {
-            player(34, m3u8)
-        }
-        btUK35.setOnClickListener {
-            player(35, m3u8)
-        }
-        btUK36.setOnClickListener {
-            player(36, m3u8)
-        }
-        btUK37.setOnClickListener {
-            player(37, m3u8)
-        }
-        btUK38.setOnClickListener {
-            player(38, m3u8)
-        }
-        btUK39.setOnClickListener {
-            player(39, m3u8)
-        }
-        btUK40.setOnClickListener {
-            player(40, m3u8)
-        }
-        btUK41.setOnClickListener {
-            player(41, m3u8)
-        }
-        btUK42.setOnClickListener {
-            player(42, m3u8)
-        }
-        btUK43.setOnClickListener {
-            player(43, m3u8)
-        }
-        btUK44.setOnClickListener {
-            player(44, m3u8)
-        }
-        btUK45.setOnClickListener {
-            player(45, m3u8)
-        }
-        btUK46.setOnClickListener {
-            player(46, m3u8)
-        }
-        btUK47.setOnClickListener {
-            player(47, m3u8)
-        }
-        btUK48.setOnClickListener {
-            player(48, m3u8)
-        }
-        btUK49.setOnClickListener {
-            player(49, m3u8)
-        }
-        btUK50.setOnClickListener {
-            player(50, m3u8)
-        }
-        btUK51.setOnClickListener {
-            player(51, m3u8)
-        }
-        btUK52.setOnClickListener {
-            player(52, m3u8)
-        }
-        btUK53.setOnClickListener {
-            player(53, m3u8)
-        }
-        btUK54.setOnClickListener {
-            player(54, m3u8)
-        }
-        btUK55.setOnClickListener {
-            player(55, m3u8)
-        }
-        btUK56.setOnClickListener {
-            player(56, m3u8)
-        }
-        btUK57.setOnClickListener {
-            player(57, m3u8)
-        }
-        btUK58.setOnClickListener {
-            player(58, m3u8)
-        }
-        btUK59.setOnClickListener {
-            player(59, m3u8)
-        }
+                return true
+            }
+        })
 
-        btUK1.setOnLongClickListener {
-            favorite(1, 1)
-            true
-        }
-        btUK2.setOnLongClickListener {
-            favorite(2, 2)
-            true
-        }
-        btUK3.setOnLongClickListener {
-            favorite(3, 3)
-            true
-        }
-        btUK4.setOnLongClickListener {
-            favorite(4, 4)
-            true
-        }
-        btUK5.setOnLongClickListener {
-            favorite(5, 5)
-            true
-        }
-        btUK6.setOnLongClickListener {
-            favorite(6, 6)
-            true
-        }
-        btUK7.setOnLongClickListener {
-            favorite(7, 7)
-            true
-        }
-        btUK8.setOnLongClickListener {
-            favorite(8, 8)
-            true
-        }
-        btUK9.setOnLongClickListener {
-            favorite(9, 9)
-            true
-        }
-        btUK10.setOnLongClickListener {
-            favorite(10, 10)
-            true
-        }
-        btUK11.setOnLongClickListener {
-            favorite(11, 11)
-            true
-        }
-        btUK12.setOnLongClickListener {
-            favorite(12, 12)
-            true
-        }
-        btUK13.setOnLongClickListener {
-            favorite(13, 13)
-            true
-        }
-        btUK14.setOnLongClickListener {
-            favorite(14, 14)
-            true
-        }
-        btUK15.setOnLongClickListener {
-            favorite(15, 15)
-            true
-        }
-        btUK16.setOnLongClickListener {
-            favorite(16, 16)
-            true
-        }
-        btUK17.setOnLongClickListener {
-            favorite(17, 17)
-            true
-        }
-        btUK18.setOnLongClickListener {
-            favorite(18, 18)
-            true
-        }
-        btUK19.setOnLongClickListener {
-            favorite(19, 19)
-            true
-        }
-        btUK20.setOnLongClickListener {
-            favorite(20, 20)
-            true
-        }
-        btUK21.setOnLongClickListener {
-            favorite(21, 21)
-            true
-        }
-        btUK22.setOnLongClickListener {
-            favorite(22, 22)
-            true
-        }
-        btUK23.setOnLongClickListener {
-            favorite(23, 23)
-            true
-        }
-        btUK24.setOnLongClickListener {
-            favorite(24, 24)
-            true
-        }
-        btUK25.setOnLongClickListener {
-            favorite(25, 25)
-            true
-        }
-        btUK26.setOnLongClickListener {
-            favorite(26, 26)
-            true
-        }
-        btUK27.setOnLongClickListener {
-            favorite(27, 27)
-            true
-        }
-        btUK28.setOnLongClickListener {
-            favorite(28, 28)
-            true
-        }
-        btUK29.setOnLongClickListener {
-            favorite(29, 29)
-            true
-        }
-        btUK30.setOnLongClickListener {
-            favorite(30, 30)
-            true
-        }
-        btUK31.setOnLongClickListener {
-            favorite(31, 31)
-            true
-        }
-        btUK32.setOnLongClickListener {
-            favorite(32, 32)
-            true
-        }
-        btUK33.setOnLongClickListener {
-            favorite(33, 33)
-            true
-        }
-        btUK34.setOnLongClickListener {
-            favorite(34, 34)
-            true
-        }
-        btUK35.setOnLongClickListener {
-            favorite(35, 35)
-            true
-        }
-        btUK36.setOnLongClickListener {
-            favorite(36, 36)
-            true
-        }
-        btUK37.setOnLongClickListener {
-            favorite(37, 37)
-            true
-        }
-        btUK38.setOnLongClickListener {
-            favorite(38, 38)
-            true
-        }
-        btUK39.setOnLongClickListener {
-            favorite(39, 39)
-            true
-        }
-        btUK40.setOnLongClickListener {
-            favorite(40, 40)
-            true
-        }
-        btUK41.setOnLongClickListener {
-            favorite(41, 41)
-            true
-        }
-        btUK42.setOnLongClickListener {
-            favorite(42, 42)
-            true
-        }
-        btUK43.setOnLongClickListener {
-            favorite(43, 43)
-            true
-        }
-        btUK44.setOnLongClickListener {
-            favorite(44, 44)
-            true
-        }
-        btUK45.setOnLongClickListener {
-            favorite(45, 45)
-            true
-        }
-        btUK46.setOnLongClickListener {
-            favorite(46, 46)
-            true
-        }
-        btUK47.setOnLongClickListener {
-            favorite(47, 47)
-            true
-        }
-        btUK48.setOnLongClickListener {
-            favorite(48, 48)
-            true
-        }
-        btUK49.setOnLongClickListener {
-            favorite(49, 49)
-            true
-        }
-        btUK50.setOnLongClickListener {
-            favorite(50, 50)
-            true
-        }
-        btUK51.setOnLongClickListener {
-            favorite(51, 51)
-            true
-        }
-        btUK52.setOnLongClickListener {
-            favorite(52, 52)
-            true
-        }
-        btUK53.setOnLongClickListener {
-            favorite(53, 53)
-            true
-        }
-        btUK54.setOnLongClickListener {
-            favorite(54, 54)
-            true
-        }
-        btUK55.setOnLongClickListener {
-            favorite(55, 55)
-            true
-        }
-        btUK56.setOnLongClickListener {
-            favorite(56, 56)
-            true
-        }
-        btUK57.setOnLongClickListener {
-            favorite(57, 57)
-            true
-        }
-        btUK58.setOnLongClickListener {
-            favorite(58, 58)
-            true
-        }
-        btUK59.setOnLongClickListener {
-            favorite(59, 59)
-            true
-        }
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareItems()
     }
 
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@UK, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private fun splitList(UKList: ArrayList<Triple<String, Int, String>>): Triple<ArrayList<String>, ArrayList<Int>, ArrayList<String>> {
+        val stringList1 = ArrayList<String>()
+        val intList = ArrayList<Int>()
+        val stringList2 = ArrayList<String>()
+
+        for (pair in UKList) {
+            stringList1.add(pair.first)
+            intList.add(pair.second)
+            stringList2.add(pair.third)
+        }
+        return Triple(stringList1, intList, stringList2)
     }
 
-    private fun favorite(x: Int, y: Int) {
+    private val UKList = ArrayList<Triple<String, Int, String>>()
+
+    private lateinit var customAdapter: ItemAdapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun prepareItems() {
+        UKList.add(
+            Triple(
+                "Animal Planet",
+                R.drawable.image,
+                "http://cineapp.org:8000/Fernando/Fernando/314?checkedby:iptvcat.com"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Access Sacramento Channel 17",
+                R.drawable.image,
+                "https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Access Sacramento Channel 18",
+                R.drawable.image,
+                "https://reflect-access-sacramento.cablecast.tv/live-8/live/live.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Action Hollywood Movies",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-actionhollywood-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Ahlulbayt TV",
+                R.drawable.image,
+                "https://5f3e23ac71915.streamlock.net:4434/live/livestream1.sdp/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "BBC 1",
+                R.drawable.image,
+                "http://cineapp.org:8000/Fernando/Fernando/318"
+            )
+        )
+        UKList.add(
+            Triple(
+                "BBC 2",
+                R.drawable.image,
+                "http://cineapp.org:8000/Fernando/Fernando/317"
+            )
+        )
+        UKList.add(
+            Triple(
+                "BBC Arabic",
+                R.drawable.image,
+                "https://vs-cmaf-pushb-ww.live.cf.md.bbci.co.uk/x=3/i=urn:bbc:pips:service:bbc_arabic_tv/pc_hd_abr_v2_cloudfrontms_live.mpd"
+            )
+        )
+        UKList.add(
+            Triple(
+                "BBC Persian",
+                R.drawable.image,
+                "https://vs-cmaf-pushb-ww.live.cf.md.bbci.co.uk/x=3/i=urn:bbc:pips:service:bbc_persian_tv/pc_hd_abr_v2_cloudfrontms_live_http.mpd"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Bloomberg Quicktake",
+                R.drawable.image,
+                "https://bloomberg-quicktake-4-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Bloomberg TV",
+                R.drawable.image,
+                "https://bloomberg-bloomberg-2-nz.samsung.wurl.tv/playlist.m3u8<"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Bloomberg TV+",
+                R.drawable.image,
+                "https://bloomberg-bloombergtv-3-nl.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Bloomberg TV Europe",
+                R.drawable.image,
+                "https://bloomberg-bloombergtv-1-it.samsung.wurl.com/manifest/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Bloomberg TV EMEA Live Event",
+                R.drawable.image,
+                "https://www.bloomberg.com/media-manifest/streams/eu-event.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Bounty",
+                R.drawable.image,
+                "https://bountyfilms-bounty-1-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "CineView",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-rialto-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Clubbing TV",
+                R.drawable.image,
+                "https://clubbingtv-samsungnz.amagi.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Craft Store TV",
+                R.drawable.image,
+                "https://live-hochanda.simplestreamcdn.com/hochanda/live.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "DISNEY CHANNEL",
+                R.drawable.image,
+                "http://cineapp.org:8000/Fernando/Fernando/286"
+            )
+        )
+        UKList.add(
+            Triple(
+                "DISNEY JUNIOR",
+                R.drawable.image,
+                "http://cineapp.org:8000/Fernando/Fernando/5626"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Deluxe Lounge",
+                R.drawable.image,
+                "https://d46c0ebf9ef94053848fdd7b1f2f6b90.mediatailor.eu-central-1.amazonaws.com/v1/master/81bfcafb76f9c947b24574657a9ce7fe14ad75c0/live-prod/9a087b26-8be4-11eb-a7de-bacfe1f83627/0/master.m3u8?country=DE&optout=0&uid=749544ec3d9a45d48c600d03cac91dfd&vendor=philips"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Discover Film",
+                R.drawable.image,
+                "https://discoverfilm-discoverfilm-1-nl.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Drybar Comedy",
+                R.drawable.image,
+                "https://drybar-drybarcomedy-1-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Dust",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00219-gunpowdersky-dustintlnz-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "FOX",
+                R.drawable.image,
+                "http://cineapp.org:8000/Fernando/Fernando/16715"
+            )
+        )
+        UKList.add(
+            Triple(
+                "GemsTV",
+                R.drawable.image,
+                "http://57d6b85685bb8.streamlock.net:1935/abrgemporiaukgfx/livestream_360p/index.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Gigant FM",
+                R.drawable.image,
+                "https://video.uitzending.tv:19360/gigantfm/gigantfm.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Hell\\'s Kitchen",
+                R.drawable.image,
+                "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00654-itvstudios-hellskitchennl-samsungnl/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "InWonder",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00861-terninternation-inwondernz-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Insight TV",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00861-terninternation-insighttvrow-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Introuble",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00861-terninternation-introublenz-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Jewlery Maker",
+                R.drawable.image,
+                "https://lo2-1.gemporia.com/abrjewellerymaker/smil:livestream.smil/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Kanshi TV",
+                R.drawable.image,
+                "http://live.kanshitv.co.uk/mobile/kanshitvkey.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Kartoon Channel",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-kartoonchannel-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "LOL!",
+                R.drawable.image,
+                "https://lol-lolnetwork-2-nl.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Love Stories TV",
+                R.drawable.image,
+                "https://lovestoriestv-lovestoriestv-1-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "METV (Merced Educational Television)",
+                R.drawable.image,
+                "https://mercedcouedu.secure.footprint.net/egress/bhandler/mercedcouedu/streamc/chunklist_b1192000.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Made in Hollywood",
+                R.drawable.image,
+                "https://connection3-ent-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Magellen TV",
+                R.drawable.image,
+                "https://magellantv-3-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Marin TV Education",
+                R.drawable.image,
+                "https://dacastmmd.mmdlive.lldns.net/dacastmmd/8e6d110b223b4aca9dd6f7c368baec07/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Marin TV Government Channel",
+                R.drawable.image,
+                "https://dacastmmd.mmdlive.lldns.net/dacastmmd/ddf2a073e3da4acb9feb34bef6d58672/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Mav TV Motorsports Network",
+                R.drawable.image,
+                "https://mavtv-mavtvglobal-1-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Mobile County Public Schools TV Network (MCPSS)",
+                R.drawable.image,
+                "https://5b200f5268ceb.streamlock.net/MCPSS/MCPSS247.smil/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Mojitv",
+                R.drawable.image,
+                "https://odmedia-mojitv-1-nl.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Motorvision TV",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01329-otterainc-motorvisionnz-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Mtrspt 1",
+                R.drawable.image,
+                "https://kravemedia-mtrspt1-1-nz.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "MyZen TV",
+                R.drawable.image,
+                "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "NCM Educational & Kid",
+                R.drawable.image,
+                "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_005/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "NCM Government & Politics",
+                R.drawable.image,
+                "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_002/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "NCM Main Channel",
+                R.drawable.image,
+                "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_001/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "PBS America",
+                R.drawable.image,
+                "https://pbs-samsunguk.amagi.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Pet Club TV",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-petclub-samsungnz/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "QVC",
+                R.drawable.image,
+                "https://d1txbbj1u9asam.cloudfront.net/live/qvcuk_main_clean/bitrate1.isml/3/prog_index.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "QVC Beauty",
+                R.drawable.image,
+                "http://live.qvcuk.simplestreamcdn.com/live/qvcuk_beauty_clean/bitrate1.isml/live.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "QVC Style",
+                R.drawable.image,
+                "http://live.qvcuk.simplestreamcdn.com/live/qvcuk_style_clean/bitrate1.isml/live.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Sofy TV",
+                R.drawable.image,
+                "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00535-largofilmsltdli-sofytvnl-samsungnl/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Sporty Stuff TV",
+                R.drawable.image,
+                "https://ayozat-live.secure2.footprint.net/egress/bhandler/ayozat/sportystufftv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "The Guardian",
+                R.drawable.image,
+                "https://rakuten-guardian-1-nl.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        UKList.add(
+            Triple(
+                "Timeline",
+                R.drawable.image,
+                "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00426-littledotstudio-timelinenz-samsungnz/playlist.m3u8"
+            )
+        )
+
+
+        customAdapter.notifyDataSetChanged()
+    }
+
+    private fun favorite(name: String, num: Int, url: String) {
         val db = Database(this, null)
-        db.writeToDb("UK", x.toString(), "m3u8", "image", "uk$y")
+        db.writeToDb("UK", num.toString(), url, "image", name)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

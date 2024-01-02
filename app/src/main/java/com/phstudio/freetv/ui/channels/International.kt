@@ -1,13 +1,17 @@
 package com.phstudio.freetv.ui.channels
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
 import com.phstudio.freetv.favorite.Database
+import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
+import com.phstudio.freetv.ui.ItemAdapter
 
 class International : AppCompatActivity() {
 
@@ -15,62 +19,98 @@ class International : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_international)
 
-        val btInternational1 = findViewById<Button>(R.id.btInternational1)
-        val btInternational2 = findViewById<Button>(R.id.btInternational2)
-        val btInternational3 = findViewById<Button>(R.id.btInternational3)
-        val btInternational4 = findViewById<Button>(R.id.btInternational4)
-        val btInternational5 = findViewById<Button>(R.id.btInternational5)
+        val recyclerView: RecyclerView = findViewById(R.id.rvInternational)
+        customAdapter = ItemAdapter(internationalList, object : ItemAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val (_, _, stringList2) = splitList(internationalList)
+                val url = stringList2[position]
+                if (url.contains("https://www.youtube.com")) {
+                    val intent = Intent(this@International, HTMLActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@International, PlayerActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                }
 
-        val m3u8 = resources.getStringArray(R.array.international_m3u8)
+            }
+        }, object : ItemAdapter.OnItemLongClickListener {
+            override fun onItemLongClick(position: Int): Boolean {
+                val (stringList1, _, stringList2) = splitList(internationalList)
+                favorite(stringList1[position], position + 1, stringList2[position])
 
-        btInternational1.setOnClickListener {
-            player(1, m3u8)
-        }
-        btInternational2.setOnClickListener {
-            player(2, m3u8)
-        }
-        btInternational3.setOnClickListener {
-            player(3, m3u8)
-        }
-        btInternational4.setOnClickListener {
-            player(4, m3u8)
-        }
-        btInternational5.setOnClickListener {
-            player(5, m3u8)
-        }
+                return true
+            }
+        })
 
-        btInternational1.setOnLongClickListener {
-            favorite(1, 1)
-            true
-        }
-        btInternational2.setOnLongClickListener {
-            favorite(2, 2)
-            true
-        }
-        btInternational3.setOnLongClickListener {
-            favorite(3, 3)
-            true
-        }
-        btInternational4.setOnLongClickListener {
-            favorite(4, 4)
-            true
-        }
-        btInternational5.setOnLongClickListener {
-            favorite(5, 5)
-            true
-        }
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareItems()
     }
 
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@International, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private fun splitList(internationalList: ArrayList<Triple<String, Int, String>>): Triple<ArrayList<String>, ArrayList<Int>, ArrayList<String>> {
+        val stringList1 = ArrayList<String>()
+        val intList = ArrayList<Int>()
+        val stringList2 = ArrayList<String>()
+
+        for (pair in internationalList) {
+            stringList1.add(pair.first)
+            intList.add(pair.second)
+            stringList2.add(pair.third)
+        }
+        return Triple(stringList1, intList, stringList2)
     }
 
-    private fun favorite(x: Int, y: Int) {
+    private val internationalList = ArrayList<Triple<String, Int, String>>()
+
+    private lateinit var customAdapter: ItemAdapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun prepareItems() {
+        internationalList.add(
+            Triple(
+                "Red Bull TV",
+                R.drawable.international1,
+                "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
+            )
+        )
+        internationalList.add(
+            Triple(
+                "TRT World",
+                R.drawable.international2,
+                "https://tv-trtworld.live.trt.com.tr/master.m3u8"
+            )
+        )
+        internationalList.add(
+            Triple(
+                "World Fashion Channel",
+                R.drawable.international3,
+                "https://live-3.otcnet.ru/wfc-int-master/tracks-v1a1/mono.m3u8"
+            )
+        )
+        internationalList.add(
+            Triple(
+                "Failarmy International",
+                R.drawable.international4,
+                "https://failarmy-international-nl.samsung.wurl.tv/playlist.m3u8"
+            )
+        )
+        internationalList.add(
+            Triple(
+                "Iran International",
+                R.drawable.international5,
+                "https://dev-live.livetvstream.co.uk/LS-63503-4/index.m3u8"
+            )
+        )
+
+        customAdapter.notifyDataSetChanged()
+    }
+
+    private fun favorite(name: String, num: Int, url: String) {
         val db = Database(this, null)
-        db.writeToDb("International", x.toString(), "m3u8", "international$y", "international$y")
+        db.writeToDb("International", num.toString(), url, "international$num", name)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

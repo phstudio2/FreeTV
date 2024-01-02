@@ -56,10 +56,9 @@ class PlayerActivity : AppCompatActivity() {
             )
         }
 
-        val position = intent.getIntExtra("TV", 0)
-        val name = intent.getStringArrayExtra("Name")
+        val name = intent.getStringExtra("Name")
 
-        link = name!![position]
+        link = name
 
         vvPlayer!!.setVideoPath(link)
         vvPlayer!!.requestFocus()
@@ -68,7 +67,7 @@ class PlayerActivity : AppCompatActivity() {
         vvPlayer!!.setOnErrorListener { arg0, arg1, arg2 ->
             Toast.makeText(
                 this@PlayerActivity,
-                getString(R.string.NotStream) + "$arg0, $arg1, $arg2",
+                getString(R.string.NotStream) + "\n$arg0, \n$arg1, \n$arg2",
                 Toast.LENGTH_SHORT
             ).show()
             finish()

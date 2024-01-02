@@ -1,0 +1,4 @@
+-Tématická ikona
+-Zrychlení aplikace
+-Podpora novějších zařízení
+-Oprava nefunkčních odkazů

@@ -1,12 +1,15 @@
 package com.phstudio.freetv.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
 import com.phstudio.freetv.favorite.Database
+import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
 
 
@@ -16,270 +19,266 @@ class AdultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_adult)
 
-        val btAdult1 = findViewById<Button>(R.id.btAdult1)
-        val btAdult2 = findViewById<Button>(R.id.btAdult2)
-        val btAdult3 = findViewById<Button>(R.id.btAdult3)
-        val btAdult4 = findViewById<Button>(R.id.btAdult4)
-        val btAdult5 = findViewById<Button>(R.id.btAdult5)
-        val btAdult6 = findViewById<Button>(R.id.btAdult6)
-        val btAdult7 = findViewById<Button>(R.id.btAdult7)
-        val btAdult8 = findViewById<Button>(R.id.btAdult8)
-        val btAdult9 = findViewById<Button>(R.id.btAdult9)
-        val btAdult10 = findViewById<Button>(R.id.btAdult10)
-        val btAdult11 = findViewById<Button>(R.id.btAdult11)
-        val btAdult12 = findViewById<Button>(R.id.btAdult12)
-        val btAdult13 = findViewById<Button>(R.id.btAdult13)
-        val btAdult14 = findViewById<Button>(R.id.btAdult14)
-        val btAdult15 = findViewById<Button>(R.id.btAdult15)
-        val btAdult16 = findViewById<Button>(R.id.btAdult16)
-        val btAdult17 = findViewById<Button>(R.id.btAdult17)
-        val btAdult18 = findViewById<Button>(R.id.btAdult18)
-        val btAdult19 = findViewById<Button>(R.id.btAdult19)
-        val btAdult20 = findViewById<Button>(R.id.btAdult20)
-        val btAdult21 = findViewById<Button>(R.id.btAdult21)
-        val btAdult22 = findViewById<Button>(R.id.btAdult22)
-        val btAdult23 = findViewById<Button>(R.id.btAdult23)
-        val btAdult24 = findViewById<Button>(R.id.btAdult24)
-        val btAdult25 = findViewById<Button>(R.id.btAdult25)
-        val btAdult26 = findViewById<Button>(R.id.btAdult26)
-        val btAdult27 = findViewById<Button>(R.id.btAdult27)
-        val btAdult28 = findViewById<Button>(R.id.btAdult28)
-        val btAdult29 = findViewById<Button>(R.id.btAdult29)
-        val btAdult30 = findViewById<Button>(R.id.btAdult30)
-        val btAdult31 = findViewById<Button>(R.id.btAdult31)
+        val recyclerView: RecyclerView = findViewById(R.id.rvAdult)
+        customAdapter = ItemAdapter(adultList, object : ItemAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val (_, _, stringList2) = splitList(adultList)
+                val url = stringList2[position]
+                if (url.contains("https://www.youtube.com")) {
+                    val intent = Intent(this@AdultActivity, HTMLActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@AdultActivity, PlayerActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                }
 
-        val m3u8 = resources.getStringArray(R.array.p_m3u8)
+            }
+        }, object : ItemAdapter.OnItemLongClickListener {
+            override fun onItemLongClick(position: Int): Boolean {
+                val (stringList1, _, stringList2) = splitList(adultList)
+                favorite(stringList1[position], position + 1, stringList2[position])
 
-        btAdult1.setOnClickListener {
-            player(1, m3u8)
-        }
-        btAdult2.setOnClickListener {
-            player(2, m3u8)
-        }
-        btAdult3.setOnClickListener {
-            player(3, m3u8)
-        }
-        btAdult4.setOnClickListener {
-            player(4, m3u8)
-        }
-        btAdult5.setOnClickListener {
-            player(5, m3u8)
-        }
-        btAdult6.setOnClickListener {
-            player(6, m3u8)
-        }
-        btAdult7.setOnClickListener {
-            player(7, m3u8)
-        }
-        btAdult8.setOnClickListener {
-            player(8, m3u8)
-        }
-        btAdult9.setOnClickListener {
-            player(9, m3u8)
-        }
-        btAdult10.setOnClickListener {
-            player(10, m3u8)
-        }
-        btAdult11.setOnClickListener {
-            player(11, m3u8)
-        }
-        btAdult12.setOnClickListener {
-            player(12, m3u8)
-        }
-        btAdult13.setOnClickListener {
-            player(13, m3u8)
-        }
-        btAdult14.setOnClickListener {
-            player(14, m3u8)
-        }
-        btAdult15.setOnClickListener {
-            player(15, m3u8)
-        }
-        btAdult16.setOnClickListener {
-            player(16, m3u8)
-        }
-        btAdult17.setOnClickListener {
-            player(17, m3u8)
-        }
-        btAdult18.setOnClickListener {
-            player(18, m3u8)
-        }
-        btAdult19.setOnClickListener {
-            player(19, m3u8)
-        }
-        btAdult20.setOnClickListener {
-            player(20, m3u8)
-        }
-        btAdult21.setOnClickListener {
-            player(21, m3u8)
-        }
-        btAdult22.setOnClickListener {
-            player(22, m3u8)
-        }
-        btAdult23.setOnClickListener {
-            player(23, m3u8)
-        }
-        btAdult24.setOnClickListener {
-            player(24, m3u8)
-        }
-        btAdult25.setOnClickListener {
-            player(25, m3u8)
-        }
-        btAdult26.setOnClickListener {
-            player(26, m3u8)
-        }
-        btAdult27.setOnClickListener {
-            player(27, m3u8)
-        }
-        btAdult28.setOnClickListener {
-            player(28, m3u8)
-        }
-        btAdult29.setOnClickListener {
-            player(29, m3u8)
-        }
-        btAdult30.setOnClickListener {
-            player(30, m3u8)
-        }
-        btAdult31.setOnClickListener {
-            player(31, m3u8)
-        }
+                return true
+            }
+        })
 
-        btAdult1.setOnLongClickListener {
-            favorite(1, 1)
-            true
-        }
-        btAdult2.setOnLongClickListener {
-            favorite(2, 2)
-            true
-        }
-        btAdult3.setOnLongClickListener {
-            favorite(3, 3)
-            true
-        }
-        btAdult4.setOnLongClickListener {
-            favorite(4, 4)
-            true
-        }
-        btAdult5.setOnLongClickListener {
-            favorite(5, 5)
-            true
-        }
-        btAdult6.setOnLongClickListener {
-            favorite(6, 6)
-            true
-        }
-        btAdult7.setOnLongClickListener {
-            favorite(7, 7)
-            true
-        }
-        btAdult8.setOnLongClickListener {
-            favorite(8, 8)
-            true
-        }
-        btAdult9.setOnLongClickListener {
-            favorite(9, 9)
-            true
-        }
-        btAdult10.setOnLongClickListener {
-            favorite(10, 10)
-            true
-        }
-        btAdult11.setOnLongClickListener {
-            favorite(11, 11)
-            true
-        }
-        btAdult12.setOnLongClickListener {
-            favorite(12, 12)
-            true
-        }
-        btAdult13.setOnLongClickListener {
-            favorite(13, 13)
-            true
-        }
-        btAdult14.setOnLongClickListener {
-            favorite(14, 14)
-            true
-        }
-        btAdult15.setOnLongClickListener {
-            favorite(15, 15)
-            true
-        }
-        btAdult16.setOnLongClickListener {
-            favorite(16, 16)
-            true
-        }
-        btAdult17.setOnLongClickListener {
-            favorite(17, 17)
-            true
-        }
-        btAdult18.setOnLongClickListener {
-            favorite(18, 18)
-            true
-        }
-        btAdult19.setOnLongClickListener {
-            favorite(19, 19)
-            true
-        }
-        btAdult20.setOnLongClickListener {
-            favorite(20, 20)
-            true
-        }
-        btAdult21.setOnLongClickListener {
-            favorite(21, 21)
-            true
-        }
-        btAdult22.setOnLongClickListener {
-            favorite(22, 22)
-            true
-        }
-        btAdult23.setOnLongClickListener {
-            favorite(23, 23)
-            true
-        }
-        btAdult24.setOnLongClickListener {
-            favorite(24, 24)
-            true
-        }
-        btAdult25.setOnLongClickListener {
-            favorite(25, 25)
-            true
-        }
-        btAdult26.setOnLongClickListener {
-            favorite(26, 26)
-            true
-        }
-        btAdult27.setOnLongClickListener {
-            favorite(27, 27)
-            true
-        }
-        btAdult28.setOnLongClickListener {
-            favorite(28, 28)
-            true
-        }
-        btAdult29.setOnLongClickListener {
-            favorite(29, 29)
-            true
-        }
-        btAdult30.setOnLongClickListener {
-            favorite(30, 30)
-            true
-        }
-        btAdult31.setOnLongClickListener {
-            favorite(31, 31)
-            true
-        }
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareItems()
     }
 
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@AdultActivity, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private fun splitList(newsList: ArrayList<Triple<String, Int, String>>): Triple<ArrayList<String>, ArrayList<Int>, ArrayList<String>> {
+        val stringList1 = ArrayList<String>()
+        val intList = ArrayList<Int>()
+        val stringList2 = ArrayList<String>()
+
+        for (pair in newsList) {
+            stringList1.add(pair.first)
+            intList.add(pair.second)
+            stringList2.add(pair.third)
+        }
+        return Triple(stringList1, intList, stringList2)
     }
 
-    private fun favorite(x: Int, y: Int) {
+    private val adultList = ArrayList<Triple<String, Int, String>>()
+
+    private lateinit var customAdapter: ItemAdapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun prepareItems() {
+        adultList.add(
+            Triple(
+                "Teen",
+                R.drawable.p1,
+                "https://live.redtraffic.xyz/teen.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Pornstar",
+                R.drawable.p2,
+                "https://live.redtraffic.xyz/pornstar.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Big Ass",
+                R.drawable.p3,
+                "https://live.redtraffic.xyz/bigass.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Fetish",
+                R.drawable.p4,
+                "https://live.redtraffic.xyz/fetish.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "MILF",
+                R.drawable.p5,
+                "https://live.redtraffic.xyz/milf.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "POV",
+                R.drawable.p6,
+                "https://live.redtraffic.xyz/pov.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Big Dick",
+                R.drawable.p7,
+                "https://live.redtraffic.xyz/bigdick.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Big Tits",
+                R.drawable.p8,
+                "https://live.redtraffic.xyz/bigtits.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Interracial",
+                R.drawable.p9,
+                "https://live.redtraffic.xyz/interracial.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Anal",
+                R.drawable.p10,
+                "https://live.redtraffic.xyz/anal.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Blowjob",
+                R.drawable.p11,
+                "https://live.redtraffic.xyz/blowjob.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Hardcore",
+                R.drawable.p12,
+                "https://live.redtraffic.xyz/hardcore.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Cuckold",
+                R.drawable.p13,
+                "https://live.redtraffic.xyz/cuckold.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Threesome",
+                R.drawable.p14,
+                "https://live.redtraffic.xyz/threesome.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Lesbian",
+                R.drawable.p15,
+                "https://live.redtraffic.xyz/lesbian.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Gangbang",
+                R.drawable.p16,
+                "https://live.redtraffic.xyz/gangbang.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Brunette",
+                R.drawable.p17,
+                "https://live.redtraffic.xyz/brunette.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Blonde",
+                R.drawable.p18,
+                "https://live.redtraffic.xyz/blonde.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Rough",
+                R.drawable.p19,
+                "https://live.redtraffic.xyz/rough.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Compilation",
+                R.drawable.p20,
+                "https://live.redtraffic.xyz/compilation.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Livecams",
+                R.drawable.p21,
+                "https://live.redtraffic.xyz/livecams.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Latina",
+                R.drawable.p22,
+                "https://live.redtraffic.xyz/latina.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Russian",
+                R.drawable.p23,
+                "https://live.redtraffic.xyz/russian.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Asian",
+                R.drawable.p24,
+                "https://live.redtraffic.xyz/asian.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Fashion TV Midnite Secrets",
+                R.drawable.p25,
+                "https://fash1043.cloudycdn.services/slive/ftv_ftv_midnite_k1y_27049_midnite_secr_108_hls.smil/playlist.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "REDLIGHT",
+                R.drawable.p28,
+                "https://cdn-main.lolokoko.tv/REDLIGHT.stream/chunks.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Brazzers TV Europe",
+                R.drawable.image,
+                "https://cdn-main.lolokoko.tv/BRAZZERS.stream/chunks.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Dorcel TV",
+                R.drawable.image,
+                "https://cdn-main.lolokoko.tv/DorcelTV.stream/playlist.m3u8"
+            )
+        )
+        adultList.add(
+            Triple(
+                "Hustler TV",
+                R.drawable.image,
+                "https://cdn-main.lolokoko.tv/HUSTLER.stream/chunks.m3u8"
+            )
+        )
+
+        customAdapter.notifyDataSetChanged()
+    }
+
+    private fun favorite(name: String, num: Int, url: String) {
         val db = Database(this, null)
-        db.writeToDb("Adult", x.toString(), "m3u8", "p$y", "p$y")
+        db.writeToDb("Adult", num.toString(), url, "p$num", name)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

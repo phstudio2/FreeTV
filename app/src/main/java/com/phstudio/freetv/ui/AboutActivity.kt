@@ -15,118 +15,72 @@ class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_about)
-        val tvDeveloper = findViewById<TextView>(R.id.tvDeveloper)
-        val tvApplicationDevelopment = findViewById<TextView>(R.id.tvApplicationDevelopment)
-        val ibWebsite = findViewById<ImageButton>(R.id.ibWebsite)
-        val tvWebsite = findViewById<TextView>(R.id.tvWebsite)
-        val ibGitHub = findViewById<ImageButton>(R.id.ibGitHub)
-        val tvGitHub = findViewById<TextView>(R.id.tvGitHub)
-        val btAbout1 = findViewById<Button>(R.id.btAbout1)
-        val btAbout2 = findViewById<Button>(R.id.btAbout2)
-        val btAbout3 = findViewById<Button>(R.id.btAbout3)
-        val btAbout4 = findViewById<Button>(R.id.btAbout4)
-        val btAbout5 = findViewById<Button>(R.id.btAbout5)
-        val btAbout6 = findViewById<Button>(R.id.btAbout6)
 
-        tvDeveloper.setOnClickListener {
-            Toast.makeText(this, getString(R.string.developer), Toast.LENGTH_SHORT).show()
-        }
+        val items = arrayOf(
+            findViewById<TextView>(R.id.tvDeveloper),
+            findViewById<TextView>(R.id.tvApplicationDevelopment),
+            findViewById<ImageButton>(R.id.ibWebsite),
+            findViewById<TextView>(R.id.tvWebsite),
+            findViewById<ImageButton>(R.id.ibGitHub),
+            findViewById<TextView>(R.id.tvGitHub),
+            findViewById<Button>(R.id.btTelegram),
+            findViewById<Button>(R.id.btLicense),
+            findViewById<Button>(R.id.btReportBug),
+            findViewById<Button>(R.id.btShare)
+        )
 
-        tvApplicationDevelopment.setOnClickListener {
-            Toast.makeText(this, getString(R.string.app_version), Toast.LENGTH_SHORT).show()
-        }
+        items.forEach { item ->
+            item.setOnClickListener {
+                when (item.id) {
+                    R.id.tvDeveloper -> Toast.makeText(
+                        this,
+                        getString(R.string.developer),
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-        ibWebsite.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.about))
-            )
-            startActivity(browserIntent)
-        }
+                    R.id.tvApplicationDevelopment -> Toast.makeText(
+                        this,
+                        getString(R.string.app_version),
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-        tvWebsite.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.about))
-            )
-            startActivity(browserIntent)
+                    R.id.ibWebsite -> sendActivity(getString(R.string.about))
+                    R.id.tvWebsite -> sendActivity(getString(R.string.about))
+                    R.id.ibGitHub -> sendActivity(getString(R.string.github))
+                    R.id.tvGitHub -> sendActivity(getString(R.string.github))
+                    R.id.btTelegram -> sendActivity(getString(R.string.telegram))
+                    R.id.btLicense -> sendActivity(getString(R.string.privacy))
+                    R.id.btReportBug -> sendActivity(getString(R.string.report))
+                    else -> {
+                        val intent = Intent(Intent.ACTION_SEND)
+                        intent.putExtra(
+                            Intent.EXTRA_SUBJECT,
+                            resources.getString(R.string.share_mail)
+                        )
+                        intent.putExtra(
+                            Intent.EXTRA_TEXT,
+                            (resources.getString(R.string.email_text) + "\n" + resources.getString(
+                                R.string.email_text2
+                            ) + "\n" + resources.getString(R.string.email_text3))
+                        )
+                        intent.type = "message/rfc822"
+                        startActivity(
+                            Intent.createChooser(
+                                intent,
+                                resources.getString(R.string.select_email)
+                            )
+                        )
+                    }
+                }
+            }
         }
+    }
 
-        ibGitHub.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.github))
-            )
-            startActivity(browserIntent)
-        }
-
-        tvGitHub.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.github))
-            )
-            startActivity(browserIntent)
-        }
-
-        btAbout1.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.googlePlay))
-            )
-            startActivity(browserIntent)
-        }
-
-        btAbout2.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.report))
-            )
-            startActivity(browserIntent)
-        }
-
-        btAbout2.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.report))
-            )
-            startActivity(browserIntent)
-        }
-
-        btAbout3.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.share_mail))
-            intent.putExtra(
-                Intent.EXTRA_TEXT,
-                (resources.getString(R.string.email_text) + "\n" + resources.getString(
-                    R.string.email_text2
-                ) + "\n" + resources.getString(R.string.email_text3))
-            )
-            intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, resources.getString(R.string.select_email)))
-        }
-
-        btAbout4.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.telegram))
-            )
-            startActivity(browserIntent)
-        }
-
-        btAbout5.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.privacy))
-            )
-            startActivity(browserIntent)
-        }
-
-        btAbout6.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(getString(R.string.terms))
-            )
-            startActivity(browserIntent)
-        }
+    private fun sendActivity(url: String) {
+        val browserIntent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse(url)
+        )
+        startActivity(browserIntent)
     }
 }

@@ -15,16 +15,16 @@ import com.phstudio.freetv.R
 class HTMLActivity : AppCompatActivity() {
 
     private var wvHtml: WebView? = null
+    private var link: String? = null
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_html)
 
-        val position = intent.getIntExtra("TV", 0)
-        val name = intent.getStringArrayExtra("Name")
+        val name = intent.getStringExtra("Name")
 
-        val link = name!![position]
+        link = name
 
         wvHtml = findViewById<View>(R.id.wvHtml) as WebView
         wvHtml!!.webViewClient = WebViewClient()

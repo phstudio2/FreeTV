@@ -185,81 +185,18 @@ class FavoriteActivity : AppCompatActivity() {
         val db = Database(this, null)
         val cursor = db.readFromDb()
         cursor!!.moveToPosition(pos)
-        val send: String = cursor.getString(cursor.getColumnIndex(Database.COL3))
-        val name: String = cursor.getString(cursor.getColumnIndex(Database.COL1))
-        val x: Int = (cursor.getString(cursor.getColumnIndex(Database.COL2))).toInt()
+        val url: String = cursor.getString(cursor.getColumnIndex(Database.COL3))
         cursor.close()
         db.close()
 
-        val help: Array<String>
-
-        when {
-            name == "News" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.news_m3u8)
-                player(x, help)
-            }
-            name == "News" && send == "html" -> {
-                help = resources.getStringArray(R.array.news_html)
-                html(x, help)
-            }
-            name == "Movies" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.movies_m3u8)
-                player(x, help)
-            }
-            name == "Music" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.music_m3u8)
-                player(x, help)
-            }
-            name == "Adult" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.p_m3u8)
-                player(x, help)
-            }
-
-            //CHANNELS
-            name == "Argentina" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.argentina_m3u8)
-                player(x, help)
-            }
-            name == "Argentina" && send == "html" -> {
-                help = resources.getStringArray(R.array.argentina_html)
-                html(x, help)
-            }
-            name == "Australia" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.australia_m3u8)
-                player(x, help)
-            }
-            name == "Czech" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.cz_m3u8)
-                player(x, help)
-            }
-            name == "Czech" && send == "html" -> {
-                help = resources.getStringArray(R.array.cz_html)
-                html(x, help)
-            }
-            name == "Germany" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.germany_m3u8)
-                player(x, help)
-            }
-            name == "Slovakia" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.slovakia_m3u8)
-                player(x, help)
-            }
-            name == "UK" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.uk_m3u8)
-                player(x, help)
-            }
-            name == "USA" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.usa_m3u8)
-                player(x, help)
-            }
-            name == "USA" && send == "html" -> {
-                help = resources.getStringArray(R.array.usa_html)
-                html(x, help)
-            }
-            name == "International" && send == "m3u8" -> {
-                help = resources.getStringArray(R.array.international_m3u8)
-                player(x, help)
-            }
+        if (url.contains("https://www.youtube.com") || url.contains("https://www.televizeseznam.cz/tv")) {
+            val intent = Intent(this@FavoriteActivity, HTMLActivity::class.java)
+            intent.putExtra("Name", url)
+            startActivity(intent)
+        }else{
+            val intent = Intent(this@FavoriteActivity, PlayerActivity::class.java)
+            intent.putExtra("Name", url)
+            startActivity(intent)
         }
     }
 
@@ -299,17 +236,22 @@ class FavoriteActivity : AppCompatActivity() {
 
     private fun isStoragePermissionGranted(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED
-            ) {
-                true
-            } else {
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    1
-                )
+            if(Build.VERSION.SDK_INT >= 31){
+                Toast.makeText(this, getString(R.string.notSupported), Toast.LENGTH_SHORT).show()
                 false
+            }else{
+                if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED
+                ) {
+                    true
+                } else {
+                    ActivityCompat.requestPermissions(
+                        this,
+                        arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                        1
+                    )
+                    false
+                }
             }
         } else {
             true
@@ -319,9 +261,9 @@ class FavoriteActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     private fun saveDb() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
             if (isStoragePermissionGranted()) {
                 val export = Database(this@FavoriteActivity, null).exportDb()
+
                 if (export) {
                     Toast.makeText(this, getString(R.string.saveOkay), Toast.LENGTH_SHORT).show()
                     restart()
@@ -334,19 +276,5 @@ class FavoriteActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.notSupported), Toast.LENGTH_SHORT).show()
             restart()
         }
-    }
-
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@FavoriteActivity, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
-    }
-
-    private fun html(x: Int, name: Array<String>) {
-        val intent = Intent(this@FavoriteActivity, HTMLActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
     }
 }

@@ -5,7 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.phstudio.freetv.R
-import com.phstudio.freetv.ui.channels.*
+import com.phstudio.freetv.ui.channels.Argentina
+import com.phstudio.freetv.ui.channels.Australia
+import com.phstudio.freetv.ui.channels.Czech
+import com.phstudio.freetv.ui.channels.Germany
+import com.phstudio.freetv.ui.channels.International
+import com.phstudio.freetv.ui.channels.Slovakia
+import com.phstudio.freetv.ui.channels.UK
+import com.phstudio.freetv.ui.channels.USA
 
 class ChannelsActivity : AppCompatActivity() {
 
@@ -13,38 +20,30 @@ class ChannelsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_channels)
 
-        val btChannel1 = findViewById<Button>(R.id.btChannel1)
-        val btChannel2 = findViewById<Button>(R.id.btChannel2)
-        val btChannel3 = findViewById<Button>(R.id.btChannel3)
-        val btChannel4 = findViewById<Button>(R.id.btChannel4)
-        val btChannel5 = findViewById<Button>(R.id.btChannel5)
-        val btChannel6 = findViewById<Button>(R.id.btChannel6)
-        val btChannel7 = findViewById<Button>(R.id.btChannel7)
-        val btChannel8 = findViewById<Button>(R.id.btChannel8)
+        val items = arrayOf(
+            findViewById<Button>(R.id.btChannel1),
+            findViewById(R.id.btChannel2),
+            findViewById(R.id.btChannel3),
+            findViewById(R.id.btChannel4),
+            findViewById(R.id.btChannel5),
+            findViewById(R.id.btChannel6),
+            findViewById(R.id.btChannel7),
+            findViewById(R.id.btChannel8)
+        )
 
-        btChannel1.setOnClickListener {
-            sendActivity(Czech())
-        }
-        btChannel2.setOnClickListener {
-            sendActivity(UK())
-        }
-        btChannel3.setOnClickListener {
-            sendActivity(Slovakia())
-        }
-        btChannel4.setOnClickListener {
-            sendActivity(Argentina())
-        }
-        btChannel5.setOnClickListener {
-            sendActivity(Australia())
-        }
-        btChannel6.setOnClickListener {
-            sendActivity(Germany())
-        }
-        btChannel7.setOnClickListener {
-            sendActivity(USA())
-        }
-        btChannel8.setOnClickListener {
-            sendActivity(International())
+        items.forEach { item ->
+            item.setOnClickListener {
+                when (item.id) {
+                    R.id.btChannel1 -> sendActivity(Czech())
+                    R.id.btChannel2 -> sendActivity(UK())
+                    R.id.btChannel3 -> sendActivity(Slovakia())
+                    R.id.btChannel4 -> sendActivity(Argentina())
+                    R.id.btChannel5 -> sendActivity(Australia())
+                    R.id.btChannel6 -> sendActivity(Germany())
+                    R.id.btChannel7 -> sendActivity(USA())
+                    else -> sendActivity(International())
+                }
+            }
         }
     }
 

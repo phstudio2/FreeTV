@@ -1,14 +1,17 @@
 package com.phstudio.freetv.ui.channels
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
 import com.phstudio.freetv.favorite.Database
 import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
+import com.phstudio.freetv.ui.ItemAdapter
 
 class Czech : AppCompatActivity() {
 
@@ -16,240 +19,252 @@ class Czech : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_czech)
 
-        val btCz1 = findViewById<Button>(R.id.btCz1)
-        val btCz2 = findViewById<Button>(R.id.btCz2)
-        val btCz3 = findViewById<Button>(R.id.btCz3)
-        val btCz4 = findViewById<Button>(R.id.btCz4)
-        val btCz5 = findViewById<Button>(R.id.btCz5)
-        val btCz6 = findViewById<Button>(R.id.btCz6)
-        val btCz7 = findViewById<Button>(R.id.btCz7)
-        val btCz8 = findViewById<Button>(R.id.btCz8)
-        val btCz9 = findViewById<Button>(R.id.btCz9)
-        val btCz10 = findViewById<Button>(R.id.btCz10)
-        val btCz11 = findViewById<Button>(R.id.btCz11)
-        val btCz12 = findViewById<Button>(R.id.btCz12)
-        val btCz13 = findViewById<Button>(R.id.btCz13)
-        val btCz14 = findViewById<Button>(R.id.btCz14)
-        val btCz15 = findViewById<Button>(R.id.btCz15)
-        val btCz16 = findViewById<Button>(R.id.btCz16)
-        val btCz17 = findViewById<Button>(R.id.btCz17)
-        val btCz18 = findViewById<Button>(R.id.btCz18)
-        val btCz19 = findViewById<Button>(R.id.btCz19)
-        val btCz20 = findViewById<Button>(R.id.btCz20)
-        val btCz21 = findViewById<Button>(R.id.btCz21)
-        val btCz22 = findViewById<Button>(R.id.btCz22)
-        val btCz23 = findViewById<Button>(R.id.btCz23)
-        val btCz24 = findViewById<Button>(R.id.btCz24)
-        val btCz25 = findViewById<Button>(R.id.btCz25)
+        val recyclerView: RecyclerView = findViewById(R.id.rvCzech)
+        customAdapter = ItemAdapter(czechList, object : ItemAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val (_, _, stringList2) = splitList(czechList)
+                val url = stringList2[position]
+                if (url.contains("https://www.youtube.com") || url.contains("https://www.televizeseznam.cz/tv")) {
+                    val intent = Intent(this@Czech, HTMLActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@Czech, PlayerActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                }
 
-        val m3u8 = resources.getStringArray(R.array.cz_m3u8)
-        val html = resources.getStringArray(R.array.cz_html)
+            }
+        }, object : ItemAdapter.OnItemLongClickListener {
+            override fun onItemLongClick(position: Int): Boolean {
+                val (stringList1, _, stringList2) = splitList(czechList)
+                favorite(stringList1[position], position + 1, stringList2[position])
 
-        btCz1.setOnClickListener {
-            player(1, m3u8)
-        }
-        btCz2.setOnClickListener {
-            player(2, m3u8)
-        }
-        btCz3.setOnClickListener {
-            player(3, m3u8)
-        }
-        btCz4.setOnClickListener {
-            player(4, m3u8)
-        }
-        btCz5.setOnClickListener {
-            player(5, m3u8)
-        }
-        btCz6.setOnClickListener {
-            player(6, m3u8)
-        }
-        btCz7.setOnClickListener {
-            player(7, m3u8)
-        }
-        btCz8.setOnClickListener {
-            player(8, m3u8)
-        }
-        btCz9.setOnClickListener {
-            player(9, m3u8)
-        }
-        btCz10.setOnClickListener {
-            player(10, m3u8)
-        }
-        btCz11.setOnClickListener {
-            player(11, m3u8)
-        }
-        btCz12.setOnClickListener {
-            player(12, m3u8)
-        }
+                return true
+            }
+        })
 
-        btCz13.setOnClickListener {
-            html(1, html)
-        }
-        btCz14.setOnClickListener {
-            html(2, html)
-        }
-        btCz15.setOnClickListener {
-            html(3, html)
-        }
-        btCz16.setOnClickListener {
-            html(4, html)
-        }
-        btCz17.setOnClickListener {
-            html(5, html)
-        }
-        btCz18.setOnClickListener {
-            html(6, html)
-        }
-        btCz19.setOnClickListener {
-            html(7, html)
-        }
-        btCz20.setOnClickListener {
-            html(8, html)
-        }
-
-        btCz21.setOnClickListener {
-            player(13, m3u8)
-        }
-        btCz22.setOnClickListener {
-            player(14, m3u8)
-        }
-        btCz23.setOnClickListener {
-            player(15, m3u8)
-        }
-        btCz24.setOnClickListener {
-            player(16, m3u8)
-        }
-        btCz25.setOnClickListener {
-            player(17, m3u8)
-        }
-
-        btCz1.setOnLongClickListener {
-            favorite(1, 1)
-            true
-        }
-        btCz2.setOnLongClickListener {
-            favorite(2, 2)
-            true
-        }
-        btCz3.setOnLongClickListener {
-            favorite(3, 3)
-            true
-        }
-        btCz4.setOnLongClickListener {
-            favorite(4, 4)
-            true
-        }
-        btCz5.setOnLongClickListener {
-            favorite(5, 5)
-            true
-        }
-        btCz6.setOnLongClickListener {
-            favorite(6, 6)
-            true
-        }
-        btCz7.setOnLongClickListener {
-            favorite(7, 7)
-            true
-        }
-        btCz8.setOnLongClickListener {
-            favorite(8, 8)
-            true
-        }
-        btCz9.setOnLongClickListener {
-            favorite(9, 9)
-            true
-        }
-        btCz10.setOnLongClickListener {
-            favorite(10, 10)
-            true
-        }
-        btCz11.setOnLongClickListener {
-            favorite(11, 11)
-            true
-        }
-        btCz12.setOnLongClickListener {
-            favorite(12, 12)
-            true
-        }
-        btCz13.setOnLongClickListener {
-            favorite2(1, 13)
-            true
-        }
-        btCz14.setOnLongClickListener {
-            favorite2(2, 14)
-            true
-        }
-        btCz15.setOnLongClickListener {
-            favorite2(3, 15)
-            true
-        }
-        btCz16.setOnLongClickListener {
-            favorite2(4, 16)
-            true
-        }
-        btCz17.setOnLongClickListener {
-            favorite2(5, 17)
-            true
-        }
-        btCz18.setOnLongClickListener {
-            favorite2(6, 18)
-            true
-        }
-        btCz19.setOnLongClickListener {
-            favorite2(7, 19)
-            true
-        }
-        btCz20.setOnLongClickListener {
-            favorite2(8, 20)
-            true
-        }
-
-        btCz21.setOnLongClickListener {
-            favorite(13, 21)
-            true
-        }
-        btCz22.setOnLongClickListener {
-            favorite(14, 22)
-            true
-        }
-        btCz23.setOnLongClickListener {
-            favorite(15, 23)
-            true
-        }
-        btCz24.setOnLongClickListener {
-            favorite(16, 24)
-            true
-        }
-        btCz25.setOnLongClickListener {
-            favorite(17, 25)
-            true
-        }
-
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareItems()
     }
 
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@Czech, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private fun splitList(czechList: ArrayList<Triple<String, Int, String>>): Triple<ArrayList<String>, ArrayList<Int>, ArrayList<String>> {
+        val stringList1 = ArrayList<String>()
+        val intList = ArrayList<Int>()
+        val stringList2 = ArrayList<String>()
+
+        for (pair in czechList) {
+            stringList1.add(pair.first)
+            intList.add(pair.second)
+            stringList2.add(pair.third)
+        }
+        return Triple(stringList1, intList, stringList2)
     }
 
-    private fun html(x: Int, name: Array<String>) {
-        val intent = Intent(this@Czech, HTMLActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private val czechList = ArrayList<Triple<String, Int, String>>()
+
+    private lateinit var customAdapter: ItemAdapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun prepareItems() {
+        czechList.add(
+            Triple(
+                "Prima",
+                R.drawable.cz1,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_family/playlist/cze/live_hq.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "CNN Prima News",
+                R.drawable.cz2,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_cnn/playlist/cze/live_hd.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima Zoom",
+                R.drawable.cz3,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_zoom/playlist/cze/live_hq.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima Love",
+                R.drawable.cz4,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_love/playlist/cze/live_hq.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima STAR",
+                R.drawable.cz5,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_star/playlist/cze/live_hq.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima Krimi",
+                R.drawable.cz6,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_krimi/playlist/cze/live_hq.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima MAX",
+                R.drawable.cz7,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_max/playlist/cze/live_hq.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima Cool",
+                R.drawable.cz8,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_cool/playlist/cze/live_hd.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Prima Show",
+                R.drawable.cz9,
+                "https://prima-ott-live.ssl.cdn.cra.cz/channels/prima_show/playlist/cze/live_hd.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Óčko",
+                R.drawable.cz10,
+                "https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist.m3u8"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Óčko Star",
+                R.drawable.cz11,
+                "https://ocko-live.ssl.cdn.cra.cz/channels/ocko_gold/playlist.m3u8"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Óčko Expres",
+                R.drawable.cz12,
+                "https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8"
+            )
+        )
+        czechList.add(
+            Triple(
+                "TV Seznam",
+                R.drawable.cz13,
+                "https://www.televizeseznam.cz/tv"
+            )
+        )
+        czechList.add(
+            Triple(
+                "ČT1",
+                R.drawable.cz14,
+                "https://sktv-forwarders.7m.pl/get.php?x=CT1"
+            )
+        )
+        czechList.add(
+            Triple(
+                "ČT2",
+                R.drawable.cz15,
+                "https://sktv-forwarders.7m.pl/get.php?x=CT2"
+            )
+        )
+        czechList.add(
+            Triple(
+                "ČT24",
+                R.drawable.cz17,
+                "https://sktv-forwarders.7m.pl/get.php?x=CT24"
+            )
+        )
+        czechList.add(
+            Triple(
+                "ČT sport",
+                R.drawable.cz18,
+                "https://sktv-forwarders.7m.pl/get.php?x=CTsport"
+            )
+        )
+        czechList.add(
+            Triple(
+                "ČT :D",
+                R.drawable.cz19,
+                "https://sktv-forwarders.7m.pl/get.php?x=CT_D"
+            )
+        )
+        czechList.add(
+            Triple(
+                "ČT art",
+                R.drawable.cz20,
+                "https://sktv-forwarders.7m.pl/get.php?x=CTart"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Retro Music Television",
+                R.drawable.cz21,
+                "https://stream.mediawork.cz/retrotv/smil:retrotv2.smil/playlist.m3u8"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Šlágr Originál",
+                R.drawable.cz22,
+                "https://stream-13.mazana.tv/slagroriginal.m3u8s"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Šlágr Muzika",
+                R.drawable.cz23,
+                "https://stream-23.mazana.tv/slagrmuzika.m3u8s"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Šlágr Premium",
+                R.drawable.cz24,
+                "https://stream-17.mazana.tv/slagrpremium.m3u8s"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Východočeská TV",
+                R.drawable.cz25,
+                "https://stream.polar.cz/vctv/vctvlive-1/playlist.m3u8"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Praha TV",
+                R.drawable.image,
+                "https://stream.polar.cz/prahatv/prahatvlive-1/playlist.m3u8"
+            )
+        )
+        czechList.add(
+            Triple(
+                "TN LIVE",
+                R.drawable.image,
+                "https://nova-ott-live-tn-sec.ssl.cdn.cra.cz/70xNRw9kiZs9EUkDVaUZTw==,1703883594/channels/nova-news/playlist/cze/live_hd.m3u8?offsetSeconds=0&url=0"
+            )
+        )
+        czechList.add(
+            Triple(
+                "Mňau TV",
+                R.drawable.image,
+                "https://5ca49f2417d90.streamlock.net/mnau/livestream/playlist.m3u8"
+            )
+        )
+
+        customAdapter.notifyDataSetChanged()
     }
 
-    private fun favorite(x: Int, y: Int) {
+    private fun favorite(name: String, num: Int, url: String) {
         val db = Database(this, null)
-        db.writeToDb("Czech", x.toString(), "m3u8", "cz$y", "cz$y")
-        Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
-    }
-
-    private fun favorite2(x: Int, y: Int) {
-        val db = Database(this, null)
-        db.writeToDb("Czech", x.toString(), "html", "cz$y", "cz$y")
+        db.writeToDb("Czech", num.toString(), url, "cz$num", name)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

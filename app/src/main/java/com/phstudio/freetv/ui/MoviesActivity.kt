@@ -1,244 +1,263 @@
 package com.phstudio.freetv.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
 import com.phstudio.freetv.favorite.Database
+import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
 
 class MoviesActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_movies)
 
-        val btMovies1 = findViewById<Button>(R.id.btMovies1)
-        val btMovies2 = findViewById<Button>(R.id.btMovies2)
-        val btMovies3 = findViewById<Button>(R.id.btMovies3)
-        val btMovies4 = findViewById<Button>(R.id.btMovies4)
-        val btMovies5 = findViewById<Button>(R.id.btMovies5)
-        val btMovies6 = findViewById<Button>(R.id.btMovies6)
-        val btMovies7 = findViewById<Button>(R.id.btMovies7)
-        val btMovies8 = findViewById<Button>(R.id.btMovies8)
-        val btMovies9 = findViewById<Button>(R.id.btMovies9)
-        val btMovies10 = findViewById<Button>(R.id.btMovies10)
-        val btMovies11 = findViewById<Button>(R.id.btMovies11)
-        val btMovies12 = findViewById<Button>(R.id.btMovies12)
-        val btMovies13 = findViewById<Button>(R.id.btMovies13)
-        val btMovies14 = findViewById<Button>(R.id.btMovies14)
-        val btMovies15 = findViewById<Button>(R.id.btMovies15)
-        val btMovies16 = findViewById<Button>(R.id.btMovies16)
-        val btMovies17 = findViewById<Button>(R.id.btMovies17)
-        val btMovies18 = findViewById<Button>(R.id.btMovies18)
-        val btMovies19 = findViewById<Button>(R.id.btMovies19)
-        val btMovies20 = findViewById<Button>(R.id.btMovies20)
-        val btMovies21 = findViewById<Button>(R.id.btMovies21)
-        val btMovies22 = findViewById<Button>(R.id.btMovies22)
-        val btMovies23 = findViewById<Button>(R.id.btMovies23)
-        val btMovies24 = findViewById<Button>(R.id.btMovies24)
-        val btMovies25 = findViewById<Button>(R.id.btMovies25)
-        val btMovies26 = findViewById<Button>(R.id.btMovies26)
+        val recyclerView: RecyclerView = findViewById(R.id.rvMovies)
+        customAdapter = ItemAdapter(moviesList, object : ItemAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val (_, _, stringList2) = splitList(moviesList)
+                val url = stringList2[position]
+                if (url.contains("https://www.youtube.com")) {
+                    val intent = Intent(this@MoviesActivity, HTMLActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@MoviesActivity, PlayerActivity::class.java)
+                    intent.putExtra("Name", url)
+                    startActivity(intent)
+                }
 
-        val m3u8 = resources.getStringArray(R.array.movies_m3u8)
+            }
+        }, object : ItemAdapter.OnItemLongClickListener {
+            override fun onItemLongClick(position: Int): Boolean {
+                val (stringList1, _, stringList2) = splitList(moviesList)
+                favorite(stringList1[position], position + 1, stringList2[position])
 
-        btMovies1.setOnClickListener {
-            player(1, m3u8)
-        }
-        btMovies2.setOnClickListener {
-            player(2, m3u8)
-        }
-        btMovies3.setOnClickListener {
-            player(3, m3u8)
-        }
-        btMovies4.setOnClickListener {
-            player(4, m3u8)
-        }
-        btMovies5.setOnClickListener {
-            player(5, m3u8)
-        }
-        btMovies6.setOnClickListener {
-            player(6, m3u8)
-        }
-        btMovies7.setOnClickListener {
-            player(7, m3u8)
-        }
-        btMovies8.setOnClickListener {
-            player(8, m3u8)
-        }
-        btMovies9.setOnClickListener {
-            player(9, m3u8)
-        }
-        btMovies10.setOnClickListener {
-            player(10, m3u8)
-        }
-        btMovies11.setOnClickListener {
-            player(11, m3u8)
-        }
-        btMovies12.setOnClickListener {
-            player(12, m3u8)
-        }
-        btMovies13.setOnClickListener {
-            player(13, m3u8)
-        }
-        btMovies14.setOnClickListener {
-            player(14, m3u8)
-        }
-        btMovies15.setOnClickListener {
-            player(15, m3u8)
-        }
-        btMovies16.setOnClickListener {
-            player(16, m3u8)
-        }
-        btMovies17.setOnClickListener {
-            player(17, m3u8)
-        }
-        btMovies18.setOnClickListener {
-            player(18, m3u8)
-        }
-        btMovies19.setOnClickListener {
-            player(19, m3u8)
-        }
-        btMovies20.setOnClickListener {
-            player(20, m3u8)
-        }
-        btMovies21.setOnClickListener {
-            player(21, m3u8)
-        }
-        btMovies22.setOnClickListener {
-            player(22, m3u8)
-        }
-        btMovies23.setOnClickListener {
-            player(23, m3u8)
-        }
-        btMovies24.setOnClickListener {
-            player(24, m3u8)
-        }
-        btMovies25.setOnClickListener {
-            player(25, m3u8)
-        }
-        btMovies26.setOnClickListener {
-            player(26, m3u8)
-        }
-        btMovies1.setOnLongClickListener {
-            favorite(1, 1)
-            true
-        }
-        btMovies2.setOnLongClickListener {
-            favorite(2, 2)
-            true
-        }
-        btMovies3.setOnLongClickListener {
-            favorite(3, 3)
-            true
-        }
-        btMovies4.setOnLongClickListener {
-            favorite(4, 4)
-            true
-        }
-        btMovies5.setOnLongClickListener {
-            favorite(5, 5)
-            true
-        }
-        btMovies6.setOnLongClickListener {
-            favorite(6, 6)
-            true
-        }
-        btMovies7.setOnLongClickListener {
-            favorite(7, 7)
-            true
-        }
-        btMovies8.setOnLongClickListener {
-            favorite(8, 8)
-            true
-        }
-        btMovies9.setOnLongClickListener {
-            favorite(9, 9)
-            true
-        }
-        btMovies10.setOnLongClickListener {
-            favorite(10, 10)
-            true
-        }
-        btMovies11.setOnLongClickListener {
-            favorite(11, 11)
-            true
-        }
-        btMovies12.setOnLongClickListener {
-            favorite(12, 12)
-            true
-        }
-        btMovies13.setOnLongClickListener {
-            favorite(13, 13)
-            true
-        }
-        btMovies14.setOnLongClickListener {
-            favorite(14, 14)
-            true
-        }
-        btMovies15.setOnLongClickListener {
-            favorite(15, 15)
-            true
-        }
-        btMovies16.setOnLongClickListener {
-            favorite(16, 16)
-            true
-        }
-        btMovies17.setOnLongClickListener {
-            favorite(17, 17)
-            true
-        }
-        btMovies18.setOnLongClickListener {
-            favorite(18, 18)
-            true
-        }
-        btMovies19.setOnLongClickListener {
-            favorite(19, 19)
-            true
-        }
-        btMovies20.setOnLongClickListener {
-            favorite(20, 20)
-            true
-        }
-        btMovies21.setOnLongClickListener {
-            favorite(21, 21)
-            true
-        }
-        btMovies22.setOnLongClickListener {
-            favorite(22, 22)
-            true
-        }
-        btMovies23.setOnLongClickListener {
-            favorite(23, 23)
-            true
-        }
-        btMovies24.setOnLongClickListener {
-            favorite(24, 24)
-            true
-        }
-        btMovies25.setOnLongClickListener {
-            favorite(25, 25)
-            true
-        }
-        btMovies26.setOnLongClickListener {
-            favorite(26, 26)
-            true
-        }
+                return true
+            }
+        })
 
+        val layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.adapter = customAdapter
+        prepareItems()
     }
 
-    private fun player(x: Int, name: Array<String>) {
-        val intent = Intent(this@MoviesActivity, PlayerActivity::class.java)
-        intent.putExtra("TV", x)
-        intent.putExtra("Name", name)
-        startActivity(intent)
+    private fun splitList(newsList: ArrayList<Triple<String, Int, String>>): Triple<ArrayList<String>, ArrayList<Int>, ArrayList<String>> {
+        val stringList1 = ArrayList<String>()
+        val intList = ArrayList<Int>()
+        val stringList2 = ArrayList<String>()
+
+        for (pair in newsList) {
+            stringList1.add(pair.first)
+            intList.add(pair.second)
+            stringList2.add(pair.third)
+        }
+        return Triple(stringList1, intList, stringList2)
     }
 
-    private fun favorite(x: Int, y: Int) {
+    private val moviesList = ArrayList<Triple<String, Int, String>>()
+
+    private lateinit var customAdapter: ItemAdapter
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun prepareItems() {
+        moviesList.add(
+            Triple(
+                "FilmRise Movies",
+                R.drawable.movies1,
+                "https://corp.xumo.com/xumocdn/p=roku/amagi_hls_data_xumo1212A-filmrisefreemovies/CDN/playlist.m3u8"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "FilmRise Sci-Fi",
+                R.drawable.movies2,
+                "https://corp.xumo.com/xumocdn/p=roku/amagi_hls_data_xumo1212A-rokufilmrisesci-fi/CDN/master.m3u8"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Film Detective",
+                R.drawable.movies3,
+                "https://dai.google.com/linear/hls/event/OYH9J7rZSK2fabKXWAYcfA/master.m3u8"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV 007",
+                R.drawable.movies4,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5d4db961034718b2f52f9e52/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=50&deviceId=5d4db961034718b2f52f9e52&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Spotlight",
+                R.drawable.movies5,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ba3fb9c4b078e0f37ad34e8/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=51&deviceId=5ba3fb9c4b078e0f37ad34e8&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Action",
+                R.drawable.movies6,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/561d7d484dc7c8770484914a/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=54&deviceId=561d7d484dc7c8770484914a&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Comedy",
+                R.drawable.movies7,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5a4d3a00ad95e4718ae8d8db/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=57&deviceId=5a4d3a00ad95e4718ae8d8db&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Drama",
+                R.drawable.movies8,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b4e92e4694c027be6ecece1/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=60&deviceId=5b4e92e4694c027be6ecece1&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Fantastic",
+                R.drawable.movies9,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b64a245a202b3337f09e51d/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=66&deviceId=5b64a245a202b3337f09e51d&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Romance",
+                R.drawable.movies10,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5a66795ef91fef2c7031c599/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=70&deviceId=5a66795ef91fef2c7031c599&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Crime Movies",
+                R.drawable.movies11,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d8594eb979c0007706de7/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=73&deviceId=5f4d8594eb979c0007706de7&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Thrillers",
+                R.drawable.movies12,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b4e69e08291147bd04a9fd7/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=74&deviceId=5b4e69e08291147bd04a9fd7&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Horror",
+                R.drawable.movies13,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/569546031a619b8f07ce6e25/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=75&deviceId=569546031a619b8f07ce6e25&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Terror",
+                R.drawable.movies14,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5c6dc88fcd232425a6e0f06e/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=76&deviceId=5c6dc88fcd232425a6e0f06e&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Black Cinema",
+                R.drawable.movies15,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58af4c093a41ca9d4ecabe96/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=80&deviceId=58af4c093a41ca9d4ecabe96&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Staff Picks",
+                R.drawable.movies16,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d863b98b41000076cd061/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=90&deviceId=5f4d863b98b41000076cd061&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Documentaries",
+                R.drawable.movies17,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b85a7582921777994caea63/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=91&deviceId=5b85a7582921777994caea63&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "90s Throwback",
+                R.drawable.movies18,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d86f519358a00072b978e/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=94&deviceId=5f4d86f519358a00072b978e&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "80s Rewind",
+                R.drawable.movies19,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ca525b650be2571e3943c63/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=95&deviceId=5ca525b650be2571e3943c63&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "70s Cinema",
+                R.drawable.movies20,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5f4d878d3d19b30007d2e782/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=96&deviceId=5f4d878d3d19b30007d2e782&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Paramount Movie Channel",
+                R.drawable.movies21,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5cb0cae7a461406ffe3f5213/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=100&deviceId=5cb0cae7a461406ffe3f5213&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Westerns",
+                R.drawable.movies22,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5b4e94282d4ec87bdcbb87cd/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=103&deviceId=5b4e94282d4ec87bdcbb87cd&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Classic Movies",
+                R.drawable.movies23,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/561c5b0dada51f8004c4d855/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=106&deviceId=561c5b0dada51f8004c4d855&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Pluto TV Cult Films",
+                R.drawable.movies24,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5c665db3e6c01b72c4977bc2/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=109&deviceId=5c665db3e6c01b72c4977bc2&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "Flicks of Fury",
+                R.drawable.movies25,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58e55b14ad8e9c364d55f717/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=112&deviceId=58e55b14ad8e9c364d55f717&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+        moviesList.add(
+            Triple(
+                "The Asylum",
+                R.drawable.movies26,
+                "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/591105034c1806b47438342c/master.m3u8?terminate=false&deviceType=web&deviceMake=web&deviceModel=web&sid=115&deviceId=591105034c1806b47438342c&deviceVersion=DNT&appVersion=DNT&deviceDNT=0&userId=&advertisingId=&deviceLat=&deviceLon=&app_name=&appName=web&buildVersion=&appStoreUrl=&architecture=&includeExtendedEvents=false&marketingRegion=US&serverSideAds=false"
+            )
+        )
+
+        customAdapter.notifyDataSetChanged()
+    }
+
+    private fun favorite(name: String, num: Int, url: String) {
         val db = Database(this, null)
-        db.writeToDb("Movies", x.toString(), "m3u8", "movies$y", "movies$y")
+        db.writeToDb("Movies", num.toString(), url, "movies$num", name)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }
