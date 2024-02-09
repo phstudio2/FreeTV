@@ -1,0 +1,2 @@
+-Přidány dvě nové instance pro přehrávání kanálů
+-Oprava problému s jasem obrazovky

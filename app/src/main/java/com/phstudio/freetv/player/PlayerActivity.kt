@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.media.AudioManager
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
@@ -40,6 +41,13 @@ class PlayerActivity : AppCompatActivity() {
         tvPlayer = findViewById(R.id.tvPlayer)
         vLightControl = findViewById(R.id.lcPlayer)
         vVolumeControl = findViewById(R.id.vcPlayer)
+
+        val currentBrightness = Settings.System.getInt(
+            contentResolver,
+            Settings.System.SCREEN_BRIGHTNESS
+        )
+
+        setBrightness(currentBrightness)
 
         initView()
 
@@ -188,5 +196,10 @@ class PlayerActivity : AppCompatActivity() {
             vVolumeControl!!.visibility = View.INVISIBLE
             vLightControl!!.visibility = View.INVISIBLE
         }
+    }
+    private fun setBrightness(brightnessValue: Int) {
+        val layoutParams = window.attributes
+        layoutParams.screenBrightness = brightnessValue / 255.0f
+        window.attributes = layoutParams
     }
 }

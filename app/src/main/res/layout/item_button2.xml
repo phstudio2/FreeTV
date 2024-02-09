@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/card_background"
+            android:drawableLeft="@drawable/image"
+            android:gravity="center"
+            android:paddingStart="8dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp"
+        android:text="@string/channel1"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/_12ssp"
+        tools:ignore="RtlHardcoded" />
+
+</LinearLayout>

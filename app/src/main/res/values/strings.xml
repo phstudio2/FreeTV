@@ -2,10 +2,10 @@
     <!--Developer & App info-->
     <string name="app_name" translatable="false">Free TV</string>
     <string name="developer" translatable="false">PH studio</string>
-    <string name="app_version" translatable="false">1.1</string>
+    <string name="app_version" translatable="false">1.2</string>
     <string name="fav_num" translatable="false">0</string>
-    <string name="countries_num" translatable="false">7</string>
-    <string name="streams_num" translatable="false">359</string>
+    <string name="countries_num" translatable="false">22</string>
+    <string name="streams_num" translatable="false">1943</string>
 
     <!--MainActivity-->
     <string name="adultWarning">Do you have 18+?</string>
@@ -21,7 +21,29 @@
     <string name="start">Start</string>
 
     <!--Channels-->
+    <string name="albania">Albania</string>
+    <string name="andorra">Andorra</string>
+    <string name="argentina">Argentina</string>
+    <string name="australia">Australia</string>
+    <string name="austria">Austria</string>
+    <string name="azerbaijan">Azerbaijan</string>
+    <string name="belarus">Belarus</string>
+    <string name="belgium">Belgium</string>
+    <string name="bosnia_and_herzegovina">Bosnia and Herzegovina</string>
+    <string name="brazil">Brazil</string>
+    <string name="bulgaria">Bulgaria</string>
+    <string name="canada">Canada</string>
+    <string name="chad">Chad</string>
+    <string name="chile">Chile</string>
+    <string name="china">China</string>
+    <string name="costa_rica">Costa Rica</string>
+    <string name="croatia">Croatia</string>
+    <string name="cyprus">Cyprus</string>
+    <string name="czech_republic">Czech Republic</string>
     <string name="channel1">Czech Republic</string>
+    <string name="denmark">Denmark</string>
+    <string name="dominican_republic">Dominican Republic</string>
+    <string name="estonia">Estonia</string>
     <string name="channel2">United Kingdom</string>
     <string name="channel3">Slovakia</string>
     <string name="channel4">Argentina</string>
@@ -88,4 +110,12 @@
     <string name="streams">Streams</string>
     <string name="music">Music</string>
     <string name="saveOkay">Saved to Downloads</string>
+    <string name="no_internet">No internet connection!</string>
+    <string name="country">Country</string>
+    <string name="unavailable">Currently unavailable!</string>
+    <string name="free_tv">Free-TV / IPTV</string>
+    <string name="kodinerds_iptv">jnk22 / kodinerds-iptv</string>
+    <string name="phstudio2">phstudio2 / FreeTV</string>
+    <string name="kodi_tv_main">Kodi Tv Main</string>
+    <string name="kodi_tv_regional">Kodi Tv Regional</string>
 </resources>

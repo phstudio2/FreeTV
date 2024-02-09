@@ -416,7 +416,7 @@ class UK : AppCompatActivity() {
         )
         UKList.add(
             Triple(
-                "NCM Main Channel",
+                "NCM KodiTvMain Channel",
                 R.drawable.image,
                 "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/nevco/G0644_001/playlist.m3u8"
             )

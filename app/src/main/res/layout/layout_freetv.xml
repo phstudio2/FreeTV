@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.new_channels.FreeTVActivity">
+
+    <View
+        android:id="@+id/vTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/free_tv"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:src="@drawable/freetv"
+        app:layout_constraintBottom_toBottomOf="@id/tvPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPrimary"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:padding="@dimen/_16sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vTop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btAlbania"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/albania"
+                android:gravity="center"
+                android:text="@string/albania"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btAndorra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/andorra"
+                android:gravity="center"
+                android:text="@string/andorra"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btArgentina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/argentina"
+                android:gravity="center"
+                android:text="@string/argentina"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btAustralia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/australia"
+                android:gravity="center"
+                android:text="@string/australia"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btAustria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/austria"
+                android:gravity="center"
+                android:text="@string/austria"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btAzerbaijan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/azerbaijan"
+                android:gravity="center"
+                android:text="@string/azerbaijan"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btBelarus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/belarus"
+                android:gravity="center"
+                android:text="@string/belarus"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btBelgium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/belgium"
+                android:gravity="center"
+                android:text="@string/belgium"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btBosniaAndHerzegovina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/bosnia_and_herzegovina"
+                android:gravity="center"
+                android:text="@string/bosnia_and_herzegovina"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btBrazil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/brazil"
+                android:gravity="center"
+                android:text="@string/brazil"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btBulgaria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/bulgaria"
+                android:gravity="center"
+                android:text="@string/bulgaria"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btCanada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/canada"
+                android:gravity="center"
+                android:text="@string/canada"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btChad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/chad"
+                android:gravity="center"
+                android:text="@string/chad"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btChile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/chile"
+                android:gravity="center"
+                android:text="@string/chile"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btChina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/china"
+                android:gravity="center"
+                android:text="@string/china"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btCostaRica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/costa_rica"
+                android:gravity="center"
+                android:text="@string/costa_rica"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btCroatia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/croatia"
+                android:gravity="center"
+                android:text="@string/croatia"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btCyprus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/cyprus"
+                android:gravity="center"
+                android:text="@string/cyprus"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btCzechRepublic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/czech_republic"
+                android:gravity="center"
+                android:text="@string/czech_republic"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btDenmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/denmark"
+                android:gravity="center"
+                android:text="@string/denmark"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btDominicanRepublic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/dominican_republic"
+                android:gravity="center"
+                android:text="@string/dominican_republic"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/btEstonia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/estonia"
+                android:gravity="center"
+                android:text="@string/estonia"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

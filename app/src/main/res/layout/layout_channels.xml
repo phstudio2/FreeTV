@@ -53,105 +53,41 @@
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
+
             <Button
-                android:id="@+id/btChannel4"
+                android:id="@+id/btFreeTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel4"
+                android:drawableLeft="@drawable/freetv"
                 android:gravity="center"
-                android:text="@string/channel4"
+                android:text="@string/free_tv"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_12ssp"
                 tools:ignore="RtlHardcoded" />
 
             <Button
-                android:id="@+id/btChannel5"
+                android:id="@+id/btPHstudio2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel5"
+                android:drawableLeft="@drawable/phstudio2"
                 android:gravity="center"
-                android:text="@string/channel5"
+                android:text="@string/phstudio2"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_12ssp"
                 tools:ignore="RtlHardcoded" />
 
             <Button
-                android:id="@+id/btChannel1"
+                android:id="@+id/btKodiNerds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel1"
+                android:drawableLeft="@drawable/kodinerds"
                 android:gravity="center"
-                android:text="@string/channel1"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btChannel2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel2"
-                android:gravity="center"
-                android:text="@string/channel2"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btChannel3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel3"
-                android:gravity="center"
-                android:text="@string/channel3"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btChannel6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel6"
-                android:gravity="center"
-                android:text="@string/channel6"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btChannel7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel7"
-                android:gravity="center"
-                android:text="@string/channel7"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_12ssp"
-                tools:ignore="RtlHardcoded" />
-
-            <Button
-                android:id="@+id/btChannel8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/channel8"
-                android:gravity="center"
-                android:text="@string/channel8"
+                android:text="@string/kodinerds_iptv"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_12ssp"

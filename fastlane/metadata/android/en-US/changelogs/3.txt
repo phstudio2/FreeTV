@@ -1,0 +1,2 @@
+-Added two new instances for playing channels
+-Fix screen brightness issue

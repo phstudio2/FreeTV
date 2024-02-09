@@ -14,7 +14,29 @@
     <string name="start">Začít</string>
 
     <!--Channels-->
+    <string name="albania">Albánie</string>
+    <string name="andorra">Andorra</string>
+    <string name="argentina">Argentina</string>
+    <string name="australia">Austrálie</string>
+    <string name="austria">Rakousko</string>
+    <string name="azerbaijan">Ázerbájdžán</string>
+    <string name="belarus">Bělorusko</string>
+    <string name="belgium">Belgie</string>
+    <string name="bosnia_and_herzegovina">Bosna a Hercegovina</string>
+    <string name="brazil">Brazílie</string>
+    <string name="bulgaria">Bulharsko</string>
+    <string name="canada">Kanada</string>
+    <string name="chad">Čad</string>
+    <string name="chile">Chile</string>
+    <string name="china">Čína</string>
+    <string name="costa_rica">Kostarika</string>
+    <string name="croatia">Chorvatsko</string>
+    <string name="cyprus">Kypr</string>
+    <string name="czech_republic">Česká Republika</string>
     <string name="channel1">Česká Republika</string>
+    <string name="denmark">Dánsko</string>
+    <string name="dominican_republic">Dominikánská republika</string>
+    <string name="estonia">Estonsko</string>
     <string name="channel2">Spojené království</string>
     <string name="channel3">Slovensko</string>
     <string name="channel4">Argentina</string>
@@ -72,4 +94,12 @@
     <string name="streams">Streamů</string>
     <string name="music">Hudba</string>
     <string name="saveOkay">Uloženo do složky Stažené</string>
+    <string name="no_internet">Nemáte internetové připojení!</string>
+    <string name="country">Země</string>
+    <string name="unavailable">Momentálně nedostupné!</string>
+    <string name="free_tv">Free-TV / IPTV</string>
+    <string name="kodinerds_iptv">jnk22 / kodinerds-iptv</string>
+    <string name="phstudio2">phstudio2 / FreeTV</string>
+    <string name="kodi_tv_main">Kodi Tv Main</string>
+    <string name="kodi_tv_regional">Kodi Tv Regional</string>
 </resources>

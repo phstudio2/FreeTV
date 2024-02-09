@@ -331,8 +331,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="music10" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/../../Stažené/music10-min.svg" />
+                            <entry key="outputName" value="kodi" />
+                            <entry key="sourceFile" value="$USER_HOME$/Stažené/kodi.png-min.svg" />
                           </map>
                         </option>
                       </PersistentState>

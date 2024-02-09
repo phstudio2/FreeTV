@@ -41,6 +41,31 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true" />
 
+        <activity android:name=".ui.new_channels.FreeTVActivity" />
+        <activity android:name=".ui.new_channels.Albania" />
+        <activity android:name=".ui.new_channels.Andorra" />
+        <activity android:name=".ui.new_channels.Argentina" />
+        <activity android:name=".ui.new_channels.Australia" />
+        <activity android:name=".ui.new_channels.Austria" />
+        <activity android:name=".ui.new_channels.Azerbaijan" />
+        <activity android:name=".ui.new_channels.Belarus" />
+        <activity android:name=".ui.new_channels.Belgium" />
+        <activity android:name=".ui.new_channels.BosniaAndHerzegovina" />
+        <activity android:name=".ui.new_channels.Brazil" />
+        <activity android:name=".ui.new_channels.Bulgaria" />
+        <activity android:name=".ui.new_channels.Canada" />
+        <activity android:name=".ui.new_channels.Chad" />
+        <activity android:name=".ui.new_channels.Chile" />
+        <activity android:name=".ui.new_channels.China" />
+        <activity android:name=".ui.new_channels.CostaRica" />
+        <activity android:name=".ui.new_channels.Croatia" />
+        <activity android:name=".ui.new_channels.Cyprus" />
+        <activity android:name=".ui.new_channels.CzechRepublic" />
+        <activity android:name=".ui.new_channels.Denmark" />
+        <activity android:name=".ui.new_channels.DominicanRepublic" />
+        <activity android:name=".ui.new_channels.Estonia" />
+
+        <activity android:name=".ui.channels.PHstudio" />
         <activity android:name=".ui.channels.Czech" />
         <activity android:name=".ui.channels.UK" />
         <activity android:name=".ui.channels.Argentina" />
@@ -49,5 +74,9 @@
         <activity android:name=".ui.channels.Germany" />
         <activity android:name=".ui.channels.Slovakia" />
         <activity android:name=".ui.channels.International" />
+
+        <activity android:name=".ui.kodinerds.KodiNerdsActivity" />
+        <activity android:name=".ui.kodinerds.KodiTvMain" />
+        <activity android:name=".ui.kodinerds.KodiTvRegional" />
     </application>
 </manifest>
