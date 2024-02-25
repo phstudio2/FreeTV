@@ -3,21 +3,28 @@ package com.phstudio.freetv.favorite
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.AdapterView.OnItemLongClickListener
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.phstudio.freetv.R
 import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
+import com.squareup.picasso.Picasso
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -35,13 +42,26 @@ class FavoriteActivity : AppCompatActivity() {
         val userList: ArrayList<HashMap<String, Any>> = db.getData(this)
         val lv = findViewById<View>(R.id.lvFavorite) as ListView
         db.close()
-        val adapter: ListAdapter = SimpleAdapter(
+        val adapter: SimpleAdapter = object : SimpleAdapter(
             this,
             userList,
             R.layout.list_favorite,
-            arrayOf("picture", "string"),
-            intArrayOf(R.id.ivFavorite, R.id.tvFavorite)
-        )
+            arrayOf("name", "logo"),
+            intArrayOf(R.id.tvFavorite, R.id.ivFavorite)
+        ) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = super.getView(position, convertView, parent)
+                val imageView = view.findViewById<ImageView>(R.id.ivFavorite)
+                val logoUrl = userList[position]["logo"].toString()
+
+                loadImage(logoUrl, this@FavoriteActivity) { drawable ->
+                    imageView.setImageDrawable(drawable)
+                }
+
+                return view
+            }
+        }
+
         lv.adapter = adapter
 
         lv.onItemClickListener = OnItemClickListener { _, _, pos, _ ->
@@ -57,6 +77,8 @@ class FavoriteActivity : AppCompatActivity() {
         btExport.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 dialogExportDb()
+            }else{
+                Toast.makeText(this, getString(R.string.notSupported), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -78,6 +100,38 @@ class FavoriteActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun loadImage(url: String, context: Context, completion: (Drawable?) -> Unit) {
+        try {
+            if (url.isNotEmpty()) {
+                Picasso.get().load(url)
+                    .resize(200, 200)
+                    .centerInside()
+                    .into(object : com.squareup.picasso.Target {
+                        override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                            bitmap?.let {
+                                val drawable = BitmapDrawable(context.resources, it)
+                                completion(drawable)
+                            }
+                        }
+
+                        override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                            completion(errorDrawable)
+                        }
+
+                        override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+                            completion(placeHolderDrawable)
+                        }
+                    })
+            } else {
+                completion(context.resources.getDrawable(R.drawable.image))
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            completion(null)
+        }
+    }
+
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -89,9 +143,9 @@ class FavoriteActivity : AppCompatActivity() {
             try {
                 reader.readLines().forEach {
                     val item = it.split(",")
-                    if (item[1] != "source" && item[2] != "number" && item[3] != "playlist" && item[4] != "picture" && item[5] != "string") {
+                    if (item[1] != "name" && item[2] != "logo" && item[3] != "url") {
                         val db = Database(this, null)
-                        db.writeToDb(item[1], item[2], item[3], item[4], item[5])
+                        db.writeToDb(item[1], item[2], item[3])
                     }
                 }
             } catch (e: FileNotFoundException) {
@@ -141,7 +195,9 @@ class FavoriteActivity : AppCompatActivity() {
         builder.setTitle(getString(R.string.exportText))
         builder.setMessage(getString(R.string.really))
         builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= 33) {
+                saveDb14()
+            }else{
                 saveDb()
             }
         }
@@ -223,6 +279,19 @@ class FavoriteActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun saveDb14()
+    {
+        val export = Database(this@FavoriteActivity, null).exportDb14(this@FavoriteActivity)
+
+        if (export) {
+            Toast.makeText(this, getString(R.string.saveOkay), Toast.LENGTH_SHORT).show()
+            restart()
+        } else {
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
+            restart()
+        }
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -236,10 +305,6 @@ class FavoriteActivity : AppCompatActivity() {
 
     private fun isStoragePermissionGranted(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if(Build.VERSION.SDK_INT >= 31){
-                Toast.makeText(this, getString(R.string.notSupported), Toast.LENGTH_SHORT).show()
-                false
-            }else{
                 if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED
                 ) {
@@ -252,29 +317,21 @@ class FavoriteActivity : AppCompatActivity() {
                     )
                     false
                 }
-            }
         } else {
             true
         }
     }
-
     @RequiresApi(Build.VERSION_CODES.M)
     private fun saveDb() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (isStoragePermissionGranted()) {
-                val export = Database(this@FavoriteActivity, null).exportDb()
+                val export = Database(this@FavoriteActivity, null).exportDb(this@FavoriteActivity)
 
                 if (export) {
-                    Toast.makeText(this, getString(R.string.saveOkay), Toast.LENGTH_SHORT).show()
                     restart()
                 } else {
                     Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
                     restart()
                 }
             }
-        } else {
-            Toast.makeText(this, getString(R.string.notSupported), Toast.LENGTH_SHORT).show()
-            restart()
-        }
     }
 }

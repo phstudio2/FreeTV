@@ -2,10 +2,10 @@
     <!--Developer & App info-->
     <string name="app_name" translatable="false">Free TV</string>
     <string name="developer" translatable="false">PH studio</string>
-    <string name="app_version" translatable="false">1.2</string>
+    <string name="app_version" translatable="false">1.3</string>
     <string name="fav_num" translatable="false">0</string>
-    <string name="countries_num" translatable="false">22</string>
-    <string name="streams_num" translatable="false">1943</string>
+    <string name="countries_num" translatable="false">78</string>
+    <string name="streams_num" translatable="false">9.3K</string>
 
     <!--MainActivity-->
     <string name="adultWarning">Do you have 18+?</string>
@@ -20,7 +20,7 @@
     <string name="exitApp">Exit app</string>
     <string name="start">Start</string>
 
-    <!--Channels-->
+    <!--Countries-->
     <string name="albania">Albania</string>
     <string name="andorra">Andorra</string>
     <string name="argentina">Argentina</string>
@@ -40,10 +40,68 @@
     <string name="croatia">Croatia</string>
     <string name="cyprus">Cyprus</string>
     <string name="czech_republic">Czech Republic</string>
-    <string name="channel1">Czech Republic</string>
     <string name="denmark">Denmark</string>
     <string name="dominican_republic">Dominican Republic</string>
     <string name="estonia">Estonia</string>
+    <string name="faroe_islands">Faroe Islands</string>
+    <string name="finland">Finland</string>
+    <string name="france">France</string>
+    <string name="georgia">Georgia</string>
+    <string name="germany">Germany</string>
+    <string name="greece">Greece</string>
+    <string name="greenland">Greenland</string>
+    <string name="hong_kong">Hong Kong</string>
+    <string name="hungary">Hungary</string>
+    <string name="iceland">Iceland</string>
+    <string name="india">India</string>
+    <string name="iran">Iran</string>
+    <string name="iraq">Iraq</string>
+    <string name="ireland">Ireland</string>
+    <string name="israel">Israel</string>
+    <string name="italy">Italy</string>
+    <string name="japan">Japan</string>
+    <string name="korea">Korea</string>
+    <string name="kosovo">Kosovo</string>
+    <string name="latvia">Latvia</string>
+    <string name="lithuania">Lithuania</string>
+    <string name="luxembourg">Luxembourg</string>
+    <string name="macau">Macau</string>
+    <string name="malta">Malta</string>
+    <string name="mexico">Mexico</string>
+    <string name="moldova">Moldova</string>
+    <string name="monaco">Monaco</string>
+    <string name="montenegro">Montenegro</string>
+    <string name="netherlands">Netherlands</string>
+    <string name="north_korea">North Korea</string>
+    <string name="north_macedonia">North Macedonia</string>
+    <string name="norway">Norway</string>
+    <string name="paraguay">Paraguay</string>
+    <string name="peru">Peru</string>
+    <string name="poland">Poland</string>
+    <string name="portugal">Portugal</string>
+    <string name="qatar">Qatar</string>
+    <string name="romania">Romania</string>
+    <string name="russia">Russia</string>
+    <string name="san_marino">San Marino</string>
+    <string name="saudi_arabia">Saudi Arabia</string>
+    <string name="serbia">Serbia</string>
+    <string name="slovakia">Slovakia</string>
+    <string name="slovenia">Slovenia</string>
+    <string name="somalia">Somalia</string>
+    <string name="spain">Spain</string>
+    <string name="sweden">Sweden</string>
+    <string name="switzerland">Switzerland</string>
+    <string name="taiwan">Taiwan</string>
+    <string name="trinidad">Trinidad</string>
+    <string name="turkey">Turkey</string>
+    <string name="uk">United Kingdom</string>
+    <string name="venezuela">Venezuela</string>
+    <string name="usa">USA</string>
+    <string name="united_arab_emirates">United Arab Emirates</string>
+    <string name="ukraine">Ukraine</string>
+
+    <!--Channels-->
+    <string name="channel1">Czech Republic</string>
     <string name="channel2">United Kingdom</string>
     <string name="channel3">Slovakia</string>
     <string name="channel4">Argentina</string>
@@ -94,7 +152,7 @@
     <string name="btExport">Export</string>
     <string name="emptyLV">You have no favorites!\n\nHold your finger on the button to add items.</string>
     <string name="permission_granted">Permissions granted\nPlease click the button again!</string>
-    <string name="NotStream">Can\'t play this stream!\n\nError: </string>
+    <string name="NotStream">Can\'t play this stream!</string>
     <string name="addedToFav">Added to favorites!</string>
     <string name="unknown">Unknown</string>
     <string name="add">add</string>
@@ -109,7 +167,7 @@
     <string name="countries">Countries</string>
     <string name="streams">Streams</string>
     <string name="music">Music</string>
-    <string name="saveOkay">Saved to Downloads</string>
+    <string name="saveOkay">Saved to Documents</string>
     <string name="no_internet">No internet connection!</string>
     <string name="country">Country</string>
     <string name="unavailable">Currently unavailable!</string>
@@ -118,4 +176,6 @@
     <string name="phstudio2">phstudio2 / FreeTV</string>
     <string name="kodi_tv_main">Kodi Tv Main</string>
     <string name="kodi_tv_regional">Kodi Tv Regional</string>
+    <string name="iptvorg">iptv-org / iptv</string>
+    <string name="saveFolder">Saved to</string>
 </resources>

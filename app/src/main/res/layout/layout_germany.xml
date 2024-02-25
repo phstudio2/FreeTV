@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.channels.Germany">
+    tools:context=".ui.git1.Germany">
 
     <View
         android:id="@+id/vTop"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
-        android:text="@string/channel6"
+        android:text="@string/germany"
         android:textColor="@color/white"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
@@ -31,7 +31,7 @@
         android:layout_width="@dimen/_26sdp"
         android:layout_height="@dimen/_26sdp"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:src="@drawable/channel6"
+        android:src="@drawable/germany"
         app:layout_constraintBottom_toBottomOf="@id/tvPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvPrimary" />

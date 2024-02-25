@@ -37,7 +37,7 @@ class NewsActivity : AppCompatActivity() {
         }, object : ItemAdapter.OnItemLongClickListener {
             override fun onItemLongClick(position: Int): Boolean {
                 val (stringList1, _, stringList2) = splitList(newsList)
-                favorite(stringList1[position], position + 1, stringList2[position])
+                favorite(stringList1[position], stringList2[position])
 
                 return true
             }
@@ -233,9 +233,9 @@ class NewsActivity : AppCompatActivity() {
         customAdapter.notifyDataSetChanged()
     }
 
-    private fun favorite(name: String, num: Int, url: String) {
+    private fun favorite(name: String, url: String) {
         val db = Database(this, null)
-        db.writeToDb("News", num.toString(), url, "news$num", name)
+        db.writeToDb(name, "", url)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

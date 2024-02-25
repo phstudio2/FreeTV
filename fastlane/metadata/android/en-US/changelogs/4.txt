@@ -1,0 +1,2 @@
+-Added more than 50 new countries
+-Fixed favorites

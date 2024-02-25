@@ -40,7 +40,7 @@ class UK : AppCompatActivity() {
         }, object : OnItemLongClickListener {
             override fun onItemLongClick(position: Int): Boolean {
                 val (stringList1, _, stringList2) = splitList(UKList)
-                favorite(stringList1[position], position + 1, stringList2[position])
+                favorite(stringList1[position], stringList2[position])
 
                 return true
             }
@@ -489,9 +489,9 @@ class UK : AppCompatActivity() {
         customAdapter.notifyDataSetChanged()
     }
 
-    private fun favorite(name: String, num: Int, url: String) {
+    private fun favorite(name: String, url: String) {
         val db = Database(this, null)
-        db.writeToDb("UK", num.toString(), url, "image", name)
+        db.writeToDb(name, "", url)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

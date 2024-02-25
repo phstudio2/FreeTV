@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.new_channels.Australia">
+    tools:context=".ui.git1.Australia">
 
     <View
         android:id="@+id/vTop"

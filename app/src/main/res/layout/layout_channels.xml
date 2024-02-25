@@ -68,13 +68,13 @@
                 tools:ignore="RtlHardcoded" />
 
             <Button
-                android:id="@+id/btPHstudio2"
+                android:id="@+id/btIpTVOrg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/card_background"
-                android:drawableLeft="@drawable/phstudio2"
+                android:drawableLeft="@drawable/iptvorg"
                 android:gravity="center"
-                android:text="@string/phstudio2"
+                android:text="@string/iptvorg"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/_12ssp"
@@ -93,6 +93,18 @@
                 android:textSize="@dimen/_12ssp"
                 tools:ignore="RtlHardcoded" />
 
+            <Button
+                android:id="@+id/btPHstudio2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/card_background"
+                android:drawableLeft="@drawable/phstudio2"
+                android:gravity="center"
+                android:text="@string/phstudio2"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlHardcoded" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

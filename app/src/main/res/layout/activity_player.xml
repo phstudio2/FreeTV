@@ -47,6 +47,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFullscreen"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@+id/tvPlayer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:background="@drawable/bg_center_window"
+        android:src="@drawable/fullscreen"
+        android:tint="@color/white"
+        android:visibility="gone" />
+
     <com.phstudio.freetv.player.LightControl
         android:id="@+id/lcPlayer"
         android:layout_width="@dimen/_50sdp"

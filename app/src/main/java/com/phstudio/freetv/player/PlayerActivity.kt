@@ -1,6 +1,7 @@
 package com.phstudio.freetv.player
 
 import android.annotation.SuppressLint
+import android.graphics.Rect
 import android.media.AudioManager
 import android.os.Build
 import android.os.Bundle
@@ -27,6 +28,7 @@ class PlayerActivity : AppCompatActivity() {
     var volume = 0
     var brightness = 0f
     private var ivPlayer: AppCompatImageView? = null
+    private var ivFullscreen: AppCompatImageView? = null
     private var tvPlayer: TextView? = null
     private var vvPlayer: VideoView? = null
     private var link: String? = null
@@ -39,8 +41,13 @@ class PlayerActivity : AppCompatActivity() {
         vvPlayer = findViewById(R.id.vvPlayer)
         ivPlayer = findViewById(R.id.ivPlayer)
         tvPlayer = findViewById(R.id.tvPlayer)
+        ivFullscreen = findViewById(R.id.ivFullscreen)
         vLightControl = findViewById(R.id.lcPlayer)
         vVolumeControl = findViewById(R.id.vcPlayer)
+
+        ivFullscreen?.setOnClickListener{
+            setFullScreen()
+        }
 
         val currentBrightness = Settings.System.getInt(
             contentResolver,
@@ -72,10 +79,10 @@ class PlayerActivity : AppCompatActivity() {
         vvPlayer!!.requestFocus()
         vvPlayer!!.start()
 
-        vvPlayer!!.setOnErrorListener { arg0, arg1, arg2 ->
+        vvPlayer!!.setOnErrorListener { _, _, _ ->
             Toast.makeText(
                 this@PlayerActivity,
-                getString(R.string.NotStream) + "\n$arg0, \n$arg1, \n$arg2",
+                getString(R.string.NotStream),
                 Toast.LENGTH_SHORT
             ).show()
             finish()
@@ -189,17 +196,39 @@ class PlayerActivity : AppCompatActivity() {
             ivPlayer!!.visibility = View.VISIBLE
             tvPlayer!!.text = link.toString()
             tvPlayer!!.visibility = View.VISIBLE
+            ivFullscreen!!.visibility = View.VISIBLE
         } else {
             vvPlayer!!.start()
             ivPlayer!!.visibility = View.INVISIBLE
             tvPlayer!!.visibility = View.INVISIBLE
             vVolumeControl!!.visibility = View.INVISIBLE
             vLightControl!!.visibility = View.INVISIBLE
+            ivFullscreen!!.visibility = View.INVISIBLE
         }
     }
     private fun setBrightness(brightnessValue: Int) {
         val layoutParams = window.attributes
         layoutParams.screenBrightness = brightnessValue / 255.0f
         window.attributes = layoutParams
+    }
+    private fun setFullScreen() {
+        val fullscreen = true
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (fullscreen) {
+                window.insetsController?.hide(WindowInsets.Type.statusBars())
+            } else {
+                window.insetsController?.show(WindowInsets.Type.systemBars())
+            }
+        } else {
+            if (fullscreen) {
+                window.setFlags(
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN
+                )
+            } else {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+            }
+        }
     }
 }

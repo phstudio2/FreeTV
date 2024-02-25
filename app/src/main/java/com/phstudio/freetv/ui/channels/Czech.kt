@@ -38,7 +38,7 @@ class Czech : AppCompatActivity() {
         }, object : ItemAdapter.OnItemLongClickListener {
             override fun onItemLongClick(position: Int): Boolean {
                 val (stringList1, _, stringList2) = splitList(czechList)
-                favorite(stringList1[position], position + 1, stringList2[position])
+                favorite(stringList1[position], stringList2[position])
 
                 return true
             }
@@ -262,9 +262,9 @@ class Czech : AppCompatActivity() {
         customAdapter.notifyDataSetChanged()
     }
 
-    private fun favorite(name: String, num: Int, url: String) {
+    private fun favorite(name: String, url: String) {
         val db = Database(this, null)
-        db.writeToDb("Czech", num.toString(), url, "cz$num", name)
+        db.writeToDb(name, "", url)
         Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
     }
 }

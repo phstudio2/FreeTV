@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/card_background"
-            android:drawableLeft="@drawable/image"
-            android:gravity="center"
-            android:paddingStart="8dp"
+    <Button
+        android:id="@+id/btItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/card_background"
+        android:drawableLeft="@drawable/image"
+        android:gravity="center"
+        android:paddingStart="8dp"
         android:paddingTop="16dp"
         android:paddingEnd="8dp"
         android:paddingBottom="16dp"

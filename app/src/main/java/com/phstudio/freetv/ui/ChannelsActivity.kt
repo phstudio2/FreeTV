@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.phstudio.freetv.R
 import com.phstudio.freetv.ui.channels.PHstudio
 import com.phstudio.freetv.ui.kodinerds.KodiNerdsActivity
-import com.phstudio.freetv.ui.new_channels.FreeTVActivity
 
 class ChannelsActivity : AppCompatActivity() {
 
@@ -17,6 +16,7 @@ class ChannelsActivity : AppCompatActivity() {
 
         val items = arrayOf(
             findViewById<Button>(R.id.btFreeTV),
+            findViewById(R.id.btIpTVOrg),
             findViewById(R.id.btPHstudio2),
             findViewById(R.id.btKodiNerds)
         )
@@ -24,7 +24,8 @@ class ChannelsActivity : AppCompatActivity() {
         items.forEach { item ->
             item.setOnClickListener {
                 when (item.id) {
-                    R.id.btFreeTV -> sendActivity(FreeTVActivity())
+                    R.id.btFreeTV -> sendActivity(com.phstudio.freetv.ui.git1.CountryActivity())
+                    R.id.btIpTVOrg -> sendActivity(com.phstudio.freetv.ui.git2.CountryActivity())
                     R.id.btPHstudio2 -> sendActivity(PHstudio())
                     R.id.btKodiNerds -> sendActivity(KodiNerdsActivity())
                 }

@@ -13,7 +13,7 @@
     <string name="exitApp">Ukončit aplikaci</string>
     <string name="start">Začít</string>
 
-    <!--Channels-->
+    <!--Countries-->
     <string name="albania">Albánie</string>
     <string name="andorra">Andorra</string>
     <string name="argentina">Argentina</string>
@@ -32,11 +32,69 @@
     <string name="costa_rica">Kostarika</string>
     <string name="croatia">Chorvatsko</string>
     <string name="cyprus">Kypr</string>
-    <string name="czech_republic">Česká Republika</string>
     <string name="channel1">Česká Republika</string>
     <string name="denmark">Dánsko</string>
     <string name="dominican_republic">Dominikánská republika</string>
     <string name="estonia">Estonsko</string>
+    <string name="faroe_islands">Faerské ostrovy</string>
+    <string name="finland">Finsko</string>
+    <string name="france">Francie</string>
+    <string name="georgia">Gruzie</string>
+    <string name="germany">Německo</string>
+    <string name="greece">Řecko</string>
+    <string name="greenland">Grónsko</string>
+    <string name="hong_kong">Hongkong</string>
+    <string name="hungary">Maďarsko</string>
+    <string name="iceland">Island</string>
+    <string name="india">Indie</string>
+    <string name="iran">Irán</string>
+    <string name="iraq">Irák</string>
+    <string name="ireland">Irsko</string>
+    <string name="israel">Izrael</string>
+    <string name="italy">Itálie</string>
+    <string name="japan">Japonsko</string>
+    <string name="korea">Korea</string>
+    <string name="kosovo">Kosovo</string>
+    <string name="latvia">Lotyšsko</string>
+    <string name="lithuania">Litva</string>
+    <string name="luxembourg">Lucembursko</string>
+    <string name="macau">Macao</string>
+    <string name="malta">Malta</string>
+    <string name="mexico">Mexiko</string>
+    <string name="moldova">Moldova</string>
+    <string name="monaco">Monako</string>
+    <string name="montenegro">Černá Hora</string>
+    <string name="netherlands">Nizozemsko</string>
+    <string name="north_korea">Severní Korea</string>
+    <string name="north_macedonia">Severní Makedonie</string>
+    <string name="norway">Norsko</string>
+    <string name="paraguay">Paraguay</string>
+    <string name="peru">Peru</string>
+    <string name="poland">Polsko</string>
+    <string name="portugal">Portugalsko</string>
+    <string name="qatar">Katar</string>
+    <string name="romania">Rumunsko</string>
+    <string name="russia">Rusko</string>
+    <string name="san_marino">San Marino</string>
+    <string name="saudi_arabia">Saúdská Arábie</string>
+    <string name="serbia">Srbsko</string>
+    <string name="slovakia">Slovensko</string>
+    <string name="slovenia">Slovensko</string>
+    <string name="somalia">Somálsko</string>
+    <string name="spain">Španělsko</string>
+    <string name="sweden">Švédsko</string>
+    <string name="switzerland">Švýcarsko</string>
+    <string name="taiwan">Taiwan</string>
+    <string name="trinidad">Trinidad</string>
+    <string name="turkey">Turecko</string>
+    <string name="uk">Spojené království</string>
+    <string name="venezuela">Venezuela</string>
+    <string name="usa">USA</string>
+    <string name="united_arab_emirates">Spojené arabské emiráty</string>
+    <string name="ukraine">Ukrajina</string>
+
+    <!--Channels-->
+    <string name="czech_republic">Česká Republika</string>
     <string name="channel2">Spojené království</string>
     <string name="channel3">Slovensko</string>
     <string name="channel4">Argentina</string>
@@ -78,7 +136,7 @@
     <string name="btExport">Exportovat</string>
     <string name="emptyLV">Nemáte žádné oblíbené položky!\n\nPodržte prst na tlačítku pro přidání položek.</string>
     <string name="permission_granted">Oprávnění uděleno\nKlikněte na tlačítko znovu!</string>
-    <string name="NotStream">Tento stream nelze přehrát!\n\nChyba: </string>
+    <string name="NotStream">Tento stream nelze přehrát!</string>
     <string name="addedToFav">Přidáno do oblíbených!</string>
     <string name="unknown">Neznámé</string>
     <string name="add">přidat</string>
@@ -93,7 +151,7 @@
     <string name="countries">Zemí</string>
     <string name="streams">Streamů</string>
     <string name="music">Hudba</string>
-    <string name="saveOkay">Uloženo do složky Stažené</string>
+    <string name="saveOkay">Uloženo do složky Dokumenty</string>
     <string name="no_internet">Nemáte internetové připojení!</string>
     <string name="country">Země</string>
     <string name="unavailable">Momentálně nedostupné!</string>
@@ -102,4 +160,6 @@
     <string name="phstudio2">phstudio2 / FreeTV</string>
     <string name="kodi_tv_main">Kodi Tv Main</string>
     <string name="kodi_tv_regional">Kodi Tv Regional</string>
+    <string name="iptvorg">iptv-org / iptv</string>
+    <string name="saveFolder">Uloženo do</string>
 </resources>

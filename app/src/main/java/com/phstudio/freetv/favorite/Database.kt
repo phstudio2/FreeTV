@@ -1,12 +1,22 @@
 package com.phstudio.freetv.favorite
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Environment
+import android.os.Environment.getExternalStoragePublicDirectory
+import android.widget.Button
+import android.widget.Toast
+import androidx.core.app.ActivityCompat.startActivityForResult
+import com.phstudio.freetv.R
+import com.squareup.picasso.Picasso
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
@@ -27,14 +37,12 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     companion object {
         private const val DATABASE_NAME = "PH studio"
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 3
         const val TABLE_NAME = "Favorite"
         const val ID_COL = "id"
-        const val COL1 = "source"
-        const val COL2 = "number"
-        const val COL3 = "playlist"
-        const val COL4 = "picture"
-        const val COL5 = "string"
+        const val COL1 = "name"
+        const val COL2 = "logo"
+        const val COL3 = "url"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -42,9 +50,7 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
                 + ID_COL + " INTEGER PRIMARY KEY, " +
                 COL1 + " TEXT," +
                 COL2 + " TEXT," +
-                COL3 + " TEXT," +
-                COL4 + " TEXT," +
-                COL5 + " TEXT" + ")")
+                COL3 + " TEXT" + ")")
         db.execSQL(query)
     }
 
@@ -52,22 +58,13 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     fun getData(context: Context): ArrayList<HashMap<String, Any>> {
         val db = this.writableDatabase
         val userList: ArrayList<HashMap<String, Any>> = ArrayList()
-        val cursor = db.rawQuery("SELECT picture, string FROM $TABLE_NAME", null)
+        val cursor = db.rawQuery("SELECT name, logo, url FROM $TABLE_NAME", null)
 
         while (cursor.moveToNext()) {
             val user: HashMap<String, Any> = HashMap()
-            val picture = (cursor.getString(cursor.getColumnIndex(COL4)))
-            user["picture"] =
-                context.resources.getIdentifier(picture, "drawable", context.packageName)
-            val text = cursor.getString(cursor.getColumnIndex(COL5))
-            user["string"] = text
-            /* user["string"] = context.getString(
-                 context.resources.getIdentifier(
-                     text,
-                     "string",
-                     context.packageName
-                 )
-             )*/
+            user["name"] = cursor.getString(cursor.getColumnIndex(COL1))
+            user["logo"] = cursor.getString(cursor.getColumnIndex(COL2))
+            user["url"] = cursor.getString(cursor.getColumnIndex(COL3))
             userList.add(user)
         }
         cursor.close()
@@ -76,18 +73,14 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
 
     fun writeToDb(
-        source: String,
-        number: String,
-        playlist: String,
-        picture: String,
-        string: String
+        name: String,
+        logo: String,
+        url: String,
     ) {
         val values = ContentValues()
-        values.put(COL1, source)
-        values.put(COL2, number)
-        values.put(COL3, playlist)
-        values.put(COL4, picture)
-        values.put(COL5, string)
+        values.put(COL1, name)
+        values.put(COL2, logo)
+        values.put(COL3, url)
 
         val db = this.writableDatabase
         db.insert(TABLE_NAME, null, values)
@@ -121,47 +114,85 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
 
     @SuppressLint("Range")
-    fun exportDb(): Boolean {
+    fun exportDb14(context: Context): Boolean {
+        val exportDir =
+            getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+        if (!exportDir.exists()) {
+            exportDir.mkdirs()
+        }
+        val file: File
+        var printWriter: PrintWriter? = null
+        try {
+            file = File(exportDir, "Database_FREETV.csv")
+            file.createNewFile()
+            printWriter = PrintWriter(FileWriter(file))
+
+            val db = this.readableDatabase
+            var id: Int
+            var name: String
+            var logo: String
+            var url: String
+
+            val curCSV: Cursor = db.rawQuery("SELECT * FROM $TABLE_NAME", null)
+            printWriter.println("id,name,logo,url")
+            while (curCSV.moveToNext()) {
+                id = curCSV.getInt(curCSV.getColumnIndex(ID_COL))
+                name = curCSV.getString(curCSV.getColumnIndex("name"))
+                logo = curCSV.getString(curCSV.getColumnIndex("logo"))
+                url = curCSV.getString(curCSV.getColumnIndex("url"))
+
+                val record = "$id,$name,$logo,$url"
+
+                printWriter.println(record)
+            }
+            curCSV.close()
+            db.close()
+        } catch (e: IOException) {
+            return false
+        } finally {
+            printWriter?.close()
+        }
+        return true
+    }
+
+    @SuppressLint("Range")
+    fun exportDb(context: Context): Boolean {
         val state = Environment.getExternalStorageState()
         if (Environment.MEDIA_MOUNTED != state) {
             return false
         } else {
-            val exportDir =
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-            if (!exportDir.exists()) {
-                exportDir.mkdirs()
-            }
+            val fileDir = context.getExternalFilesDir(null)
+
             val file: File
             var printWriter: PrintWriter? = null
             try {
-                file = File(exportDir, "Database_FREETV.csv")
+                file = File(fileDir, "Database_FREETV.csv")
                 file.createNewFile()
                 printWriter = PrintWriter(FileWriter(file))
 
                 val db = this.readableDatabase
                 var id: Int
-                var source: String
-                var number: String
-                var playlist: String
-                var picture: String
-                var string: String
+                var name: String
+                var logo: String
+                var url: String
 
                 val curCSV: Cursor = db.rawQuery("SELECT * FROM $TABLE_NAME", null)
-                printWriter.println("id,source,number,playlist,picture,string")
+                printWriter.println("id,name,logo,url")
                 while (curCSV.moveToNext()) {
                     id = curCSV.getInt(curCSV.getColumnIndex(ID_COL))
-                    source = curCSV.getString(curCSV.getColumnIndex("source"))
-                    number = curCSV.getString(curCSV.getColumnIndex("number"))
-                    playlist = curCSV.getString(curCSV.getColumnIndex("playlist"))
-                    picture = curCSV.getString(curCSV.getColumnIndex("picture"))
-                    string = curCSV.getString(curCSV.getColumnIndex("string"))
+                    name = curCSV.getString(curCSV.getColumnIndex("name"))
+                    logo = curCSV.getString(curCSV.getColumnIndex("logo"))
+                    url = curCSV.getString(curCSV.getColumnIndex("url"))
 
-                    val record = "$id,$source,$number,$playlist,$picture,$string"
+                    val record = "$id,$name,$logo,$url"
 
                     printWriter.println(record)
                 }
                 curCSV.close()
                 db.close()
+                Toast.makeText(context, context.getString(R.string.saveFolder), Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, file.absolutePath, Toast.LENGTH_LONG).show()
+
             } catch (e: IOException) {
                 return false
             } finally {

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.phstudio.freetv.R
+import com.phstudio.freetv.favorite.Database
 import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
 import com.phstudio.freetv.ui.ItemAdapter2
@@ -54,14 +55,10 @@ class KodiTvMain : AppCompatActivity() {
                         }
 
                     }
-                },
-                object : ItemAdapter2.OnItemLongClickListener {
+                }, object : ItemAdapter2.OnItemLongClickListener {
                     override fun onItemLongClick(position: Int): Boolean {
-                        Toast.makeText(
-                            this@KodiTvMain,
-                            getString(R.string.unavailable),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        val (name, logo, url) = splitList(kodiTvMainList)
+                        favorite(name[position], logo[position], url[position])
 
                         return true
                     }
@@ -149,4 +146,10 @@ class KodiTvMain : AppCompatActivity() {
     private val kodiTvMainList = ArrayList<Triple<String, String, String>>()
 
     private lateinit var customAdapter: ItemAdapter2
+
+    private fun favorite(name: String, logo: String, url: String) {
+        val db = Database(this, null)
+        db.writeToDb(name, logo, url)
+        Toast.makeText(this, getString(R.string.addedToFav), Toast.LENGTH_SHORT).show()
+    }
 }

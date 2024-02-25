@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.new_channels.CountryActivity">
+    tools:context=".ui.git1.CountryActivity">
 
     <View
         android:id="@+id/vTop"
@@ -28,14 +28,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDrawable"
         android:layout_width="@dimen/_26sdp"
         android:layout_height="@dimen/_26sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:src="@drawable/what"
         app:layout_constraintBottom_toBottomOf="@id/tvPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvPrimary"
-        app:tint="@color/white" />
+        app:layout_constraintTop_toTopOf="@id/tvPrimary" />
 
     <ScrollView
         android:layout_width="match_parent"
