@@ -1,0 +1,4 @@
+-New logo
+-Added search bar
+-Added ability to save custom links
+-Adjusting countries and providers

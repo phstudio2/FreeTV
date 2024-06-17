@@ -1,0 +1,4 @@
+-Nové logo
+-Přidán vyhledávací panel
+-Přidána možnost ukládat vlastní odkazy
+-Úprava zemí a poskytovatelů

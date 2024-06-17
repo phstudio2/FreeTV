@@ -14,13 +14,17 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.AdapterView.OnItemLongClickListener
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.SimpleAdapter
+import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.phstudio.freetv.R
 import com.phstudio.freetv.player.HTMLActivity
 import com.phstudio.freetv.player.PlayerActivity
@@ -198,7 +202,9 @@ class FavoriteActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= 33) {
                 saveDb14()
             }else{
-                saveDb()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    saveDb()
+                }
             }
         }
         builder.setNegativeButton(

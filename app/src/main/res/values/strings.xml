@@ -2,10 +2,10 @@
     <!--Developer & App info-->
     <string name="app_name" translatable="false">Free TV</string>
     <string name="developer" translatable="false">PH studio</string>
-    <string name="app_version" translatable="false">1.3</string>
+    <string name="app_version" translatable="false">1.4</string>
     <string name="fav_num" translatable="false">0</string>
-    <string name="countries_num" translatable="false">78</string>
-    <string name="streams_num" translatable="false">9.3K</string>
+    <string name="countries_num" translatable="false">80</string>
+    <string name="streams_num" translatable="false">9.4K</string>
 
     <!--MainActivity-->
     <string name="adultWarning">Do you have 18+?</string>
@@ -76,6 +76,7 @@
     <string name="north_macedonia">North Macedonia</string>
     <string name="norway">Norway</string>
     <string name="paraguay">Paraguay</string>
+    <string name="pakistan">Pakistan</string>
     <string name="peru">Peru</string>
     <string name="poland">Poland</string>
     <string name="portugal">Portugal</string>
@@ -97,6 +98,7 @@
     <string name="uk">United Kingdom</string>
     <string name="venezuela">Venezuela</string>
     <string name="usa">USA</string>
+    <string name="uzbekistan">Uzbekistan</string>
     <string name="united_arab_emirates">United Arab Emirates</string>
     <string name="ukraine">Ukraine</string>
 
@@ -155,7 +157,7 @@
     <string name="NotStream">Can\'t play this stream!</string>
     <string name="addedToFav">Added to favorites!</string>
     <string name="unknown">Unknown</string>
-    <string name="add">add</string>
+    <string name="add">Add</string>
     <string name="favorite">Favorites</string>
     <string name="pornography">Adult</string>
     <string name="add_link">Add your link</string>
@@ -178,4 +180,13 @@
     <string name="kodi_tv_regional">Kodi Tv Regional</string>
     <string name="iptvorg">iptv-org / iptv</string>
     <string name="saveFolder">Saved to</string>
+    <string name="search_channel">Search channel…</string>
+    <string name="search_country">Search country…</string>
+    <string name="emptyCustom">You don\'t have any custom links!\n\nTo add click on this image.</string>
+    <string name="custom_name">Channel name:</string>
+    <string name="custom_logo">Link to logo:</string>
+    <string name="custom_link">Link to stream:</string>
+    <string name="save">Save</string>
+    <string name="hint_name">BBC News</string>
+    <string name="hint_logo">https://example.com/logo.png</string>
 </resources>

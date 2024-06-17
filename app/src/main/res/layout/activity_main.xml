@@ -508,7 +508,7 @@
                             android:id="@+id/tvLink"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/add"
+                            android:text="@string/show"
                             android:textColor="@color/primary"
                             android:textSize="@dimen/_12ssp"
                             android:textStyle="bold"

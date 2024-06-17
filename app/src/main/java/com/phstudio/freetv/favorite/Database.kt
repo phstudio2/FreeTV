@@ -1,22 +1,15 @@
 package com.phstudio.freetv.favorite
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.os.Environment
 import android.os.Environment.getExternalStoragePublicDirectory
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.app.ActivityCompat.startActivityForResult
 import com.phstudio.freetv.R
-import com.squareup.picasso.Picasso
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
@@ -123,7 +116,7 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val file: File
         var printWriter: PrintWriter? = null
         try {
-            file = File(exportDir, "Database_FREETV.csv")
+            file = File(exportDir, "Database_FREETV_Favorite.csv")
             file.createNewFile()
             printWriter = PrintWriter(FileWriter(file))
 

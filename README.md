@@ -11,7 +11,7 @@
 #### Open-Source application that does not require registration and all content is free for users. It is possible to play international as well as local channels using a simple player. The player supports gesture control. Add favorite channels to the favorites list and then play them. There is also the option to play your own links. And much more.
 
 ## Available for download
-[![Google Play](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.phstudio.freetv) [![Galaxy Store](https://shields.io/badge/Galaxy%20Store-e013a0?style=for-the-badge&logo=samsung&logoColor=white)](https://galaxystore.samsung.com/detail/com.phstudio.freetv) [![APK](https://shields.io/badge/APK-7MB-58a6ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phstudio2/FreeTV/releases/download/1.3/FreeTV1-3.apk)
+[![Google Play](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.phstudio.freetv) [![Galaxy Store](https://shields.io/badge/Galaxy%20Store-e013a0?style=for-the-badge&logo=samsung&logoColor=white)](https://galaxystore.samsung.com/detail/com.phstudio.freetv) [![APK](https://shields.io/badge/APK-7MB-58a6ff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phstudio2/FreeTV/releases/download/1.4/FreeTV1-4.apk)
 
 ## Screenshot preview
 <div style="display:flex;">

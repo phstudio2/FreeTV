@@ -30,9 +30,6 @@
         <activity android:name=".ui.AboutActivity" />
         <activity android:name=".ui.AdultActivity" />
         <activity android:name=".ui.ChannelsActivity" />
-        <activity android:name=".ui.MoviesActivity" />
-        <activity android:name=".ui.MusicActivity" />
-        <activity android:name=".ui.NewsActivity" />
 
         <activity android:name=".player.PlayerActivity" />
         <activity android:name=".player.LinkActivity" />
@@ -41,23 +38,8 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true" />
 
-        <activity android:name=".ui.git1.CountryActivity" />
-        <activity android:name=".ui.git1.LinkActivity" />
+        <activity android:name=".ui.LinkActivity" />
+        <activity android:name=".custom.CustomActivity" />
 
-        <activity android:name=".ui.git2.CountryActivity" />
-
-        <activity android:name=".ui.channels.PHstudio" />
-        <activity android:name=".ui.channels.Czech" />
-        <activity android:name=".ui.channels.UK" />
-        <activity android:name=".ui.channels.Argentina" />
-        <activity android:name=".ui.channels.Australia" />
-        <activity android:name=".ui.channels.USA" />
-        <activity android:name=".ui.channels.Germany" />
-        <activity android:name=".ui.channels.Slovakia" />
-        <activity android:name=".ui.channels.International" />
-
-        <activity android:name=".ui.kodinerds.KodiNerdsActivity" />
-        <activity android:name=".ui.kodinerds.KodiTvMain" />
-        <activity android:name=".ui.kodinerds.KodiTvRegional" />
     </application>
 </manifest>

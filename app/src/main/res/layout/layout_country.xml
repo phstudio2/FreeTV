@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".ui.git1.CountryActivity">
+    android:background="@color/background">
 
     <View
         android:id="@+id/vTop"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_65sdp"
+        android:layout_height="@dimen/_55sdp"
         android:background="@color/primary"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,22 +34,38 @@
         android:src="@drawable/what"
         app:layout_constraintBottom_toBottomOf="@id/tvPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvPrimary" />
+        app:layout_constraintTop_toTopOf="@id/tvPrimary"
+        />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vTop" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:padding="@dimen/_16sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_14sdp"
+        android:paddingEnd="@dimen/_14sdp"
+        android:paddingRight="@dimen/_14sdp"
+        android:paddingLeft="@dimen/_14sdp"
         android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vTop">
+        app:layout_constraintTop_toBottomOf="@id/svCountry"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCountry"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:overScrollMode="never"
             android:scrollbars="none" />

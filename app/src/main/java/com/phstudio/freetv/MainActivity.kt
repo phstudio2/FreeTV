@@ -1,20 +1,23 @@
 package com.phstudio.freetv
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.text.InputType
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.phstudio.freetv.R.*
+import com.phstudio.freetv.R.id
+import com.phstudio.freetv.R.layout
+import com.phstudio.freetv.R.mipmap
+import com.phstudio.freetv.R.string
+import com.phstudio.freetv.custom.CustomActivity
 import com.phstudio.freetv.favorite.Database
 import com.phstudio.freetv.favorite.FavoriteActivity
-import com.phstudio.freetv.player.LinkActivity
-import com.phstudio.freetv.ui.*
+import com.phstudio.freetv.ui.AboutActivity
+import com.phstudio.freetv.ui.AdultActivity
+import com.phstudio.freetv.ui.ChannelsActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         llStreams.setOnClickListener {
-            showDialog()
+            sendActivity(CustomActivity())
         }
 
         llFavorites.setOnClickListener {
@@ -50,11 +53,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         clNews.setOnClickListener {
-            sendActivity(NewsActivity())
+            sendActivity("zz_news_en", "news")
         }
 
         clMovies.setOnClickListener {
-            sendActivity(MoviesActivity())
+            sendActivity("zz_movies", "movies")
         }
 
         clMovies.setOnLongClickListener {
@@ -66,12 +69,25 @@ class MainActivity : AppCompatActivity() {
             sendActivity(ChannelsActivity())
         }
         clMusic.setOnClickListener {
-            sendActivity(MusicActivity())
+            sendActivity("music", "music")
         }
 
         clLink.setOnClickListener {
-            showDialog()
+            sendActivity(CustomActivity())
         }
+    }
+
+    @SuppressLint("DiscouragedApi")
+    private fun sendActivity(country: String, code: String) {
+        val intent = Intent(this, com.phstudio.freetv.ui.LinkActivity::class.java)
+        intent.putExtra("country", country)
+        intent.putExtra("code", code)
+        intent.putExtra(
+            "tvPrimary",
+            getString(resources.getIdentifier(code, "string", packageName))
+        )
+        intent.putExtra("ivDrawable", resources.getIdentifier(code, "drawable", packageName))
+        startActivity(intent)
     }
 
     private fun sendActivity(where: AppCompatActivity) {
@@ -89,30 +105,6 @@ class MainActivity : AppCompatActivity() {
         }
         builder.setNegativeButton(
             getString(string.no)
-        ) { dialog, _ -> dialog.cancel() }
-        builder.show()
-    }
-
-    private fun showDialog() {
-        val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
-        builder.setTitle(getString(string.enterLink))
-        val input = EditText(this)
-        input.hint = getString(string.hint)
-        input.inputType = InputType.TYPE_CLASS_TEXT
-        builder.setView(input)
-        builder.setPositiveButton(getString(string.start)) { _, _ ->
-            val text = input.text.toString()
-            if (text.isNotEmpty()) {
-                val intent = Intent(this, LinkActivity::class.java)
-                intent.putExtra("Link", text)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this@MainActivity, getString(string.empty), Toast.LENGTH_SHORT)
-                    .show()
-            }
-        }
-        builder.setNegativeButton(
-            getString(string.cancel)
         ) { dialog, _ -> dialog.cancel() }
         builder.show()
     }

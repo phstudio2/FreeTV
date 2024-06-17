@@ -69,6 +69,7 @@
     <string name="north_macedonia">Severní Makedonie</string>
     <string name="norway">Norsko</string>
     <string name="paraguay">Paraguay</string>
+    <string name="pakistan">Pákistán</string>
     <string name="peru">Peru</string>
     <string name="poland">Polsko</string>
     <string name="portugal">Portugalsko</string>
@@ -79,7 +80,7 @@
     <string name="saudi_arabia">Saúdská Arábie</string>
     <string name="serbia">Srbsko</string>
     <string name="slovakia">Slovensko</string>
-    <string name="slovenia">Slovensko</string>
+    <string name="slovenia">Slovinsko</string>
     <string name="somalia">Somálsko</string>
     <string name="spain">Španělsko</string>
     <string name="sweden">Švédsko</string>
@@ -90,6 +91,7 @@
     <string name="uk">Spojené království</string>
     <string name="venezuela">Venezuela</string>
     <string name="usa">USA</string>
+    <string name="uzbekistan">Uzbekistán</string>
     <string name="united_arab_emirates">Spojené arabské emiráty</string>
     <string name="ukraine">Ukrajina</string>
 
@@ -139,7 +141,7 @@
     <string name="NotStream">Tento stream nelze přehrát!</string>
     <string name="addedToFav">Přidáno do oblíbených!</string>
     <string name="unknown">Neznámé</string>
-    <string name="add">přidat</string>
+    <string name="add">Přidat</string>
     <string name="favorite">Oblíbené</string>
     <string name="pornography">Pro dospělé</string>
     <string name="add_link">Vlastní odkaz</string>
@@ -162,4 +164,13 @@
     <string name="kodi_tv_regional">Kodi Tv Regional</string>
     <string name="iptvorg">iptv-org / iptv</string>
     <string name="saveFolder">Uloženo do</string>
+    <string name="search_channel">Vyhledejte kanál…</string>
+    <string name="search_country">Vyhledejte zemi…</string>
+    <string name="emptyCustom">Nemáte žádné vlastní odkazy!\n\nPro přidání klikněte na tento obrázek.</string>
+    <string name="custom_name">Název kanálu:</string>
+    <string name="custom_logo">Odkaz na logo:</string>
+    <string name="custom_link">Odkaz na stream:</string>
+    <string name="save">Uložit</string>
+    <string name="hint_name">BBC News</string>
+    <string name="hint_logo">https://priklad.cz/logo.png</string>
 </resources>

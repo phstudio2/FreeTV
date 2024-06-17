@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="@dimen/_18sdp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:text="@string/custom_name"
+        android:textSize="@dimen/_14sdp" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:hint="@string/hint_name"
+        android:inputType="text"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:text="@string/custom_logo"
+        android:textSize="@dimen/_14sdp" />
+
+    <EditText
+        android:id="@+id/etLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:hint="@string/hint_logo"
+        android:inputType="text"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:text="@string/custom_link"
+        android:textSize="@dimen/_14sdp" />
+
+    <EditText
+        android:id="@+id/etLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:hint="@string/hint"
+        android:inputType="text"
+        android:textSize="@dimen/_12sdp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp" />
+
+    <Button
+        android:id="@+id/btOkay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/primary" />
+
+    <Button
+        android:id="@+id/btDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btDelete"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:visibility="gone"/>
+
+</LinearLayout>

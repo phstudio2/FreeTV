@@ -244,34 +244,6 @@ class AdultActivity : AppCompatActivity() {
                 "https://fash1043.cloudycdn.services/slive/ftv_ftv_midnite_k1y_27049_midnite_secr_108_hls.smil/playlist.m3u8"
             )
         )
-        adultList.add(
-            Triple(
-                "REDLIGHT",
-                R.drawable.p28,
-                "https://cdn-main.lolokoko.tv/REDLIGHT.stream/chunks.m3u8"
-            )
-        )
-        adultList.add(
-            Triple(
-                "Brazzers TV Europe",
-                R.drawable.image,
-                "https://cdn-main.lolokoko.tv/BRAZZERS.stream/chunks.m3u8"
-            )
-        )
-        adultList.add(
-            Triple(
-                "Dorcel TV",
-                R.drawable.image,
-                "https://cdn-main.lolokoko.tv/DorcelTV.stream/playlist.m3u8"
-            )
-        )
-        adultList.add(
-            Triple(
-                "Hustler TV",
-                R.drawable.image,
-                "https://cdn-main.lolokoko.tv/HUSTLER.stream/chunks.m3u8"
-            )
-        )
 
         customAdapter.notifyDataSetChanged()
     }
